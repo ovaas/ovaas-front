@@ -9,12 +9,12 @@ This project use pnpm as package manager.
 npm i -g pnpm
 ```
 
-### Start Dev Server
+### Start dev server
 ```
 pnpm dev
 ```
 
-### Build Production
+### Build for production
 ```
 pnpm build
 ```
