@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex flex-col items-center bg-gray-600 h-full w-18 p-2">
+  <aside class="flex-none flex flex-col items-center bg-gray-600 h-full w-18 p-2">
     <router-link v-slot="{ isActive }" to="/">
       <NavLink text="Home" icon="bx:bx-home" :is-active="isActive" />
     </router-link>
