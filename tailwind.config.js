@@ -9,6 +9,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      opacity: {
+        '15': '0.15',
+        '20': '0.2',
+        '95': '0.95',
+      },
       colors: {
         header: '#2B6CB0',
       },
