@@ -6,6 +6,7 @@
     "build": "cross-env NODE_ENV=production vite build"
   },
   "dependencies": {
+    "@braid/vue-formulate": "^2.4.3",
     "@iconify/iconify": "2.0.0-beta.6",
     "vue": "3.0.0-rc.8",
     "vue-router": "^4.0.0-beta.6"
