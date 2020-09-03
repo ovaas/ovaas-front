@@ -1,9 +1,11 @@
 <template>
-  <div class="flex flex-wrap h-full">
+  <div class="flex flex-col h-screen overflow-hidden">
     <Header />
-    <SideMenu />
-    <div class="flex-1 px-4 py-10 text-center text-white">
-      <router-view />
+    <div class="flex-auto flex overflow-hidden">
+      <SideMenu />
+      <div class="flex-auto overflow-auto">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>

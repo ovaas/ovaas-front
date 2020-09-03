@@ -1,5 +1,7 @@
 <template>
-  <h1>Index</h1>
+  <MainContant title="Demos">
+    <DemoCard v-for="n in 10" :key="n" />
+  </MainContant>
 </template>
 
 <script>
