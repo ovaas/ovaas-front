@@ -3,5 +3,7 @@
     "vetur.validation.template": false,
     "typescript.validate.enable": false,
     "typescript.suggestionActions.enabled": false,
-    "javascript.suggestionActions.enabled": false
+    "javascript.suggestionActions.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.autoSave": "on"
 }
