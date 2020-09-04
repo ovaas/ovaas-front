@@ -1,4 +1,5 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/OVaaS/ovaas-front)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/481b6017-918f-4fca-a136-dc08dc1d36d3/deploy-status)](https://app.netlify.com/sites/ovaas-front/deploys)
 
 # OVaaS Front-End Client
 
