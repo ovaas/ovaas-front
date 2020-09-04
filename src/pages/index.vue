@@ -1,6 +1,8 @@
 <template>
   <MainContant title="Demos">
-    <DemoCard v-for="n in 10" :key="n" />
+    <div class="grid grid-cols-4 gap-4">
+      <DemoCard v-for="n in 10" :key="n" />
+    </div>
   </MainContant>
 </template>
 
