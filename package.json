@@ -1,6 +1,9 @@
 {
   "name": "ovaas-front",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "OVaaS Front-end use Vue.js v3",
+  "license": "Apache-2.0",
+  "repository": "github:ovaas/ovaas-front",
   "scripts": {
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build"
