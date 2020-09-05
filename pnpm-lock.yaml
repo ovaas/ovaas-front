@@ -1,5 +1,4 @@
 dependencies:
-  '@braid/vue-formulate': 2.4.3
   '@iconify/iconify': 2.0.0-beta.6
   vue: 3.0.0-rc.8
   vue-router: 4.0.0-beta.7_vue@3.0.0-rc.8
@@ -48,19 +47,6 @@ packages:
       to-fast-properties: 2.0.0
     resolution:
       integrity: sha512-bvM7Qz6eKnJVFIn+1LPtjlBFPVN5jNDc1XmN15vWe7Q3DPBufWWsLiIvUu7xW87uTG6QoggpIDnUgLQvPheU+Q==
-  /@braid/vue-formulate-i18n/1.11.0:
-    dev: false
-    resolution:
-      integrity: sha512-pXpx/h3Lo+touthbUDGFcaRTb7aOZBe8tRK4tg039rm+6czYixBfZdbeKZf9vOU0a7c6WIu91yEglc89by5bkw==
-  /@braid/vue-formulate/2.4.3:
-    dependencies:
-      '@braid/vue-formulate-i18n': 1.11.0
-      is-plain-object: 3.0.1
-      is-url: 1.2.4
-      nanoid: 2.1.11
-    dev: false
-    resolution:
-      integrity: sha512-+kLEabQ3BipBpUCyBiasa09EZvINxtUcX86jvmqSDpi5pDLO+xGBi1Mi6a7PdVC3vmBgYc7+GCwkinIPokheoA==
   /@eslint/eslintrc/0.1.0:
     dependencies:
       ajv: 6.12.4
@@ -1666,12 +1652,6 @@ packages:
       node: '>=0.12.0'
     resolution:
       integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
-  /is-plain-object/3.0.1:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-Xnpx182SBMrr/aBik8y+GuR4U1L9FqMSojwDQwPMmxyC6bvEqly9UBCxhauBF5vNh2gwWJNX6oDV7O+OM4z34g==
   /is-reference/1.2.1:
     dependencies:
       '@types/estree': 0.0.45
@@ -1684,10 +1664,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
-  /is-url/1.2.4:
-    dev: false
-    resolution:
-      integrity: sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==
   /is-wsl/2.2.0:
     dependencies:
       is-docker: 2.1.1
@@ -1999,10 +1975,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==
-  /nanoid/2.1.11:
-    dev: false
-    resolution:
-      integrity: sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==
   /natural-compare/1.4.0:
     dev: true
     resolution:
@@ -3034,7 +3006,6 @@ packages:
     resolution:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
-  '@braid/vue-formulate': ^2.4.3
   '@iconify/iconify': 2.0.0-beta.6
   '@iconify/json': ^1.1.216
   '@purge-icons/generated': ^0.4.0
