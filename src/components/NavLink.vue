@@ -10,9 +10,6 @@
 <script setup="props">
 export default {
   props: {
-    isActive: {
-      type: Boolean
-    },
     text: {
       type: String,
       default: "Home"
