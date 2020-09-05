@@ -1,5 +1,6 @@
 <template>
-  <h1>Settings</h1>
+  <MainContant title="Setting">
+  </MainContant>
 </template>
 
 <script>

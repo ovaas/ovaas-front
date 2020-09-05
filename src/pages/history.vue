@@ -1,5 +1,6 @@
 <template>
-  <h1>History</h1>
+  <MainContant title="History">
+  </MainContant>
 </template>
 
 <script>
