@@ -7,11 +7,11 @@
         class="object-cover w-full h-full"
       >
     </div>
-    <div class="h-2/5 text-left p-2">
+    <div class="h-2/5 text-left p-2 w-full">
       <h2 class="text-xl font-medium pt-2">
         {{ demo.title }}
       </h2>
-      <p class="mt-1 w-full">
+      <p class="mt-1">
         {{ demo.content }}
       </p>
     </div>
