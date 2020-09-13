@@ -11,8 +11,8 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-export const demos = reactive([
+import { ref } from 'vue'
+export const demos = ref([
   {
     title: 'Human pose estimation',
     image: '/~/assets/human-pose-estimation-0001.png',
