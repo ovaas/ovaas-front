@@ -12,34 +12,35 @@
 
 <script setup>
 import { ref } from 'vue'
+import humanPoseImage from '/~/assets/human-pose-estimation-0001.png'
 export const demos = ref([
   {
     title: 'Human pose estimation',
-    image: '/~/assets/human-pose-estimation-0001.png',
+    image: humanPoseImage,
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   },
   {
     title: 'Human pose estimation',
-    image: '/~/assets/human-pose-estimation-0001.png',
+    image: humanPoseImage,
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   },
   {
     title: 'Human pose estimation',
-    image: '/~/assets/human-pose-estimation-0001.png',
+    image: humanPoseImage,
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   },
   {
     title: 'Human pose estimation',
-    image: '/~/assets/human-pose-estimation-0001.png',
+    image: humanPoseImage,
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   },
   {
     title: 'Human pose estimation',
-    image: '/~/assets/human-pose-estimation-0001.png',
+    image: humanPoseImage,
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   }
