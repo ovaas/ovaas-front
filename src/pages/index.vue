@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
-export const demos = [
+import { reactive } from 'vue'
+export const demos = reactive([
   {
     title: 'Human pose estimation',
     image: '/~/assets/human-pose-estimation-0001.png',
@@ -42,7 +43,7 @@ export const demos = [
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
     path: '/demo/human-pose-estimation'
   }
-]
+])
 </script>
 
 <style>
