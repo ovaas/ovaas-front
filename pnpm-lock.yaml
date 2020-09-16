@@ -1,6 +1,7 @@
 dependencies:
   '@iconify/iconify': 2.0.0-beta.6
   vue: 3.0.0-rc.10
+  vue-i18n: 9.0.0-alpha.17_vue@3.0.0-rc.10
   vue-router: 4.0.0-beta.9_vue@3.0.0-rc.10
 devDependencies:
   '@iconify/json': 1.1.222
@@ -9,6 +10,7 @@ devDependencies:
   cross-env: 7.0.2
   eslint: 7.9.0
   eslint-plugin-vue: 7.0.0-beta.3_eslint@7.9.0
+  pnpm: 5.5.13
   tailwindcss: 1.8.8
   vite: 1.0.0-rc.4
   vite-plugin-components: 0.2.13
@@ -2162,6 +2164,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
+  /pnpm/5.5.13:
+    dev: true
+    engines:
+      node: '>=10.13'
+    hasBin: true
+    resolution:
+      integrity: sha512-dNKfdY4HXOyAEsCzSuFbJ5uSCoabYTavw19YiN4wYuzk3ULG+5+Wc9+eAIm1hdQhD8gBG8etNm2O3/8lYAImdw==
   /postcss-discard-comments/4.0.2:
     dependencies:
       postcss: 7.0.32
@@ -2929,6 +2938,16 @@ packages:
       eslint: '>=5.0.0'
     resolution:
       integrity: sha512-Kr21uPfthDc63nDl27AGQEhtt9VrZ9nkYk/NTftJ2ws9XiJwzJJCnCr3AITQ2jpRMA0XPGDECxYH8E027qMK9Q==
+  /vue-i18n/9.0.0-alpha.17_vue@3.0.0-rc.10:
+    dependencies:
+      vue: 3.0.0-rc.10
+    dev: false
+    engines:
+      node: '>= 10'
+    peerDependencies:
+      vue: ^3.0.0-rc.8
+    resolution:
+      integrity: sha512-5GIDvYKHPU8DuysdQM7tcALWmBlFbwtM9jKWGI4wBDbych4dK9OMjGCVrC2PvaGD/zo96VLJMYLNpgg0GCk6QA==
   /vue-router/4.0.0-beta.9_vue@3.0.0-rc.10:
     dependencies:
       vue: 3.0.0-rc.10
@@ -3014,6 +3033,7 @@ specifiers:
   cross-env: ^7.0.2
   eslint: ^7.9.0
   eslint-plugin-vue: ^7.0.0-beta.3
+  pnpm: ^5.5.13
   tailwindcss: ^1.8.8
   vite: 1.0.0-rc.4
   vite-plugin-components: ^0.2.13
@@ -3021,4 +3041,5 @@ specifiers:
   vite-plugin-voie: ^0.4.0
   vue: 3.0.0-rc.10
   vue-eslint-parser: ^7.1.0
+  vue-i18n: 9.0.0-alpha.17
   vue-router: ^4.0.0-beta.9
