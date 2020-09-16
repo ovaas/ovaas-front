@@ -1,5 +1,5 @@
 <template>
-  <MainContant title="Human Pose Estimation" back-btn="true">
+  <MainContant :title="t('demos.human-pose.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
         <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-cover h-full w-full">
@@ -11,16 +11,18 @@
         <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="upload">
         <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
           <p class="mt-2 text-md">
-            Drop files anywhere to upload
+            {{ t('upload.image.drop') }}
           </p>
           <p class="mt-2 text-base">
-            or
+            {{ t('upload.image.or') }}
           </p>
           <div class="mt-2">
-            <Icon class="iconify mb-1" icon="bx:bxs-cloud-upload" size="2" />
+            <Icon class="iconify mb-1" icon="bx:bxs-cloud-upload" :size="2" />
           </div>
-          <span class="mt-2 text-base">Select a file</span>
-          <span v-show="showAlern" class="mt-2 text-base text-red-700">Please upload a image file !!!</span>
+          <span class="mt-2 text-base">{{ t('upload.image.select') }}</span>
+          <span v-show="showAlern" class="mt-2 text-base text-red-700">
+            {{ t('errors.not-image') }}
+          </span>
         </div>
       </div>
     </div>
@@ -29,6 +31,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+export { t }
+
 export const file = ref(null)
 export const preview = ref(null)
 export const uploadedImage = ref('')

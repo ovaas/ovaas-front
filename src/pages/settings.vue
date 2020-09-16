@@ -1,12 +1,13 @@
 <template>
-  <MainContant title="Setting">
+  <MainContant :title="t('pages-title.settings')">
   </MainContant>
 </template>
 
-<script>
-export default {
+<script setup>
+import { useI18n } from 'vue-i18n'
 
-}
+const { t } = useI18n()
+export { t }
 </script>
 
 <style>

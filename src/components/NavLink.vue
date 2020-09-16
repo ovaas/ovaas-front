@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-center items-center w-14 h-14 bg-white rounded-lg bg-opacity-0 text-white hover:text-black hover:bg-opacity-100">
     <Icon class="iconify mb-1" :icon="icon" />
     <p class="text-xs font-bold">
-      {{ text }}
+      {{ title }}
     </p>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script setup="props">
 export default {
   props: {
-    text: {
+    title: {
       type: String,
       default: "Home"
     },
