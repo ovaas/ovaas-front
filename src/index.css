@@ -9,3 +9,7 @@ html, body, #app {
   padding: 0;
   background: #1A202C;
 }
+
+.select-dark {
+  @apply block appearance-none w-full bg-gray-800 border border-gray-800 hover:border-gray-700 px-4 py-2 pr-20 rounded leading-tight outline-none;
+}
