@@ -4,8 +4,8 @@
       OVaaS
     </router-link>
     <div class="inline-block relative">
-      <DarkSelect v-model="locale">
-        <option v-for="lang in languages" :key="lang.locale" :value="lang.locale">
+      <DarkSelect v-model="currentLang">
+        <option v-for="lang in languages" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
           {{ lang.name }}
         </option>
       </DarkSelect>
@@ -14,15 +14,27 @@
 </template>
 
 <script setup>
+import { watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { languages } from '/~/messages'
+export { languages } from '/~/messages'
+import { localeSchema } from "../store";
 
-const { locale } = useI18n()
+const { locale } = useI18n();
 
-export {
-  locale,
-  languages
-}
+export const currentLang = computed({
+  get() {
+    return localeSchema.value;
+  },
+  set(v) {
+    localeSchema.value = v;
+  },
+});
+
+watch(
+  currentLang,
+  (v) => locale.value = v,
+  { immediate: true },
+);
 </script>
 
 <style>
