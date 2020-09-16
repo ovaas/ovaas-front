@@ -1,5 +1,6 @@
 dependencies:
   '@iconify/iconify': 2.0.0-beta.6
+  '@vueuse/core': 4.0.0-beta.11_vue@3.0.0-rc.10
   vue: 3.0.0-rc.10
   vue-i18n: 9.0.0-alpha.17_vue@3.0.0-rc.10
   vue-router: 4.0.0-beta.9_vue@3.0.0-rc.10
@@ -372,6 +373,14 @@ packages:
   /@vue/shared/3.0.0-rc.10:
     resolution:
       integrity: sha512-fI6gVhhgb3cAmEkY4oeVVA2hWZ2xvkgogHdBI5PL7gSvZnOB6XZ2eQGsYjC4W+7BegvEkoMBuZsFXVa4ZQ07XQ==
+  /@vueuse/core/4.0.0-beta.11_vue@3.0.0-rc.10:
+    dependencies:
+      vue-demi: 0.3.3_vue@3.0.0-rc.10
+    dev: false
+    peerDependencies:
+      vue: '*'
+    resolution:
+      integrity: sha512-/hCB+LN5DUMULY0AKEYNsM0FDlo+FnEYVBWKl4pBfUcbYtXgtqyUEE7L3TLNzI+zT2P6O9tB7yBb0TwXKroCIw==
   /accepts/1.3.7:
     dependencies:
       mime-types: 2.1.27
@@ -2922,6 +2931,17 @@ packages:
       vue: '*'
     resolution:
       integrity: sha512-3oa4wm9tTQEPFdEZychcqCF91PfsEZfvJZ62GoGJf9fpzDF5DnmNZJYQkGxzRbKYUvaIYm37DCd5yDn8btl0eA==
+  /vue-demi/0.3.3_vue@3.0.0-rc.10:
+    dependencies:
+      vue: 3.0.0-rc.10
+    dev: false
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': '>=1.0.0-beta.1'
+      vue: ^2.6.0 || >=3.0.0-rc.1
+    requiresBuild: true
+    resolution:
+      integrity: sha512-/CvXJUp7e41C/jS5ZgflMQgkY2qFX1ZkZq1kYwYH5RCC9gGy1vgvjsldtQlVORaAUt55+k/mQIUnUKNrLosoIw==
   /vue-eslint-parser/7.1.0_eslint@7.9.0:
     dependencies:
       debug: 4.1.1
@@ -3030,6 +3050,7 @@ specifiers:
   '@iconify/json': ^1.1.222
   '@purge-icons/generated': ^0.4.0
   '@vue/compiler-sfc': 3.0.0-rc.10
+  '@vueuse/core': 4.0.0-beta.11
   cross-env: ^7.0.2
   eslint: ^7.9.0
   eslint-plugin-vue: ^7.0.0-beta.3
