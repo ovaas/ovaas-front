@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full p-4 flex flex-col bg-white bg-opacity-15 rounded-lg" @click="$router.push(demo.path)">
+  <div class="w-full h-full p-4 flex flex-col bg-white bg-opacity-15 rounded-lg cursor-pointer" @click="$router.push(demo.path)">
     <div class="rounded-lg overflow-hidden h-40 w-full">
       <img
         :src="demo.image"
