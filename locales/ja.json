@@ -1,0 +1,23 @@
+{
+  "pages-title": {
+    "home": "ホーム",
+    "history": "履歴",
+    "settings": "設定"
+  },
+  "demos": {
+    "human-pose": {
+      "title": "人体動き検出",
+      "content": "ここは説明文です。"
+    }
+  },
+  "upload": {
+    "image": {
+      "drop": "画像ファイルをここにドラッグ＆ドロップ",
+      "or": "もしくは",
+      "select": "画像ファイルを選択"
+    }
+  },
+  "errors": {
+    "not-image": "画像ファイルではありません !!!"
+  }
+}

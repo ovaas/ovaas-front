@@ -1,0 +1,23 @@
+{
+  "pages-title": {
+    "home": "Home",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "demos": {
+    "human-pose": {
+      "title": "Human pose estimation",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi."
+    }
+  },
+  "upload": {
+    "image": {
+      "drop": "Drop image anywhere to upload",
+      "or": "or",
+      "select": "Select a image"
+    }
+  },
+  "errors": {
+    "not-image": "Please upload a image file !!!"
+  }
+}
