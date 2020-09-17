@@ -1,5 +1,5 @@
 <template>
-  <header class="flex-none flex items-center justify-between bg-header w-full h-18 text-white px-6">
+  <header class="flex-none flex items-center justify-between bg-header w-full h-16 text-white px-6">
     <router-link to="/" class="text-3xl font-bold">
       OVaaS
     </router-link>
