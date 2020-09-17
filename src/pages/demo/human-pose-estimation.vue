@@ -5,20 +5,20 @@
         <div class="flex-1 bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
           <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-cover h-full w-full">
           <button v-if="uploadedImage !== ''" class="absolute bottom-8 right-10 py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-md outline-none">
-            Upload
+            {{ t('upload.text') }}
           </button>
         </div>
         <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
             <Icon class="iconify" icon="bx:bx-download" />
             <span class="pl-2">
-              Download
+              {{ t('share.download') }}
             </span>
           </div>
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
             <Icon class="iconify" icon="bx:bx-share" />
             <span class="pl-2">
-              Share
+              {{ t('share.share') }}
             </span>
           </div>
         </div>

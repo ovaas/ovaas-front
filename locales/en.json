@@ -11,11 +11,16 @@
     }
   },
   "upload": {
+    "text": "Upload",
     "image": {
       "drop": "Drop image anywhere to upload",
       "or": "or",
       "select": "Select a image"
     }
+  },
+  "share": {
+    "download": "Download",
+    "share": "Share"
   },
   "errors": {
     "not-image": "Please upload a image file !!!"
