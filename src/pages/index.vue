@@ -14,6 +14,7 @@
 import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import humanPoseImage from '/~/assets/human-pose-estimation-0001.png'
+import handWriteOCRImage from '/~/assets/handwriting-ocr.jpg'
 
 const { t } = useI18n()
 export { t }
@@ -29,28 +30,10 @@ watchEffect(() => {
       path: '/demo/human-pose-estimation'
     },
     {
-      title: 'Human pose estimation',
-      image: humanPoseImage,
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
-      path: '/demo/human-pose-estimation'
-    },
-    {
-      title: 'Human pose estimation',
-      image: humanPoseImage,
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
-      path: '/demo/human-pose-estimation'
-    },
-    {
-      title: 'Human pose estimation',
-      image: humanPoseImage,
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
-      path: '/demo/human-pose-estimation'
-    },
-    {
-      title: 'Human pose estimation',
-      image: humanPoseImage,
-      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem, voluptatem distinctio deleniti cumque accusamus deserunt officiis ducimus minima consequuntur dicta laboriosam modi incidunt, natus architecto iste tempora sit eligendi.',
-      path: '/demo/human-pose-estimation'
+      title: t('demos.hand-write-ocr.title'),
+      image: handWriteOCRImage,
+      content: t('demos.hand-write-ocr.content'),
+      path: '/demo/hand-write-ocr'
     }
   ]})
 </script>
