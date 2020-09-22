@@ -81,6 +81,8 @@ export const doMouseDown = (e) => {
   ctx.lineWidth = lineWidth;
   ctx.beginPath();
   ctx.moveTo(e.offsetX, e.offsetY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
 }
 export const doMouseMove = (e) => {
   if (!draw) return
