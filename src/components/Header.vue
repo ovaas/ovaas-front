@@ -1,12 +1,16 @@
 <template>
-  <header class="flex-none flex items-center justify-between bg-header w-full h-16 text-white px-6">
-    <router-link to="/" class="inline-flex">
-      <img src="/favicon.svg" alt="Icon" class="h-8 w-8">
-      <h1 class="text-3xl font-bold leading-none ml-6">
-        OVaaS
-      </h1>
-    </router-link>
-    <div class="inline-block relative">
+  <header class="flex-none flex items-center justify-between bg-header w-full h-16 text-white">
+    <div class="flex h-full items-center">
+      <div class="w-18 h-full bg-blue-900 flex justify-center items-center">
+        <img src="/favicon.svg" alt="Icon" class="h-8 w-8">
+      </div>
+      <router-link to="/" class="inline-flex">
+        <h1 class="text-3xl font-bold leading-none ml-6">
+          OVaaS
+        </h1>
+      </router-link>
+    </div>
+    <div class="inline-block relative px-6">
       <DarkSelect v-model="currentLang">
         <option v-for="lang in languages" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
           {{ lang.name }}
