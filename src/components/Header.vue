@@ -1,7 +1,10 @@
 <template>
   <header class="flex-none flex items-center justify-between bg-header w-full h-16 text-white px-6">
-    <router-link to="/" class="text-3xl font-bold">
-      OVaaS
+    <router-link to="/" class="inline-flex">
+      <img src="/favicon.svg" alt="Icon" class="h-8 w-8">
+      <h1 class="text-3xl font-bold leading-none ml-6">
+        OVaaS
+      </h1>
     </router-link>
     <div class="inline-block relative">
       <DarkSelect v-model="currentLang">
