@@ -5,6 +5,8 @@
 
 # OVaaS Front-End Client
 
+Azure Static Web Apps: [link](https://ambitious-mushroom-065b43300.azurestaticapps.net)
+
 ## Develop
 
 This project use pnpm as package manager.
