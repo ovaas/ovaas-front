@@ -4,7 +4,7 @@
       <div ref="box" class="w-full relative">
         <canvas
           ref="canvas"
-          class="absolute bg-gray-200"
+          class="absolute bg-gray-200 cursor-pen"
           @mousedown="doMouseDown"
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
@@ -29,7 +29,6 @@ export const disableRedo = ref(true)
 let ctx = null
 
 onMounted(() => {
-  console.log(canvas);
   canvas.value.width = box.value.offsetWidth;
   canvas.value.height = box.value.offsetHeight;
   ctx = canvas.value.getContext('2d')
@@ -44,6 +43,7 @@ const lineWidth = 10
 const STACK_MAX_SIZE = 30;
 let undoDataStack = [];
 let redoDataStack = [];
+
 const saveDraw = () => {
   redoDataStack = [];
   disableRedo.value = true
@@ -53,6 +53,7 @@ const saveDraw = () => {
   undoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
   disableUndo.value = false
 };
+
 const undo = () => {
   if (undoDataStack.length <= 0) return;
   redoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
@@ -63,6 +64,7 @@ const undo = () => {
     disableUndo.value = true
   }
 };
+
 const redo = () => {
   if (redoDataStack.length <= 0) return;
   undoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
