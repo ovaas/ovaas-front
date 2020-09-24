@@ -1,5 +1,5 @@
 <template>
-  <header class="flex-none flex items-center justify-between bg-header w-full h-16 text-white">
+  <header class="flex-none flex items-center justify-between bg-blue-700 w-full h-16 text-white">
     <div class="flex h-full items-center">
       <div class="w-18 h-full bg-blue-900 flex justify-center items-center">
         <img src="/favicon.svg" alt="Icon" class="h-8 w-8">

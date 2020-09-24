@@ -14,9 +14,6 @@ module.exports = {
         "20": "0.2",
         "95": "0.95",
       },
-      colors: {
-        header: "#2B6CB0",
-      },
       margin: {
         "96": "24rem",
         "128": "32rem",
@@ -45,7 +42,6 @@ module.exports = {
   },
   experimental: {
     applyComplexClasses: true,
-    uniformColorPalette: true,
     extendedSpacingScale: true,
     defaultLineHeights: true,
     extendedFontSizeScale: true,
