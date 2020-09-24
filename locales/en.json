@@ -17,9 +17,8 @@
   "upload": {
     "text": "Upload",
     "image": {
-      "drop": "Drop image anywhere to upload",
-      "or": "or",
-      "select": "Select a image"
+      "title": "Upload Image",
+      "content": "Click to select image file or drop image to upload."
     }
   },
   "share": {
