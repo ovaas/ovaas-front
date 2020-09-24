@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex-none flex flex-col items-center bg-gray-600 h-full w-18 p-2">
+  <aside class="flex-none flex flex-col items-center bg-gray-700 h-full w-18 p-2">
     <router-link to="/">
       <NavLink :title="t('pages-title.home')" icon="bx:bx-home" />
     </router-link>
