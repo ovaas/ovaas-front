@@ -10,7 +10,7 @@
         </h1>
       </router-link>
     </div>
-    <div class="inline-block relative px-6">
+    <div class="inline-block px-6">
       <DarkSelect v-model="currentLang">
         <option v-for="lang in languages" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
           {{ lang.name }}
