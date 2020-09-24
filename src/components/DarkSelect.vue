@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <Icon class="absolute inset-y-0 left-0 iconify ml-2 flex items-center" icon="carbon:language" :size="1.2" />
     <select class="select-dark" @change="$emit('update:modelValue', $event.target.value)">
       <slot></slot>
     </select>
