@@ -26,16 +26,13 @@
       <div class="w-1/3 group border-2 border-dashed border-gray-400 rounded-lg relative ml-6 text-gray-300 hover:text-white hover:border-gray-300 basic-transition">
         <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="upload">
         <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
-          <p class="mt-2 text-md">
-            {{ t('upload.image.drop') }}
+          <h3 class="text-2xl font-semibold inline-flex items-center">
+            <Icon class="iconify mr-2" icon="bx:bxs-cloud-upload" />
+            {{ t('upload.image.title') }}
+          </h3>
+          <p class="mt-2 text-base w-2/3">
+            {{ t('upload.image.content') }}
           </p>
-          <p class="mt-2 text-base">
-            {{ t('upload.image.or') }}
-          </p>
-          <div class="mt-2 group-hover:animate-bounce">
-            <Icon class="iconify" icon="bx:bxs-cloud-upload" :size="2" />
-          </div>
-          <span class="mt-2 text-base">{{ t('upload.image.select') }}</span>
           <span v-show="showAlern" class="mt-2 text-base text-red-700">
             {{ t('errors.not-image') }}
           </span>
