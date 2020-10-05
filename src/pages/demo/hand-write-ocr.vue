@@ -1,7 +1,17 @@
 <template>
   <MainContant :title="t('demos.hand-write-ocr.title')" :back-btn="true">
-    <div class="flex-auto flex w-full rounded-lg items-stretch overflow-hidden">
-      <div ref="box" class="w-full relative">
+    <div class="relative flex-auto flex w-full items-stretch">
+      <div class="absolute transform -translate-y-14 w-full text-gray-600 flex space-x-4 text-md justify-end">
+        <RoundedFullBtn icon="bx:bx-undo" :is-disable="disableUndo || disableAllBtn" @click="undo()" />
+        <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
+        <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center focus:outline-none" :disabled="disableUndo || disableAllBtn" :class="{ 'opacity-50 cursor-not-allowed': disableUndo || disableAllBtn }" @click="sendImage()">
+          <Icon v-if="uploading" class="iconify mr-2 -ml-1 animate-spin" icon="mdi:loading" />
+          <Icon v-else icon="bx:bx-cloud-upload" class="mr-2 -ml-1" />
+          送信
+        </button>
+      </div>
+      <div ref="box" class="w-full relative rounded-lg overflow-hidden">
         <canvas
           ref="canvas"
           class="absolute bg-gray-200 cursor-pen"
@@ -9,13 +19,23 @@
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
         />
+        <div v-if="isModelOpen" class="absolute object-cover h-full w-full bg-gray-800 bg-opacity-50">
+          <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
+            Test
+            <div class="absolute top-0 right-0 p-6 text-lg">
+              <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="isModelOpen = false">
+                <Icon icon="mdi:close" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </MainContant>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -23,12 +43,28 @@ export { t }
 
 export const canvas = ref(null)
 export const box = ref(null)
-export const disableUndo = ref(true)
-export const disableRedo = ref(true)
+export const uploading = ref(false)
+export const isModelOpen = ref(false)
+export const disableAllBtn = ref(false)
+
+export const disableUndo = computed(() => {
+  return undoDataStack.value.length === 0
+})
+export const disableRedo = computed(() => {
+  return redoDataStack.value.length === 0
+})
+
+watch(isModelOpen, value => {
+  disableAllBtn.value = value ? true : false
+})
 
 let ctx = null
 
 onMounted(() => {
+  window.addEventListener('resize',() => {
+    canvas.value.width = box.value.offsetWidth;
+    canvas.value.height = box.value.offsetHeight;
+  })
   canvas.value.width = box.value.offsetWidth;
   canvas.value.height = box.value.offsetHeight;
   ctx = canvas.value.getContext('2d')
@@ -36,44 +72,41 @@ onMounted(() => {
   ctx.lineCap = 'round';
 })
 
-export let draw = false
+let draw = false
 const color = '#000000'
 const lineWidth = 10
 
 const STACK_MAX_SIZE = 30;
-let undoDataStack = [];
-let redoDataStack = [];
+export const undoDataStack = ref([]);
+export const redoDataStack = ref([]);
+
+export const clearAll = () => {
+  undoDataStack.value = []
+  redoDataStack.value = []
+  console.log(undoDataStack);
+  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
+}
 
 const saveDraw = () => {
-  redoDataStack = [];
-  disableRedo.value = true
-  if (undoDataStack.length >= STACK_MAX_SIZE) {
-    undoDataStack.pop();
+  redoDataStack.value = [];
+  if (undoDataStack.value.length >= STACK_MAX_SIZE) {
+    undoDataStack.value.pop();
   }
-  undoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-  disableUndo.value = false
+  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
 };
 
-const undo = () => {
-  if (undoDataStack.length <= 0) return;
-  redoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-  disableRedo.value = true
-  const imageData = undoDataStack.shift();
+export const undo = () => {
+  if (undoDataStack.value.length <= 0) return;
+  redoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
+  const imageData = undoDataStack.value.shift();
   ctx.putImageData(imageData, 0, 0);
-  if (undoDataStack.length <= 0) {
-    disableUndo.value = true
-  }
 };
 
-const redo = () => {
-  if (redoDataStack.length <= 0) return;
-  undoDataStack.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-  disableUndo.value = false
-  const imageData = redoDataStack.shift();
+export const redo = () => {
+  if (redoDataStack.value.length <= 0) return;
+  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
+  const imageData = redoDataStack.value.shift();
   ctx.putImageData(imageData, 0, 0);
-  if (redoDataStack.length <= 0) {
-    disableRedo.value = true
-  }
 };
 
 export const doMouseDown = (e) => {
@@ -95,6 +128,13 @@ export const doMouseUp = () => {
   draw = false;
 }
 
+export const sendImage = () => {
+  uploading.value = true
+  setTimeout(()=> {
+    uploading.value = false
+    isModelOpen.value = true
+  }, 1000)
+}
 
 </script>
 
