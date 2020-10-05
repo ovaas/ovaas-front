@@ -4,9 +4,6 @@
       <div class="w-2/3 flex flex-col">
         <div class="flex-1 bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
           <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-cover h-full w-full">
-          <button v-if="uploadedImage !== ''" class="absolute bottom-8 right-10 py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-md outline-none">
-            {{ t('upload.text') }}
-          </button>
         </div>
         <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
@@ -27,7 +24,8 @@
         <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="upload">
         <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
           <h3 class="text-2xl font-semibold inline-flex items-center">
-            <Icon class="iconify mr-2" icon="bx:bxs-cloud-upload" />
+            <Icon v-if="uploading" class="iconify mr-2 animate-spin" icon="mdi:loading" />
+            <Icon v-else class="iconify mr-2" icon="bx:bxs-cloud-upload" />
             {{ t('upload.image.title') }}
           </h3>
           <p class="mt-2 text-base w-2/3">
@@ -53,11 +51,13 @@ export const file = ref(null)
 export const preview = ref(null)
 export const uploadedImage = ref('')
 export const showAlern = ref(false)
+export const uploading = ref(false)
 
 const allowFileTypes = ['image/jpeg', 'image/png']
 
 export const upload = (event) => {
   const imageFile = event.target.files[0]
+  uploading.value = true
   if (allowFileTypes.indexOf(imageFile.type) !== -1) {
     showAlern.value = false
     const reader = new FileReader()
