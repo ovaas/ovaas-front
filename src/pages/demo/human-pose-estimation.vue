@@ -55,24 +55,27 @@ export const uploading = ref(false)
 
 const allowFileTypes = ['image/jpeg', 'image/png']
 
-export const upload = (event) => {
+export const upload = async (event) => {
   const imageFile = event.target.files[0]
-  uploading.value = true
   if (allowFileTypes.indexOf(imageFile.type) !== -1) {
     showAlern.value = false
     const reader = new FileReader()
-    reader.onload = event => {
-      uploadedImage.value = event.target.result
-    }
-    reader.readAsDataURL(imageFile)
+    uploading.value = true
+    setTimeout(() => {
+      uploading.value = false
+      reader.onload = event => {
+        uploadedImage.value = event.target.result
+      }
+      reader.readAsDataURL(imageFile)
+    }, 1000)
+    
   } else {
     file.value.value = ''
     showAlern.value = true
     setTimeout(() => {
       showAlern.value = false
-    }, 10000)
+    }, 5000)
   }
-  
 }
 </script>
 
