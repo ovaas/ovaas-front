@@ -16,6 +16,10 @@ jobs:
           source: https://ovaas-front.netlify.app
           destination: screenshot.png
           full-page: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot.png
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
