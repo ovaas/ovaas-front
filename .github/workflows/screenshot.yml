@@ -16,3 +16,9 @@ jobs:
           source: https://ovaas-front.netlify.app
           destination: screenshot.png
           full-page: true
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add screenshot.png
+          git commit -m "ci: website screenshot"
+          git push
