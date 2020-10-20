@@ -9,14 +9,10 @@ jobs:
   screenshot:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://ovaas-front.netlify.app
           destination: screenshot.png
           full-page: true
-      - name: Upload Screenshot
-        uses: actions/upload-artifact@v2
-        with:
-          name: screenshot
-          path: ./screenshot.png
