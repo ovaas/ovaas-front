@@ -1,10 +1,10 @@
 <template>
-  <main :class="$attrs.class ? $attrs.class : 'w-5/6'" class="flex flex-col items-start min-h-full mx-auto px-4 py-10 text-white relative">
-    <h1 class="text-4xl font-bold pb-6">
-      {{ title }}
-    </h1>
-    <div class="absolute transform -translate-x-12 translate-y-1 hover:text-gray-300">
-      <Icon v-if="backBtn" class="iconify mb-1　cursor-pointer" icon="bx:bx-left-arrow-circle" :size="2" @click="$router.go(-1)" />
+  <main :class="$attrs.class ? $attrs.class : 'w-5/6'" class="flex flex-col items-start min-h-full mx-auto px-4 py-10 text-white">
+    <div class="text-4xl font-bold pb-6 relative">
+      <h1>{{ title }}</h1>
+      <div class="absolute top-0 transform -translate-x-12 translate-y-2 hover:text-gray-300">
+        <Icon v-if="backBtn" class="iconify mb-1　cursor-pointer" icon="bx:bx-left-arrow-circle" :size="1" @click="$router.go(-1)" />
+      </div>
     </div>
     <slot></slot>
   </main>
