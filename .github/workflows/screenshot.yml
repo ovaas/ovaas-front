@@ -15,6 +15,8 @@ jobs:
         with:
           source: https://ovaas-front.netlify.app
           destination: screenshot.png
+          width: 1920
+          height: 1080
           full-page: true
       - name: Download screenshot from last step
         uses: actions/download-artifact@v1
