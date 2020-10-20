@@ -15,3 +15,8 @@ jobs:
           source: https://ovaas-front.netlify.app
           destination: screenshot.png
           full-page: true
+      - name: Upload Screenshot
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot.png
