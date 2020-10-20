@@ -1,14 +1,20 @@
-[![GitHub](https://img.shields.io/github/license/ovaas/ovaas-front)](https://github.com/OVaaS/ovaas-front/blob/main/LICENSE)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/OVaaS/ovaas-front)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/481b6017-918f-4fca-a136-dc08dc1d36d3/deploy-status)](https://app.netlify.com/sites/ovaas-front/deploys)
 [![Actions Status](https://github.com/OVaaS/ovaas-front/workflows/Docker/badge.svg)](https://github.com/OVaaS/ovaas-front/actions?query=workflow%3ADocker)
 [![Actions Status](https://github.com/OVaaS/ovaas-front/workflows/Azure%20Static%20Web%20Apps%20CI%2FCD/badge.svg)](https://github.com/OVaaS/ovaas-front/actions?query=workflow%3A%22Azure+Static+Web+Apps+CI%2FCD%22)
 
-# OVaaS Front-End Client
+<h1 align='center'>OVaaS Front-End Client</h1>
 
-Azure Static Web Apps: [link](https://ambitious-mushroom-065b43300.azurestaticapps.net)
+<br>
+<p align='center'>Azure Static Web Apps: <a href='https://happy-dune-07ba2b100.azurestaticapps.net'>link</a></p>
+<br>
+
+<p align='center'>
+<img src='https://raw.githubusercontent.com/OVaaS/ovaas-front/main/screenshot/screenshot.png' alt='screenshot'/>
+</p>
 
 ## Develop
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/OVaaS/ovaas-front)
 
 This project use pnpm as package manager.
 
@@ -26,3 +32,7 @@ pnpm dev
 ```
 pnpm build
 ```
+
+## License
+
+[![GitHub](https://img.shields.io/github/license/ovaas/ovaas-front)](https://github.com/OVaaS/ovaas-front/blob/main/LICENSE)
