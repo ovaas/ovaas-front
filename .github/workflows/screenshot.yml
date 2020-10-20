@@ -21,6 +21,6 @@ jobs:
         with:
           name: screenshot
       - name: Commit to Github
-      - uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "ci: website screenshot"
