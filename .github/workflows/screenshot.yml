@@ -22,6 +22,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: screenshot
+          path: screenshot.png
       - run: |
           ls -al ./
       - run: |
