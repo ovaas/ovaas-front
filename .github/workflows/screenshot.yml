@@ -1,0 +1,17 @@
+name: Screenshot
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://ovaas-front.netlify.app
+          destination: screenshot.png
+          full-page: true
