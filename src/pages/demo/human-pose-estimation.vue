@@ -43,6 +43,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import axios from 'axios'
 
 const { t } = useI18n()
 export { t }
@@ -52,6 +53,7 @@ export const preview = ref(null)
 export const uploadedImage = ref('')
 export const showAlern = ref(false)
 export const uploading = ref(false)
+const isProd = process.env.NODE_ENV === 'production' ? true : false
 
 const allowFileTypes = ['image/jpeg', 'image/png']
 
@@ -60,15 +62,34 @@ export const upload = async (event) => {
   if (allowFileTypes.indexOf(imageFile.type) !== -1) {
     showAlern.value = false
     const reader = new FileReader()
-    uploading.value = true
-    setTimeout(() => {
-      uploading.value = false
-      reader.onload = event => {
-        uploadedImage.value = event.target.result
+    reader.onload = event => {
+      uploadedImage.value = event.target.result
+    }
+    let formData = new FormData();
+    formData.append('image', imageFile);
+    if (!isProd) {
+      for(let pair of formData.entries()) {
+        console.log(pair[0]+ ', '+ pair[1]); 
       }
-      reader.readAsDataURL(imageFile)
-    }, 1000)
-    
+    }
+
+    const url = process.env.URL || 'http://localhost:3000/human-pose-estimation-0001.png'
+
+    uploading.value = true
+    await axios.post(url, formData, { 
+      responseType:"blob",
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+      .then(response => {
+        if (!isProd) console.log(response);
+        reader.readAsDataURL(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    uploading.value = false
   } else {
     file.value.value = ''
     showAlern.value = true

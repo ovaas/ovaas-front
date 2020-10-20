@@ -1,6 +1,7 @@
 dependencies:
   '@iconify/iconify': 2.0.0-rc.1
   '@vueuse/core': 4.0.0-beta.16_vue@3.0.0
+  axios: 0.20.0
   vue: 3.0.0
   vue-i18n: 9.0.0-beta.4_vue@3.0.0
   vue-router: 4.0.0-beta.13_vue@3.0.0
@@ -507,7 +508,6 @@ packages:
   /axios/0.20.0:
     dependencies:
       follow-redirects: 1.13.0
-    dev: true
     resolution:
       integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
   /balanced-match/1.0.0:
@@ -1272,7 +1272,6 @@ packages:
     resolution:
       integrity: sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
   /follow-redirects/1.13.0:
-    dev: true
     engines:
       node: '>=4.0'
     resolution:
@@ -3047,6 +3046,7 @@ specifiers:
   '@purge-icons/generated': ^0.4.1
   '@vue/compiler-sfc': 3.0.0
   '@vueuse/core': 4.0.0-beta.16
+  axios: ^0.20.0
   cross-env: ^7.0.2
   eslint: ^7.10.0
   eslint-plugin-vue: ^7.0.1
