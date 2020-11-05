@@ -15,6 +15,7 @@
 ## Develop
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/OVaaS/ovaas-front)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front?ref=badge_shield)
 
 This project use pnpm as package manager.
 
@@ -36,3 +37,5 @@ pnpm build
 ## License
 
 [![GitHub](https://img.shields.io/github/license/ovaas/ovaas-front)](https://github.com/OVaaS/ovaas-front/blob/main/LICENSE)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front?ref=badge_large)
