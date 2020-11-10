@@ -59,6 +59,7 @@ const allowFileTypes = ['image/jpeg', 'image/png']
 
 export const upload = async (event) => {
   const imageFile = event.target.files[0]
+  if (!imageFile) return
   if (allowFileTypes.indexOf(imageFile.type) !== -1) {
     showAlern.value = false
     const reader = new FileReader()
