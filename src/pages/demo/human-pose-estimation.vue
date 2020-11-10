@@ -2,8 +2,8 @@
   <MainContant :title="t('demos.human-pose.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
-        <div class="flex-1 bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
-          <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-cover h-full w-full">
+        <div class="flex-1 border bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
+          <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-contain h-full w-full">
         </div>
         <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
@@ -73,7 +73,7 @@ export const upload = async (event) => {
       }
     }
 
-    const url = process.env.URL || 'http://localhost:3000/human-pose-estimation-0001.png'
+    const url = process.env.DEMO_HUMAN_POSE_URL || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
 
     uploading.value = true
     await axios.post(url, formData, { 
