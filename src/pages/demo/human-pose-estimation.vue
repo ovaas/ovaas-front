@@ -6,12 +6,12 @@
           <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-contain h-full w-full">
         </div>
         <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
-          <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
+          <button class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform" @click="downloadImage()">
             <Icon class="iconify" icon="bx:bx-download" />
             <span class="pl-2">
               {{ t('share.download') }}
             </span>
-          </div>
+          </button>
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
             <Icon class="iconify" icon="bx:bx-share" />
             <span class="pl-2">
@@ -98,6 +98,16 @@ export const upload = async (event) => {
       showAlern.value = false
     }, 5000)
   }
+}
+
+export const downloadImage = () => {
+  if (!uploadedImage.value) return
+  const a = document.createElement("a");
+  document.body.appendChild(a);
+  a.download = 'human-pose.jpg';
+  a.href = uploadedImage.value;
+  a.click();
+  a.remove();
 }
 </script>
 
