@@ -3,7 +3,7 @@
     <Header />
     <div class="flex-auto flex overflow-hidden">
       <SideMenu />
-      <div class="flex-auto overflow-auto">
+      <div class="flex-auto overflow-hidden">
         <router-view />
       </div>
     </div>
