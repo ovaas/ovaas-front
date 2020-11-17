@@ -18,11 +18,11 @@
     "vue-router": "next"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.252",
+    "@iconify/json": "^1.1.259",
     "@purge-icons/generated": "^0.4.1",
     "@vue/compiler-sfc": "3.0.0",
     "cross-env": "^7.0.2",
-    "eslint": "^7.12.1",
+    "eslint": "^7.13.0",
     "eslint-plugin-vue": "^7.1.0",
     "tailwindcss": "^1.9.6",
     "vite": "1.0.0-rc.4",
