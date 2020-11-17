@@ -12,6 +12,10 @@
     "hand-write-ocr": {
       "title": "Hand write OCR",
       "content": "Optical Character Recognition (OCR) is a technology that has achieved cult status when it comes to digitizing printed documents. In this demonstration, what ever you write will instantly translate to digital characters."
+    },
+    "draw-colors": {
+      "title": "Draw Colors",
+      "content": "Auto fill colors to picture"
     }
   },
   "upload": {

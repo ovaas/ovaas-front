@@ -1,5 +1,5 @@
 <template>
-  <MainContant :title="t('demos.human-pose.title')" :back-btn="true">
+  <MainContant :title="t('demos.draw-colors.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
         <div class="flex-1 border bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
@@ -74,7 +74,7 @@ export const upload = async (event) => {
       }
     }
 
-    const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
+    const url = process.env.DRAW_COLORS_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
 
     uploading.value = true
     await axios.post(url, formData, { 
@@ -88,12 +88,6 @@ export const upload = async (event) => {
         reader.readAsDataURL(response.data)
       })
       .catch(error => {
-        if(error.response.code === 408) {
-          alert('Server Timeout')
-        }
-        if(error.response.code === 500) {
-          alert('Server Error')
-        }
         console.log(error)
       })
     uploading.value = false
@@ -110,7 +104,7 @@ export const downloadImage = () => {
   if (!uploadedImage.value) return
   const a = document.createElement("a");
   document.body.appendChild(a);
-  a.download = 'human-pose.jpg';
+  a.download = 'draw-colors.jpg';
   a.href = uploadedImage.value;
   a.click();
   a.remove();
