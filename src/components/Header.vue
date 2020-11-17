@@ -11,8 +11,9 @@
       </router-link>
     </div>
     <div class="inline-block px-6">
+      {{languages}}
       <DarkSelect v-model="currentLang">
-        <option v-for="lang in languages" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
+        <option v-for="lang in langs" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
           {{ lang.name }}
         </option>
       </DarkSelect>
@@ -23,9 +24,11 @@
 <script setup>
 import { watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-export { languages } from '/~/messages'
+export { languages as langs } from '/~/messages'
 import { localeSchema } from "../store";
+import { usePreferredLanguages } from '@vueuse/core'
 
+const languages = usePreferredLanguages()
 const { locale } = useI18n();
 
 export const currentLang = computed({
@@ -36,6 +39,14 @@ export const currentLang = computed({
     localeSchema.value = v;
   },
 });
+
+watch(languages, (val) => {
+  if (val[0] === 'ja') {
+    currentLang.value = 'ja'
+  } else {
+    currentLang.value = 'en'
+  }
+}, { immediate: true })
 
 watch(
   currentLang,
