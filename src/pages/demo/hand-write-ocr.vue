@@ -21,7 +21,7 @@
         />
         <div v-if="isModelOpen" class="absolute object-cover h-full w-full bg-gray-800 bg-opacity-50">
           <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
-            Test
+            {{ modelText }}
             <div class="absolute top-0 right-0 p-6 text-lg">
               <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="isModelOpen = false">
                 <Icon icon="mdi:close" />
@@ -37,6 +37,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import axios from 'axios'
 
 const { t } = useI18n()
 export { t }
@@ -45,7 +46,9 @@ export const canvas = ref(null)
 export const box = ref(null)
 export const uploading = ref(false)
 export const isModelOpen = ref(false)
+export const modelText = ref('')
 export const disableAllBtn = ref(false)
+const isProd = process.env.NODE_ENV === 'production' ? true : false
 
 export const disableUndo = computed(() => {
   return undoDataStack.value.length === 0
@@ -128,12 +131,45 @@ export const doMouseUp = () => {
   draw = false;
 }
 
-export const sendImage = () => {
+export const sendImage = async () => {
   uploading.value = true
-  setTimeout(()=> {
-    uploading.value = false
-    isModelOpen.value = true
-  }, 1000)
+
+  const mimeType = 'image/jpeg'
+  const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwitten'
+  const formData = new FormData();
+
+  canvas.value.toBlob(async (blob) => {
+    formData.append('image', blob);
+    if (!isProd) {
+      for(let pair of formData.entries()) {
+        console.log(pair[0]+ ', '+ pair[1]); 
+      }
+    }
+
+    await axios.post(url, formData, { 
+      responseType:"blob",
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+      .then(response => {
+        if (!isProd) console.log(response);
+        modelText.value = response.data
+        isModelOpen.value = true
+        uploading.value = false
+      })
+      .catch(error => {
+        if(error.response.code === 408) {
+          alert('Server Timeout')
+        } else if(error.response.code === 500) {
+          alert('Server Error')
+        } else {
+          alert('Error')
+        }
+        uploading.value = false
+        throw error
+      })
+  }, mimeType);
 }
 
 </script>
