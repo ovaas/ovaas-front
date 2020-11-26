@@ -88,10 +88,10 @@ export const upload = async (event) => {
         reader.readAsDataURL(response.data)
       })
       .catch(error => {
-        if(error.response.code === 408) {
+        if(error.response.status === 408) {
           alert('Server Timeout')
         }
-        if(error.response.code === 500) {
+        if(error.response.status === 500) {
           alert('Server Error')
         }
         console.log(error)

@@ -159,13 +159,13 @@ export const sendImage = async () => {
         uploading.value = false
       })
       .catch(error => {
-        if(error.response.code === 408) {
+        if(error.response.status === 408) {
           alert('Server Timeout')
-        } else if(error.response.code === 500) {
+        } else if(error.response.status === 500) {
           alert('Server Error')
-        } else if(error.response.code === 404) {
+        } else if(error.response.status === 404) {
           alert('文字を見つかりませんでした')
-        }else {
+        } else {
           alert('Error')
         }
         uploading.value = false
