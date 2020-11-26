@@ -139,7 +139,7 @@ export const sendImage = async () => {
   const formData = new FormData();
 
   canvas.value.toBlob(async (blob) => {
-    formData.append('image', blob);
+    formData.append('image', blob, 'hand-written.jpeg');
     if (!isProd) {
       for(let pair of formData.entries()) {
         console.log(pair[0]+ ', '+ pair[1]); 
