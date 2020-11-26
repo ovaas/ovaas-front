@@ -21,7 +21,7 @@
         />
         <div v-if="isModelOpen" class="absolute object-cover h-full w-full bg-gray-800 bg-opacity-50">
           <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
-            {{ modelText }}
+            {{ modelText.text || t('demos.hand-write-ocr.text-not-found') }}
             <div class="absolute top-0 right-0 p-6 text-lg">
               <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="isModelOpen = false">
                 <Icon icon="mdi:close" />
@@ -141,12 +141,12 @@ export const sendImage = async () => {
   const mimeType = 'image/jpeg'
   const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
   const formData = new FormData();
-  let link = document.createElement("a")
-  link.download = "image.jpeg"
+  // let link = document.createElement("a")
+  // link.download = "image.jpeg"
 
   canvas.value.toBlob(async (blob) => {
-    link.href = URL.createObjectURL(blob)
-    link.click()
+    // link.href = URL.createObjectURL(blob)
+    // link.click()
     formData.append('image', blob, 'hand-written.jpeg');
     if (!isProd) {
       for(let pair of formData.entries()) {
@@ -160,9 +160,9 @@ export const sendImage = async () => {
         'Content-Type': 'multipart/form-data'
       }
     })
-      .then(response => {
+      .then(async response => {
         if (!isProd) console.log(response);
-        modelText.value = response.data
+        modelText.value = JSON.parse(await response.data.text())
         isModelOpen.value = true
         uploading.value = false
       })
