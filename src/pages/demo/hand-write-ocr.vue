@@ -14,7 +14,7 @@
       <div ref="box" class="w-full relative rounded-lg overflow-hidden">
         <canvas
           ref="canvas"
-          class="absolute bg-gray-200 cursor-pen"
+          class="absolute bg-gray-700 cursor-pen"
           @mousedown="doMouseDown"
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
@@ -71,6 +71,8 @@ onMounted(() => {
   canvas.value.width = box.value.offsetWidth;
   canvas.value.height = box.value.offsetHeight;
   ctx = canvas.value.getContext('2d')
+  ctx.fillStyle = '#EDF2F7';
+  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
 })
@@ -88,6 +90,8 @@ export const clearAll = () => {
   redoDataStack.value = []
   console.log(undoDataStack);
   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
+  ctx.fillStyle = '#EDF2F7';
+  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
 }
 
 const saveDraw = () => {
@@ -137,8 +141,12 @@ export const sendImage = async () => {
   const mimeType = 'image/jpeg'
   const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
   const formData = new FormData();
+  let link = document.createElement("a")
+  link.download = "image.jpeg"
 
   canvas.value.toBlob(async (blob) => {
+    link.href = URL.createObjectURL(blob)
+    link.click()
     formData.append('image', blob, 'hand-written.jpeg');
     if (!isProd) {
       for(let pair of formData.entries()) {
