@@ -135,7 +135,7 @@ export const sendImage = async () => {
   uploading.value = true
 
   const mimeType = 'image/jpeg'
-  const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwitten'
+  const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
   const formData = new FormData();
 
   canvas.value.toBlob(async (blob) => {
@@ -163,7 +163,9 @@ export const sendImage = async () => {
           alert('Server Timeout')
         } else if(error.response.code === 500) {
           alert('Server Error')
-        } else {
+        } else if(error.response.code === 404) {
+          alert('文字を見つかりませんでした')
+        }else {
           alert('Error')
         }
         uploading.value = false
