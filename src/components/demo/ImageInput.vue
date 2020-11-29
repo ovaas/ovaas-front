@@ -1,6 +1,6 @@
 <template>
   <div class="w-1/3 group border-2 border-dashed border-gray-800 dark:border-gray-400 rounded-lg relative ml-6 basic-transition">
-    <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="emit('change', $event)">
+    <input type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="emit('change', $event)">
     <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
       <h3 class="text-2xl font-semibold inline-flex items-center">
         <div class="text-2xl mr-2">
