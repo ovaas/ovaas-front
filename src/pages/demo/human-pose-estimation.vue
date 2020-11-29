@@ -7,13 +7,13 @@
         </div>
         <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
           <button class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform" @click="downloadImage()">
-            <Icon class="iconify" icon="bx:bx-download" />
+            <Icon class="text-xl" icon="bx:bx-download" />
             <span class="pl-2">
               {{ t('share.download') }}
             </span>
           </button>
           <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
-            <Icon class="iconify" icon="bx:bx-share" />
+            <Icon class="text-xl" icon="bx:bx-share" />
             <span class="pl-2">
               {{ t('share.share') }}
             </span>
@@ -24,8 +24,10 @@
         <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="upload">
         <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
           <h3 class="text-2xl font-semibold inline-flex items-center">
-            <Icon v-if="uploading" class="iconify mr-2 animate-spin" icon="mdi:loading" />
-            <Icon v-else class="iconify mr-2" icon="bx:bxs-cloud-upload" />
+            <div class="text-2xl mr-2">
+              <Icon v-if="uploading" class="animate-spin" icon="mdi:loading" />
+              <Icon v-else icon="bx:bxs-cloud-upload" />
+            </div>
             {{ t('upload.image.title') }}
           </h3>
           <p class="mt-2 text-base w-2/3">
@@ -40,64 +42,63 @@
   </MainContant>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 
 const { t } = useI18n()
-export { t }
 
-export const file = ref(null)
-export const preview = ref(null)
-export const uploadedImage = ref('')
-export const showAlern = ref(false)
-export const uploading = ref(false)
-const isProd = process.env.NODE_ENV === 'production' ? true : false
+const file = ref(null)
+const preview = ref(null)
+const uploadedImage = ref('')
+const showAlern = ref(false)
+const uploading = ref(false)
+const isProd = process.env.NODE_ENV === 'production'
 
 const allowFileTypes = ['image/jpeg', 'image/png']
 
-export const upload = async (event) => {
+const upload = async(event) => {
   const imageFile = event.target.files[0]
   if (!imageFile) return
-  if (allowFileTypes.indexOf(imageFile.type) !== -1) {
+  if (allowFileTypes.includes(imageFile.type)) {
     showAlern.value = false
     const reader = new FileReader()
-    reader.onload = event => {
+    reader.onload = (event) => {
       uploadedImage.value = event.target.result
     }
-    let formData = new FormData();
-    formData.append('image', imageFile);
+    const formData = new FormData()
+    formData.append('image', imageFile)
     if (!isProd) {
-      for(let pair of formData.entries()) {
-        console.log(pair[0]+ ', '+ pair[1]); 
-      }
+      for (const pair of formData.entries())
+        console.log(`${pair[0]}, ${pair[1]}`)
     }
 
     const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
 
     uploading.value = true
-    await axios.post(url, formData, { 
-      responseType:"blob",
+    await axios.post(url, formData, {
+      responseType: 'blob',
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     })
-      .then(response => {
-        if (!isProd) console.log(response);
+      .then((response) => {
+        if (!isProd) console.log(response)
         reader.readAsDataURL(response.data)
       })
-      .catch(error => {
-        if(error.response.status === 408) {
+      .catch((error) => {
+        if (error.response.status === 408)
           alert('Server Timeout')
-        }
-        if(error.response.status === 500) {
+
+        if (error.response.status === 500)
           alert('Server Error')
-        }
+
         console.log(error)
       })
     uploading.value = false
-  } else {
+  }
+  else {
     file.value.value = ''
     showAlern.value = true
     setTimeout(() => {
@@ -106,14 +107,14 @@ export const upload = async (event) => {
   }
 }
 
-export const downloadImage = () => {
+const downloadImage = () => {
   if (!uploadedImage.value) return
-  const a = document.createElement("a");
-  document.body.appendChild(a);
-  a.download = 'human-pose.jpg';
-  a.href = uploadedImage.value;
-  a.click();
-  a.remove();
+  const a = document.createElement('a')
+  document.body.appendChild(a)
+  a.download = 'human-pose.jpg'
+  a.href = uploadedImage.value
+  a.click()
+  a.remove()
 }
 </script>
 

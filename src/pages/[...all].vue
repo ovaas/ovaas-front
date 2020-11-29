@@ -1,14 +1,3 @@
 <template>
-  <MainContant title="404 Not Found">
-  </MainContant>
+  <MainContant title="404 Not Found" />
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>

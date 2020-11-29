@@ -1,5 +1,5 @@
 <template>
-  <header class="flex-none flex items-center justify-between bg-blue-700 w-full h-16 text-white">
+  <header class="flex-none flex items-center justify-between bg-blue-600 w-full h-16 text-white">
     <div class="flex h-full items-center">
       <div class="w-18 h-full bg-blue-900 flex justify-center items-center">
         <img src="/favicon.svg" alt="Icon" class="h-8 w-8">
@@ -11,7 +11,6 @@
       </router-link>
     </div>
     <div class="inline-block px-6">
-      {{languages}}
       <DarkSelect v-model="currentLang">
         <option v-for="lang in langs" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
           {{ lang.name }}
@@ -21,38 +20,38 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-export { languages as langs } from '/~/messages'
-import { localeSchema } from "../store";
+import { languages as langs } from '/~/messages'
 import { usePreferredLanguages } from '@vueuse/core'
+import { localeSchema } from '../logics'
 
 const languages = usePreferredLanguages()
-const { locale } = useI18n();
+const { locale } = useI18n()
 
-export const currentLang = computed({
+const currentLang = computed({
   get() {
-    return localeSchema.value;
+    return localeSchema.value
   },
   set(v) {
-    localeSchema.value = v;
+    localeSchema.value = v
   },
-});
+})
 
 watch(languages, (val) => {
-  if (val[0] === 'ja') {
+  if (val[0] === 'ja')
     currentLang.value = 'ja'
-  } else {
+
+  else
     currentLang.value = 'en'
-  }
 }, { immediate: true })
 
 watch(
   currentLang,
-  (v) => locale.value = v,
+  v => locale.value = v,
   { immediate: true },
-);
+)
 </script>
 
 <style>

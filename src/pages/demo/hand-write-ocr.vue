@@ -6,8 +6,8 @@
         <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
         <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
         <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center focus:outline-none" :disabled="disableUndo || disableAllBtn" :class="{ 'opacity-50 cursor-not-allowed': disableUndo || disableAllBtn }" @click="sendImage()">
-          <Icon v-if="uploading" class="iconify mr-2 -ml-1 animate-spin" icon="mdi:loading" />
-          <Icon v-else icon="bx:bx-cloud-upload" class="mr-2 -ml-1" />
+          <Icon v-if="uploading" class="text-xl iconify mr-2 -ml-1 animate-spin" icon="mdi:loading" />
+          <Icon v-else icon="bx:bx-cloud-upload" class="text-2xl mr-2 -ml-1" />
           {{ t('upload.text') }}
         </button>
       </div>
@@ -34,152 +34,149 @@
   </MainContant>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 
 const { t } = useI18n()
-export { t }
 
-export const canvas = ref(null)
-export const box = ref(null)
-export const uploading = ref(false)
-export const isModelOpen = ref(false)
-export const modelText = ref('')
-export const disableAllBtn = ref(false)
-const isProd = process.env.NODE_ENV === 'production' ? true : false
+const canvas = ref(null)
+const box = ref(null)
+const uploading = ref(false)
+const isModelOpen = ref(false)
+const modelText = ref('')
+const disableAllBtn = ref(false)
+const isProd = process.env.NODE_ENV === 'production'
 
-export const disableUndo = computed(() => {
+const disableUndo = computed(() => {
   return undoDataStack.value.length === 0
 })
-export const disableRedo = computed(() => {
+const disableRedo = computed(() => {
   return redoDataStack.value.length === 0
 })
 
-watch(isModelOpen, value => {
-  disableAllBtn.value = value ? true : false
+watch(isModelOpen, (value) => {
+  disableAllBtn.value = !!value
 })
 
 let ctx = null
 
 onMounted(() => {
-  window.addEventListener('resize',() => {
-    canvas.value.width = box.value.offsetWidth;
-    canvas.value.height = box.value.offsetHeight;
+  window.addEventListener('resize', () => {
+    canvas.value.width = box.value.offsetWidth
+    canvas.value.height = box.value.offsetHeight
   })
-  canvas.value.width = box.value.offsetWidth;
-  canvas.value.height = box.value.offsetHeight;
+  canvas.value.width = box.value.offsetWidth
+  canvas.value.height = box.value.offsetHeight
   ctx = canvas.value.getContext('2d')
-  ctx.fillStyle = '#EDF2F7';
-  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
-  ctx.lineJoin = 'round';
-  ctx.lineCap = 'round';
+  ctx.fillStyle = '#EDF2F7'
+  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
+  ctx.lineJoin = 'round'
+  ctx.lineCap = 'round'
 })
 
 let draw = false
 const color = '#000000'
 const lineWidth = 10
 
-const STACK_MAX_SIZE = 30;
-export const undoDataStack = ref([]);
-export const redoDataStack = ref([]);
+const STACK_MAX_SIZE = 30
+const undoDataStack = ref([])
+const redoDataStack = ref([])
 
-export const clearAll = () => {
+const clearAll = () => {
   undoDataStack.value = []
   redoDataStack.value = []
-  console.log(undoDataStack);
-  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
-  ctx.fillStyle = '#EDF2F7';
-  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
+  console.log(undoDataStack)
+  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
+  ctx.fillStyle = '#EDF2F7'
+  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
 }
 
 const saveDraw = () => {
-  redoDataStack.value = [];
-  if (undoDataStack.value.length >= STACK_MAX_SIZE) {
-    undoDataStack.value.pop();
-  }
-  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-};
+  redoDataStack.value = []
+  if (undoDataStack.value.length >= STACK_MAX_SIZE)
+    undoDataStack.value.pop()
 
-export const undo = () => {
-  if (undoDataStack.value.length <= 0) return;
-  redoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-  const imageData = undoDataStack.value.shift();
-  ctx.putImageData(imageData, 0, 0);
-};
+  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
+}
 
-export const redo = () => {
-  if (redoDataStack.value.length <= 0) return;
-  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height));
-  const imageData = redoDataStack.value.shift();
-  ctx.putImageData(imageData, 0, 0);
-};
+const undo = () => {
+  if (undoDataStack.value.length <= 0) return
+  redoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
+  const imageData = undoDataStack.value.shift()
+  ctx.putImageData(imageData, 0, 0)
+}
 
-export const doMouseDown = (e) => {
+const redo = () => {
+  if (redoDataStack.value.length <= 0) return
+  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
+  const imageData = redoDataStack.value.shift()
+  ctx.putImageData(imageData, 0, 0)
+}
+
+const doMouseDown = (e) => {
   saveDraw()
-  draw = true;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = lineWidth;
-  ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.stroke();
+  draw = true
+  ctx.strokeStyle = color
+  ctx.lineWidth = lineWidth
+  ctx.beginPath()
+  ctx.moveTo(e.offsetX, e.offsetY)
+  ctx.lineTo(e.offsetX, e.offsetY)
+  ctx.stroke()
 }
-export const doMouseMove = (e) => {
+const doMouseMove = (e) => {
   if (!draw) return
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.stroke();
+  ctx.lineTo(e.offsetX, e.offsetY)
+  ctx.stroke()
 }
-export const doMouseUp = () => {
-  draw = false;
+const doMouseUp = () => {
+  draw = false
 }
 
-export const sendImage = async () => {
+const sendImage = async() => {
   uploading.value = true
 
   const mimeType = 'image/jpeg'
   const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
-  const formData = new FormData();
+  const formData = new FormData()
   // let link = document.createElement("a")
   // link.download = "image.jpeg"
 
-  canvas.value.toBlob(async (blob) => {
+  canvas.value.toBlob(async(blob) => {
     // link.href = URL.createObjectURL(blob)
     // link.click()
-    formData.append('image', blob, 'hand-written.jpeg');
+    formData.append('image', blob, 'hand-written.jpeg')
     if (!isProd) {
-      for(let pair of formData.entries()) {
-        console.log(pair[0]+ ', '+ pair[1]); 
-      }
+      for (const pair of formData.entries())
+        console.log(`${pair[0]}, ${pair[1]}`)
     }
 
-    await axios.post(url, formData, { 
-      responseType:"blob",
+    await axios.post(url, formData, {
+      responseType: 'blob',
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     })
-      .then(async response => {
-        if (!isProd) console.log(response);
+      .then(async(response) => {
+        if (!isProd) console.log(response)
         modelText.value = JSON.parse(await response.data.text())
         isModelOpen.value = true
         uploading.value = false
       })
-      .catch(error => {
-        if(error.response.status === 408) {
+      .catch((error) => {
+        if (error.response.status === 408)
           alert('Server Timeout')
-        } else if(error.response.status === 500) {
+        else if (error.response.status === 500)
           alert('Server Error')
-        } else if(error.response.status === 404) {
+        else if (error.response.status === 404)
           alert('文字を見つかりませんでした')
-        } else {
+        else
           alert('Error')
-        }
         uploading.value = false
         throw error
       })
-  }, mimeType);
+  }, mimeType)
 }
 
 </script>

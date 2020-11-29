@@ -18,16 +18,15 @@
   </div>
 </template>
 
-<script setup="props">
-import { ref } from "vue";
-export default {
-  props: {
-    demo: {
-      type: Object,
-      require: true
-    }
-  }
-}
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  demo: {
+    type: Object,
+    require: true,
+  },
+})
 </script>
 
 <style scoped>
