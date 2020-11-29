@@ -1,5 +1,5 @@
 <template>
-  <button class="bg-gray-200 rounded-full inline-flex justify-center items-center w-10 h-10 focuse:outline-none shadow-lg text-2xl" :disabled="isDisable" :class="{ 'opacity-50 cursor-not-allowed': isDisable }">
+  <button class="bg-white dark:bg-gray-200 hover:bg-gray-50 dark:hover:bg-gray-300 rounded-full inline-flex justify-center items-center w-10 h-10 focuse:outline-none shadow-sm text-2xl" :disabled="isDisable" :class="{ 'opacity-50 cursor-not-allowed': isDisable }">
     <Icon class="iconify" :icon="icon" />
   </button>
 </template>

@@ -32,5 +32,9 @@
   },
   "errors": {
     "not-image": "Please upload a image file !!!"
+  },
+  "colorMode": {
+    "light": "Light",
+    "dark": "Dark"
   }
 }

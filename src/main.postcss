@@ -7,6 +7,13 @@ html, body, #app {
   width: 100vw;
   margin: 0;
   padding: 0;
+}
+
+html {
+  @apply bg-gray-200;
+}
+
+html.dark {
   background: #1A202C;
 }
 
@@ -19,9 +26,21 @@ html, body, #app {
 }
 
 .select-dark {
-  @apply block appearance-none w-full bg-gray-800 border border-gray-800 hover:border-gray-400 px-8 py-2 pr-10 rounded leading-tight outline-none basic-transition;
+  @apply 
+    block appearance-none w-full 
+    bg-gray-600
+    px-8 py-2 pr-10 rounded 
+    leading-tight outline-none basic-transition
+    dark:bg-gray-800;
 }
 
 .cursor-pen {
-    cursor: url(https://api.iconify.design/mdi:lead-pencil.svg) 2 13, auto;
+  cursor: url(https://api.iconify.design/mdi:lead-pencil.svg) 2 18, auto;
+}
+
+.icon-btn {
+  @apply
+    inline-block cursor-pointer select-none text-2xl
+    opacity-75 transition duration-200 ease-in-out
+    hover:opacity-100;
 }

@@ -5,7 +5,7 @@
         <RoundedFullBtn icon="bx:bx-undo" :is-disable="disableUndo || disableAllBtn" @click="undo()" />
         <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
         <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
-        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center focus:outline-none" :disabled="disableUndo || disableAllBtn" :class="{ 'opacity-50 cursor-not-allowed': disableUndo || disableAllBtn }" @click="sendImage()">
+        <button class="bg-white dark:bg-gray-300 hover:bg-gray-50 dark:hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex shadow-sm items-center focus:outline-none" :disabled="disableUndo || disableAllBtn" :class="{ 'opacity-50 cursor-not-allowed': disableUndo || disableAllBtn }" @click="sendImage()">
           <Icon v-if="uploading" class="text-xl iconify mr-2 -ml-1 animate-spin" icon="mdi:loading" />
           <Icon v-else icon="bx:bx-cloud-upload" class="text-2xl mr-2 -ml-1" />
           {{ t('upload.text') }}
@@ -14,7 +14,7 @@
       <div ref="box" class="w-full relative rounded-lg overflow-hidden">
         <canvas
           ref="canvas"
-          class="absolute bg-gray-700 cursor-pen"
+          class="absolute bg-gray-white cursor-pen"
           @mousedown="doMouseDown"
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"

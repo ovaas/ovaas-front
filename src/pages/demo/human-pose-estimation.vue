@@ -2,25 +2,12 @@
   <MainContant :title="t('demos.human-pose.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
-        <div class="flex-1 border bg-gray-600 bg-opacity-25 rounded-lg relative overflow-hidden">
+        <div class="flex-1 bg-white dark:bg-gray-400 rounded-lg relative overflow-hidden">
           <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-contain h-full w-full">
         </div>
-        <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-400 rounded-full">
-          <button class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform" @click="downloadImage()">
-            <Icon class="text-xl" icon="bx:bx-download" />
-            <span class="pl-2">
-              {{ t('share.download') }}
-            </span>
-          </button>
-          <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
-            <Icon class="text-xl" icon="bx:bx-share" />
-            <span class="pl-2">
-              {{ t('share.share') }}
-            </span>
-          </div>
-        </div>
+        <ImageActions :image="uploadedImage" @download="downloadImage()" />
       </div>
-      <div class="w-1/3 group border-2 border-dashed border-gray-400 rounded-lg relative ml-6 text-gray-300 hover:text-white hover:border-gray-300 basic-transition">
+      <div class="w-1/3 group border-2 border-dashed border-gray-800 dark:border-gray-400 rounded-lg relative ml-6 basic-transition">
         <input ref="file" type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="upload">
         <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto">
           <h3 class="text-2xl font-semibold inline-flex items-center">
@@ -49,7 +36,6 @@ import axios from 'axios'
 
 const { t } = useI18n()
 
-const file = ref(null)
 const preview = ref(null)
 const uploadedImage = ref('')
 const showAlern = ref(false)
@@ -99,7 +85,7 @@ const upload = async(event) => {
     uploading.value = false
   }
   else {
-    file.value.value = ''
+    event.target.files = []
     showAlern.value = true
     setTimeout(() => {
       showAlern.value = false

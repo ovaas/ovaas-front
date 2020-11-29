@@ -32,5 +32,9 @@
   },
   "errors": {
     "not-image": "画像ファイルではありません !!!"
+  },
+  "colorMode": {
+    "light": "ライト",
+    "dark": "ダーク"
   }
 }
