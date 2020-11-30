@@ -19,23 +19,25 @@ import axios from 'axios'
 
 const { t } = useI18n()
 
-const file = ref(null)
-const preview = ref(null)
-const uploadedImage = ref('')
-const showAlern = ref(false)
-const uploading = ref(false)
+const uploadedImage = ref<string>('')
+const showAlern = ref<boolean>(false)
+const uploading = ref<boolean>(false)
 const isProd = process.env.NODE_ENV === 'production'
 
-const allowFileTypes = ['image/jpeg', 'image/png']
+const allowFileTypes = ['image/jpeg']
 
-const upload = async(event) => {
-  const imageFile = event.target.files[0]
+const upload = async(event: Event) => {
+  const target = event.target as HTMLInputElement
+  const files: FileList = target.files as FileList
+  const imageFile = files[0]
+
   if (!imageFile) return
+
   if (allowFileTypes.includes(imageFile.type)) {
     showAlern.value = false
     const reader = new FileReader()
     reader.onload = (event) => {
-      uploadedImage.value = event.target.result
+      uploadedImage.value = event.target?.result as string
     }
     const formData = new FormData()
     formData.append('image', imageFile)
@@ -44,7 +46,7 @@ const upload = async(event) => {
         console.log(`${pair[0]}, ${pair[1]}`)
     }
 
-    const url = process.env.DRAW_COLORS_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
+    const url: string = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
 
     uploading.value = true
     await axios.post(url, formData, {
@@ -58,12 +60,18 @@ const upload = async(event) => {
         reader.readAsDataURL(response.data)
       })
       .catch((error) => {
+        if (error.response.status === 408)
+          alert('Server Timeout')
+
+        if (error.response.status === 500)
+          alert('Server Error')
+
         console.log(error)
       })
     uploading.value = false
   }
   else {
-    file.value.value = ''
+    target.value = ''
     showAlern.value = true
     setTimeout(() => {
       showAlern.value = false
@@ -75,13 +83,9 @@ const downloadImage = () => {
   if (!uploadedImage.value) return
   const a = document.createElement('a')
   document.body.appendChild(a)
-  a.download = 'draw-colors.jpg'
+  a.download = 'human-pose.jpg'
   a.href = uploadedImage.value
   a.click()
   a.remove()
 }
 </script>
-
-<style>
-
-</style>

@@ -4,5 +4,6 @@
   "i18n-ally.sortKeys": true,
   "cSpell.words": [
     "ovaas"
-  ]
+  ],
+  "vetur.experimental.templateInterpolationService": true
 }

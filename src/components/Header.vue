@@ -27,29 +27,21 @@ import { languages as langs } from '/~/messages'
 import { usePreferredLanguages } from '@vueuse/core'
 import { localeSchema } from '../logics'
 
-const languages = usePreferredLanguages()
+const preferredLang = usePreferredLanguages()
 const { locale } = useI18n()
 
 const currentLang = computed({
   get() {
-    return localeSchema.value
+    return localeSchema.value ? localeSchema.value : localeSchema.value = preferredLang.value[0] === 'ja' ? 'ja' : 'en'
   },
   set(v) {
     localeSchema.value = v
   },
 })
 
-watch(languages, (val) => {
-  if (val[0] === 'ja')
-    currentLang.value = 'ja'
-
-  else
-    currentLang.value = 'en'
-}, { immediate: true })
-
 watch(
   currentLang,
-  v => locale.value = v,
+  v => locale.value = v as string,
   { immediate: true },
 )
 </script>

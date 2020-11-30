@@ -8,6 +8,11 @@ export const messages = {
 
 export const locales = Object.keys(messages)
 
+interface Lang {
+  locale: string
+  name: string
+}
+
 export const languages = [
   {
     locale: 'en',
@@ -17,4 +22,4 @@ export const languages = [
     locale: 'ja',
     name: '日本語',
   },
-]
+] as Lang[]

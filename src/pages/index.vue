@@ -1,6 +1,6 @@
 <template>
   <MainContant :title="t('pages-title.home')">
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
       <DemoCard
         v-for="demo in demos"
         :key="demo.path"
@@ -17,8 +17,15 @@ import humanPoseImage from '/~/assets/human-pose-estimation-0001.png'
 import handWriteOCRImage from '/~/assets/handwriting-ocr.jpg'
 import drawColorsImage from '/~/assets/draw-colors.jpeg'
 
+interface Demo {
+  title: string
+  image: string
+  content: string
+  path: string
+}
+
 const { t, locale } = useI18n()
-const demos = ref([])
+const demos = ref<Demo[]>()
 
 watch(
   locale,

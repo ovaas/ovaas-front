@@ -41,13 +41,13 @@ import axios from 'axios'
 
 const { t } = useI18n()
 
-const canvas = ref(null)
-const box = ref(null)
-const uploading = ref(false)
-const isModelOpen = ref(false)
-const modelText = ref('')
-const disableAllBtn = ref(false)
-const isProd = process.env.NODE_ENV === 'production'
+const canvas = ref<HTMLCanvasElement | null>(null)
+const box = ref<HTMLCanvasElement | null>(null)
+const uploading = ref<boolean>(false)
+const isModelOpen = ref<boolean>(false)
+const modelText = ref<string>('')
+const disableAllBtn = ref<boolean>(false)
+const isProd: boolean = process.env.NODE_ENV === 'production'
 
 const disableUndo = computed(() => {
   return undoDataStack.value.length === 0
@@ -60,16 +60,20 @@ watch(isModelOpen, (value) => {
   disableAllBtn.value = !!value
 })
 
-let ctx = null
+let ctx: CanvasRenderingContext2D
 
 onMounted(() => {
+  if (!canvas.value || !box.value) return
+  const width = box.value.offsetWidth
+  const height = box.value.offsetHeight
   window.addEventListener('resize', () => {
-    canvas.value.width = box.value.offsetWidth
-    canvas.value.height = box.value.offsetHeight
+    if (!canvas.value) return
+    canvas.value.width = width
+    canvas.value.height = height
   })
   canvas.value.width = box.value.offsetWidth
   canvas.value.height = box.value.offsetHeight
-  ctx = canvas.value.getContext('2d')
+  ctx = canvas.value.getContext('2d') as CanvasRenderingContext2D
   ctx.fillStyle = '#EDF2F7'
   ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
   ctx.lineJoin = 'round'
@@ -81,15 +85,15 @@ const color = '#000000'
 const lineWidth = 10
 
 const STACK_MAX_SIZE = 30
-const undoDataStack = ref([])
-const redoDataStack = ref([])
+const undoDataStack = ref<ImageData[]>([])
+const redoDataStack = ref<ImageData[]>([])
 
 const clearAll = () => {
   undoDataStack.value = []
   redoDataStack.value = []
-  console.log(undoDataStack)
-  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
   ctx.fillStyle = '#EDF2F7'
+  if (!canvas.value) return
+  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
   ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
 }
 
@@ -97,25 +101,27 @@ const saveDraw = () => {
   redoDataStack.value = []
   if (undoDataStack.value.length >= STACK_MAX_SIZE)
     undoDataStack.value.pop()
-
+  if (!canvas.value) return
   undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
 }
 
 const undo = () => {
   if (undoDataStack.value.length <= 0) return
-  redoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
-  const imageData = undoDataStack.value.shift()
+  if (canvas.value)
+    redoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
+  const imageData = undoDataStack.value.shift() as ImageData
   ctx.putImageData(imageData, 0, 0)
 }
 
 const redo = () => {
   if (redoDataStack.value.length <= 0) return
-  undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
-  const imageData = redoDataStack.value.shift()
+  if (canvas.value)
+    undoDataStack.value.unshift(ctx.getImageData(0, 0, canvas.value.width, canvas.value.height))
+  const imageData = redoDataStack.value.shift() as ImageData
   ctx.putImageData(imageData, 0, 0)
 }
 
-const doMouseDown = (e) => {
+const doMouseDown = (e: MouseEvent) => {
   saveDraw()
   draw = true
   ctx.strokeStyle = color
@@ -125,7 +131,7 @@ const doMouseDown = (e) => {
   ctx.lineTo(e.offsetX, e.offsetY)
   ctx.stroke()
 }
-const doMouseMove = (e) => {
+const doMouseMove = (e: MouseEvent) => {
   if (!draw) return
   ctx.lineTo(e.offsetX, e.offsetY)
   ctx.stroke()
@@ -142,11 +148,11 @@ const sendImage = async() => {
   const formData = new FormData()
   // let link = document.createElement("a")
   // link.download = "image.jpeg"
-
+  if (!canvas.value) return
   canvas.value.toBlob(async(blob) => {
     // link.href = URL.createObjectURL(blob)
     // link.click()
-    formData.append('image', blob, 'hand-written.jpeg')
+    formData.append('image', blob as Blob, 'hand-written.jpeg')
     if (!isProd) {
       for (const pair of formData.entries())
         console.log(`${pair[0]}, ${pair[1]}`)

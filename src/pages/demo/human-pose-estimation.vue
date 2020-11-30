@@ -19,22 +19,25 @@ import axios from 'axios'
 
 const { t } = useI18n()
 
-const preview = ref(null)
-const uploadedImage = ref('')
-const showAlern = ref(false)
-const uploading = ref(false)
+const uploadedImage = ref<string>('')
+const showAlern = ref<boolean>(false)
+const uploading = ref<boolean>(false)
 const isProd = process.env.NODE_ENV === 'production'
 
-const allowFileTypes = ['image/jpeg', 'image/png']
+const allowFileTypes = ['image/jpeg']
 
-const upload = async(event) => {
-  const imageFile = event.target.files[0]
+const upload = async(event: Event) => {
+  const target = event.target as HTMLInputElement
+  const files: FileList = target.files as FileList
+  const imageFile = files[0]
+
   if (!imageFile) return
+
   if (allowFileTypes.includes(imageFile.type)) {
     showAlern.value = false
     const reader = new FileReader()
     reader.onload = (event) => {
-      uploadedImage.value = event.target.result
+      uploadedImage.value = event.target?.result as string
     }
     const formData = new FormData()
     formData.append('image', imageFile)
@@ -43,7 +46,7 @@ const upload = async(event) => {
         console.log(`${pair[0]}, ${pair[1]}`)
     }
 
-    const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
+    const url: string = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/humanpose'
 
     uploading.value = true
     await axios.post(url, formData, {
@@ -68,7 +71,7 @@ const upload = async(event) => {
     uploading.value = false
   }
   else {
-    event.target.files = []
+    target.value = ''
     showAlern.value = true
     setTimeout(() => {
       showAlern.value = false
@@ -86,7 +89,3 @@ const downloadImage = () => {
   a.remove()
 }
 </script>
-
-<style>
-
-</style>
