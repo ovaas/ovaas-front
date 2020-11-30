@@ -25,6 +25,9 @@ module.exports = {
         96: '24rem',
         128: '32rem',
       },
+      padding: {
+        '2/3': '66.666%',
+      },
       height: {
         18: '4.5rem',
       },

@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full h-full p-4 flex flex-col bg-white dark:bg-white dark:bg-opacity-15 rounded-lg cursor-pointer border border-transparent hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
-    <div class="rounded-lg overflow-hidden h-40 w-full">
+  <div class="p-4 flex flex-col bg-white dark:bg-white dark:bg-opacity-15 rounded-lg cursor-pointer border border-transparent hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
+    <div class="relative rounded-lg overflow-hidden w-full pb-2/3">
       <img
         :src="demo.image"
         alt="human-pose-estimation"
-        class="object-cover w-full h-full"
+        class="absolute object-cover w-full h-full"
       >
     </div>
     <div class="text-left px-2 w-full">
