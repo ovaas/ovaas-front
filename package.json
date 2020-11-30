@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "dev:debug": "vite --debug",
-    "build": "cross-env NODE_ENV=production vite build"
+    "build": "cross-env NODE_ENV=production vite build",
+    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skiping pnpm install"
   },
   "dependencies": {
     "@iconify/iconify": "2.0.0-rc.1",
