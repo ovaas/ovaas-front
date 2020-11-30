@@ -3,7 +3,7 @@
     <Header />
     <div class="flex-auto flex overflow-hidden">
       <Navbar />
-      <div class="flex-auto overflow-hidden">
+      <div class="flex-auto overflow-y-auto">
         <router-view />
       </div>
     </div>
