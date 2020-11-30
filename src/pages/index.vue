@@ -1,6 +1,6 @@
 <template>
   <MainContant :title="t('pages-title.home')">
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <DemoCard
         v-for="demo in demos"
         :key="demo.path"
