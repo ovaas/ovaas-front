@@ -2,9 +2,7 @@
   <MainContant :title="t('demos.draw-colors.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
-        <div class="flex-1 bg-white dark:bg-gray-400 rounded-lg relative overflow-hidden">
-          <img v-if="uploadedImage !== ''" :src="uploadedImage" alt="" class="absolute object-contain h-full w-full">
-        </div>
+        <ImagePreview :image="uploadedImage" />
         <ImageActions :image="uploadedImage" @download="downloadImage()" />
       </div>
       <ImageInput :uploading="uploading" :show-alern="showAlern" @change="upload" />

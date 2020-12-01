@@ -1,17 +1,13 @@
 <template>
   <MainContant :title="t('demos.hand-write-ocr.title')" :back-btn="true">
     <div class="relative flex-auto flex w-full items-stretch">
-      <div class="absolute transform -translate-y-14 w-full text-gray-600 flex space-x-4 text-md justify-end">
+      <div class="absolute right-0 top-0 transform -translate-y-14 text-gray-600 inline-flex space-x-4 text-md items-center">
         <RoundedFullBtn icon="bx:bx-undo" :is-disable="disableUndo || disableAllBtn" @click="undo()" />
         <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
         <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
-        <button class="bg-white dark:bg-gray-300 hover:bg-gray-50 dark:hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex shadow-sm items-center focus:outline-none" :disabled="disableUndo || disableAllBtn" :class="{ 'opacity-50 cursor-not-allowed': disableUndo || disableAllBtn }" @click="sendImage()">
-          <Icon v-if="uploading" class="text-xl iconify mr-2 -ml-1 animate-spin" icon="mdi:loading" />
-          <Icon v-else icon="bx:bx-cloud-upload" class="text-2xl mr-2 -ml-1" />
-          {{ t('upload.text') }}
-        </button>
+        <SendBtn :loading="uploading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
       </div>
-      <div ref="box" class="w-full relative rounded-lg overflow-hidden">
+      <div ref="box" class="w-full relative rounded-2xl overflow-hidden border-2 border-gray-300">
         <canvas
           ref="canvas"
           class="absolute bg-gray-white cursor-pen"
@@ -19,16 +15,7 @@
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
         />
-        <div v-if="isModelOpen" class="absolute object-cover h-full w-full bg-gray-800 bg-opacity-50">
-          <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
-            {{ modelText.text || t('demos.hand-write-ocr.text-not-found') }}
-            <div class="absolute top-0 right-0 p-6 text-lg">
-              <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="isModelOpen = false">
-                <Icon icon="mdi:close" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <ResultModel :open="isModelOpen" :text="modelText.text" />
       </div>
     </div>
   </MainContant>
@@ -43,11 +30,11 @@ const { t } = useI18n()
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const box = ref<HTMLCanvasElement | null>(null)
-const uploading = ref<boolean>(false)
-const isModelOpen = ref<boolean>(false)
-const modelText = ref<string>('')
-const disableAllBtn = ref<boolean>(false)
-const isProd: boolean = process.env.NODE_ENV === 'production'
+const uploading = ref(false)
+const isModelOpen = ref(false)
+const modelText = ref('')
+const disableAllBtn = ref(false)
+const isProd = process.env.NODE_ENV === 'production'
 
 const disableUndo = computed(() => {
   return undoDataStack.value.length === 0
@@ -74,7 +61,7 @@ onMounted(() => {
   canvas.value.width = box.value.offsetWidth
   canvas.value.height = box.value.offsetHeight
   ctx = canvas.value.getContext('2d') as CanvasRenderingContext2D
-  ctx.fillStyle = '#EDF2F7'
+  ctx.fillStyle = '#FFFFFF'
   ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
   ctx.lineJoin = 'round'
   ctx.lineCap = 'round'
@@ -91,7 +78,7 @@ const redoDataStack = ref<ImageData[]>([])
 const clearAll = () => {
   undoDataStack.value = []
   redoDataStack.value = []
-  ctx.fillStyle = '#EDF2F7'
+  ctx.fillStyle = '#FFFFFF'
   if (!canvas.value) return
   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
   ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
