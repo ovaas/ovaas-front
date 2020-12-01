@@ -45,11 +45,6 @@ module.exports = {
       'active',
       'group-hover',
     ],
-    // cursor: ['responsive', 'disabled'],
-    // backgroundColor: ['dark', 'hover', 'disabled'],
-    // borderColor: ['dark', 'active', 'hover', 'focus', 'disabled'],
-    // textColor: ['dark', 'hover', 'active', 'disabled'],
-    // opacity: ['dark', 'hover', 'active', 'focus', 'disabled'],
   },
   darkMode: 'class',
 }

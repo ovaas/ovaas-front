@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 flex flex-col bg-white dark:bg-white dark:bg-opacity-15 rounded-lg cursor-pointer border border-transparent hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
+  <div class="p-4 flex flex-col bg-white dark:bg-white shadow-lg dark:bg-opacity-15 rounded-xl cursor-pointer border border-transparent hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
     <div class="relative rounded-lg overflow-hidden w-full pb-2/3">
       <img
         :src="demo.image"
