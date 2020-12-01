@@ -15,7 +15,7 @@
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
         />
-        <ResultModel :open="isModelOpen" :text="modelText.text" />
+        <ResultModel v-model:open="isModelOpen" :text="modelText.text" />
       </div>
     </div>
   </MainContant>

@@ -3,7 +3,7 @@
     <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
       {{ text || t('demos.hand-write-ocr.text-not-found') }}
       <div class="absolute top-0 right-0 p-6 text-lg">
-        <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="open = false">
+        <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="emit('update:open', false)">
           <Icon icon="mdi:close" />
         </div>
       </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, defineEmit } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -27,6 +27,8 @@ const props = defineProps({
     require: true,
   },
 })
+
+const emit = defineEmit(['update:open'])
 </script>
 
 <style>
