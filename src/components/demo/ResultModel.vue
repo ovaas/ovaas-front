@@ -3,8 +3,8 @@
     <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
       {{ text || t('demos.hand-write-ocr.text-not-found') }}
       <div class="absolute top-0 right-0 p-6 text-lg">
-        <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-800 hover:bg-opacity-50 text-gray-300 border border-gray-500" @click="emit('update:open', false)">
-          <Icon icon="mdi:close" />
+        <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-opacity-75 text-gray-800 dark:text-white border border-gray-500 " @click="emit('update:open', false)">
+          <Icon icon="ion:close-round" />
         </div>
       </div>
     </div>
