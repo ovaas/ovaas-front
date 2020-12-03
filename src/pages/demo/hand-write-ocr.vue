@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 
@@ -51,13 +51,7 @@ let ctx: CanvasRenderingContext2D
 
 onMounted(() => {
   if (!canvas.value || !box.value) return
-  const width = box.value.offsetWidth
-  const height = box.value.offsetHeight
-  window.addEventListener('resize', () => {
-    if (!canvas.value) return
-    canvas.value.width = width
-    canvas.value.height = height
-  })
+  window.addEventListener('resize', resize)
   canvas.value.width = box.value.offsetWidth
   canvas.value.height = box.value.offsetHeight
   ctx = canvas.value.getContext('2d') as CanvasRenderingContext2D
@@ -66,6 +60,18 @@ onMounted(() => {
   ctx.lineJoin = 'round'
   ctx.lineCap = 'round'
 })
+
+onUnmounted(() => {
+  window.removeEventListener('resize', resize)
+})
+
+const resize = () => {
+  if (!canvas.value || !box.value) return
+  const width = box.value.offsetWidth
+  const height = box.value.offsetHeight
+  canvas.value.width = width
+  canvas.value.height = height
+}
 
 let draw = false
 const color = '#000000'
