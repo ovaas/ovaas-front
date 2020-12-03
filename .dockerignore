@@ -6,4 +6,5 @@ node_modules
 .vscode
 .gitpod.yml
 netlify.toml
-public/routes.json
+dist
+.presite
