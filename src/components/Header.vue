@@ -1,7 +1,7 @@
 <template>
   <header class="flex-none flex items-center justify-between bg-gray-500 dark:bg-gray-600 w-full h-16 basic-transition">
     <div class="flex h-full items-center">
-      <div class="w-18 h-full bg-gray-600 dark:bg-gray-900 flex justify-center items-center">
+      <div class="w-18 h-full bg-gray-700 dark:bg-gray-900 flex justify-center items-center">
         <img src="/~/assets/logo.svg" alt="Icon" class="h-8 w-8">
       </div>
       <router-link to="/" class="inline-flex text-white">
