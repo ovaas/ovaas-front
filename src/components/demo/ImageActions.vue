@@ -1,12 +1,12 @@
 <template>
   <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-700 dark:border-gray-400 rounded-full">
-    <button class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform" @click="emit('download')">
+    <button class="inline-flex cursor-pointer px-3 h-full items-center group hover:text-indigo-500 hover-transform" @click="downloadImage">
       <Icon class="text-xl" icon="bx:bx-download" />
       <span class="pl-2">
         {{ t('share.download') }}
       </span>
     </button>
-    <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-600 hover-transform">
+    <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-500 hover-transform">
       <Icon class="text-xl" icon="bx:bx-share" @click="emit('share')" />
       <span class="pl-2">
         {{ t('share.share') }}
@@ -16,12 +16,24 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmit } from 'vue'
+import { defineProps } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const emit = defineEmit(['download', 'share'])
+const props = defineProps({
+  image: String,
+})
+
+const downloadImage = () => {
+  if (!props.image) return
+  const a = document.createElement('a')
+  document.body.appendChild(a)
+  a.download = 'human-pose.jpg'
+  a.href = props.image
+  a.click()
+  a.remove()
+}
 </script>
 
 <style>

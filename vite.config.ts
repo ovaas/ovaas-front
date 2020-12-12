@@ -21,6 +21,9 @@ const config: UserConfig = {
     ViteComponents({ alias }),
     PurgeIcons(),
   ],
+  optimizeDeps: {
+    include: ['mitt'],
+  },
 }
 
 export default config

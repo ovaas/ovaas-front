@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: {
@@ -13,6 +14,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"M PLUS Rounded 1c"', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         teal: colors.teal,
       },
@@ -37,14 +41,14 @@ module.exports = {
     },
   },
   variants: {
-    backgroundOpacity: [
-      'dark',
-      'responsive',
-      'hover',
-      'focus',
-      'active',
-      'group-hover',
-    ],
+    extend: {
+      translate: ['group-hover'],
+      animation: ['group-hover'],
+      backgroundOpacity: [
+        'dark',
+        'active',
+      ],
+    },
   },
   darkMode: 'class',
 }

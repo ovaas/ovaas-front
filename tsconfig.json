@@ -11,6 +11,7 @@
     "strict": true,
     "esModuleInterop": true,
     "incremental": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
