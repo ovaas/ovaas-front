@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   test:
@@ -22,6 +23,7 @@ jobs:
 
   deploy-netlify:
     needs: test
+    if: github.event_name == 'push'
     name: Deploy to Netlify
     runs-on: ubuntu-latest
     steps:
@@ -46,6 +48,7 @@ jobs:
 
   deploy-azure-static-web:
     needs: test
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: Deploy to Azure Static Web App
     steps:
