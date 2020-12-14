@@ -36,7 +36,7 @@ jobs:
           node-version: 14.x
       
       - name: Build Production
-        run: npx pnpm i --store=node_modules/.pnpm-store && npm run build:ssg
+        run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
