@@ -20,7 +20,8 @@ jobs:
       - name: Build Production
         run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
 
-  netlify:
+  deploy-netlify:
+    needs: test
     name: Deploy to Netlify
     runs-on: ubuntu-latest
     steps:
@@ -43,7 +44,8 @@ jobs:
           args: deploy --dir=dist --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
 
-  azure-static-web:
+  deploy-azure-static-web:
+    needs: test
     runs-on: ubuntu-latest
     name: Deploy to Azure Static Web App
     steps:
