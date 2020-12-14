@@ -35,7 +35,9 @@ jobs:
         with:
           node-version: 12.x
       - name: Build Production
-        run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
+        uses: ianwalter/puppeteer-container@v4
+        with:
+          args: npx pnpm i --store=node_modules/.pnpm-store && npm run build:ssg
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
