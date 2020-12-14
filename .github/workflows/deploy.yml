@@ -48,9 +48,9 @@ jobs:
         # sudo apt-get install -y google-chrome-stable --no-install-recommends
       
       - name: Build Production
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-          ENV PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+        # env:
+        #   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+        #   ENV PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
         run: npx pnpm i --store=node_modules/.pnpm-store && npm run build:ssg
 
       - name: Deploy to netlify
