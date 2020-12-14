@@ -35,6 +35,8 @@ jobs:
         with:
           node-version: 12.x
       - name: Install Chromium
+        env:
+          APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE: 1
         run: |
           sudo apt-get update
           sudo apt-get install -yq libgconf-2-4
