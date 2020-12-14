@@ -40,13 +40,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -yq libgconf-2-4
-          sudo apt-get install -y wget --no-install-recommends
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo touch /etc/apt/sources.list.d/google.list
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable --no-install-recommends
-          sudo rm -rf /var/lib/apt/lists/*
+        # sudo apt-get install -y wget --no-install-recommends
+        # wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        # sudo touch /etc/apt/sources.list.d/google.list
+        # echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google.list
+        # sudo apt-get update
+        # sudo apt-get install -y google-chrome-stable --no-install-recommends
       
       - name: Build Production
         env:
