@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Build Production
-      - run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
+        run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
