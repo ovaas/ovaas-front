@@ -2,10 +2,14 @@
   <MainContant :title="t('demos.draw-colors.title')" :back-btn="true">
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
-        <ImagePreview :image="uploadedImage" />
-        <ImageActions :image="uploadedImage" @download="downloadImage()" />
+        <ImagePreview :image="resultImage" />
+        <ImageActions :image="resultImage" />
       </div>
-      <ImageInput :uploading="uploading" :show-alern="showAlern" @change="upload" />
+      <ImageInput
+        v-model="image"
+        :uploading="loading"
+        :show-alern="showAlern"
+      />
     </div>
   </MainContant>
 </template>
