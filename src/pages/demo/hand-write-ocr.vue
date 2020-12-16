@@ -5,7 +5,7 @@
         <RoundedFullBtn icon="bx:bx-undo" :is-disable="disableUndo || disableAllBtn" @click="undo()" />
         <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
         <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
-        <SendBtn :loading="uploading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
+        <SendBtn :loading="loading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
       </div>
       <div ref="box" class="w-full relative rounded-2xl overflow-hidden border-2 border-gray-300">
         <canvas
@@ -24,13 +24,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import axios from 'axios'
+import { useApi, useFromData } from '/~/plugins/axios'
+import { AxiosRequestConfig } from 'axios'
 
 const { t } = useI18n()
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const box = ref<HTMLCanvasElement | null>(null)
-const uploading = ref(false)
 const isModelOpen = ref(false)
 const modelText = ref('')
 const disableAllBtn = ref(false)
@@ -133,51 +133,35 @@ const doMouseUp = () => {
   draw = false
 }
 
-const sendImage = async() => {
-  uploading.value = true
-
-  const mimeType = 'image/jpeg'
-  const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
-  const formData = new FormData()
-  // let link = document.createElement("a")
-  // link.download = "image.jpeg"
-  if (!canvas.value) return
-  canvas.value.toBlob(async(blob) => {
-    // link.href = URL.createObjectURL(blob)
-    // link.click()
-    formData.append('image', blob as Blob, 'hand-written.jpeg')
-    if (!isProd) {
-      for (const pair of formData.entries())
-        console.log(`${pair[0]}, ${pair[1]}`)
-    }
-
-    await axios.post(url, formData, {
-      responseType: 'blob',
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-      .then(async(response) => {
-        if (!isProd) console.log(response)
-        modelText.value = JSON.parse(await response.data.text())
-        isModelOpen.value = true
-        uploading.value = false
-      })
-      .catch((error) => {
-        if (error.response.status === 408)
-          alert('Server Timeout')
-        else if (error.response.status === 500)
-          alert('Server Error')
-        else if (error.response.status === 404)
-          alert('文字を見つかりませんでした')
-        else
-          alert('Error')
-        uploading.value = false
-        throw error
-      })
-  }, mimeType)
+const mimeType = 'image/jpeg'
+const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
+const config: AxiosRequestConfig = {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+  responseType: 'blob',
 }
 
+const { data, loading, error, post, cancel } = useApi<Blob>(url, config)
+
+watch(data, async(v) => {
+  if (!v) return
+  if (!isProd) console.log(v)
+  modelText.value = JSON.parse(await v.text())
+  isModelOpen.value = true
+})
+
+const sendImage = async() => {
+  if (!canvas.value) return
+  canvas.value.toBlob(async(blob) => {
+    if (!blob) return
+    const formData = useFromData('image', blob, 'handwritten.jpg')
+    post(formData)
+  }, mimeType)
+}
+onUnmounted(() => {
+  cancel()
+})
 </script>
 
 <style>
