@@ -14,6 +14,7 @@ axios.interceptors.response.use((response) => {
   NProgress.done()
   return response
 }, (error) => {
+  NProgress.done()
   if (typeof error.response === 'undefined')
     flash(EmitTypes.Danger, 'Network Error')
   else if (error.response?.status === 408)
