@@ -20,7 +20,8 @@
 <script setup lang="ts">
 import { ref, computed, watch, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useApi } from '/~/plugins/axios'
+import { useApi, useFromData } from '/~/plugins/axios'
+import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/plugins/emitter'
 
 const { t } = useI18n()
@@ -42,23 +43,14 @@ reader.onload = (event) => {
   resultImage.value = event.target?.result as string
 }
 
-const config = {
+const config: AxiosRequestConfig = {
   headers: {
     'Content-Type': 'multipart/form-data',
   },
+  responseType: 'blob',
 }
 
 const { data, loading, error, post, cancel } = useApi<Blob>(url, config)
-
-const useFromData = (name: string, file: File) => {
-  const formData = new FormData()
-  formData.append(name, file)
-  if (!isProd) {
-    for (const pair of formData.entries())
-      console.log(`${pair[0]}, ${pair[1]}`)
-  }
-  return formData
-}
 
 const checkFileExt = (file: File) => {
   if (allowFileTypes.includes(file.type))
@@ -68,7 +60,7 @@ const checkFileExt = (file: File) => {
 }
 
 watch(data, (v) => {
-  if (v) reader.readAsDataURL(v)
+  if (v) reader.readAsDataURL(v as Blob)
 })
 watch(error, (e) => {
   console.log(e)
