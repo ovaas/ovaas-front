@@ -134,7 +134,8 @@ const doMouseUp = () => {
 }
 
 const mimeType = 'image/jpeg'
-const url = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/handwritten'
+const url = process.env.FUNCTIONS_ENDPOINT || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const handWriteUrl = `${url}/handwritten`
 const config: AxiosRequestConfig = {
   headers: {
     'Content-Type': 'multipart/form-data',
@@ -142,7 +143,7 @@ const config: AxiosRequestConfig = {
   responseType: 'blob',
 }
 
-const { data, loading, error, post, cancel } = useApi<Blob>(url, config)
+const { data, loading, error, post, cancel } = useApi<Blob>(handWriteUrl, config)
 
 watch(data, async(v) => {
   if (!v) return

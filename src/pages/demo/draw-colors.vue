@@ -32,7 +32,8 @@ watch(showAlern, (v) => {
     setTimeout(() => v = false, 5000)
 })
 
-const url: string = process.env.HUMAN_POSE_API || 'https://ovaashumanpose-test.azurewebsites.net/api/colorization'
+const url: string = process.env.FUNCTIONS_ENDPOINT || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const drawColorUrl = `${url}/colorization`
 const allowFileTypes = ['image/jpeg']
 
 const reader = new FileReader()
@@ -47,7 +48,7 @@ const config: AxiosRequestConfig = {
   responseType: 'blob',
 }
 
-const { data, loading, error, post, cancel } = useApi<Blob>(url, config)
+const { data, loading, error, post, cancel } = useApi<Blob>(drawColorUrl, config)
 
 const checkFileExt = (file: File) => {
   if (allowFileTypes.includes(file.type))
