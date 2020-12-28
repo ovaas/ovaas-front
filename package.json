@@ -9,7 +9,7 @@
     "dev:debug": "vite --debug",
     "build": "cross-env NODE_ENV=production vite build",
     "build:ssg": "cross-env NODE_ENV=production vite build && esno scripts/ssg.ts",
-    "build:intel": "cross-env NODE_ENV=production FUNCTIONS_ENDPOINT: https://ovaas-backend.azurewebsites.net vite build"
+    "build:intel": "cross-env NODE_ENV=production FUNCTIONS_ENDPOINT=https://ovaas-backend.azurewebsites.net vite build"
   },
   "dependencies": {
     "@iconify/iconify": "^2.0.0-rc.2",
