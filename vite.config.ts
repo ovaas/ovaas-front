@@ -25,7 +25,7 @@ const config: UserConfig = {
     include: ['mitt'],
   },
   env: {
-    VITE_FUNCTIONS_ENDPOINT: process.env.FUNCTIONS_ENDPOINT | "https://ovaashumanpose-test.azurewebsites.net/api"
+    VITE_FUNCTIONS_ENDPOINT: process.env.FUNCTIONS_ENDPOINT || "https://ovaashumanpose-test.azurewebsites.net/api"
   }
 }
 
