@@ -24,6 +24,9 @@ const config: UserConfig = {
   optimizeDeps: {
     include: ['mitt'],
   },
+  env: {
+    VITE_FUNCTIONS_ENDPOINT: process.env.FUNCTIONS_ENDPOINT | "https://ovaashumanpose-test.azurewebsites.net/api"
+  }
 }
 
 export default config

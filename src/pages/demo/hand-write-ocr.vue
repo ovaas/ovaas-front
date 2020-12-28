@@ -34,7 +34,7 @@ const box = ref<HTMLCanvasElement | null>(null)
 const isModelOpen = ref(false)
 const modelText = ref('')
 const disableAllBtn = ref(false)
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = import.meta.env.MODE === 'production'
 
 const disableUndo = computed(() => {
   return undoDataStack.value.length === 0
@@ -134,7 +134,7 @@ const doMouseUp = () => {
 }
 
 const mimeType = 'image/jpeg'
-const url: string = import.meta.env.FUNCTIONS_ENDPOINT as string || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
 const handWriteUrl = `${url}/handwritten`
 const config: AxiosRequestConfig = {
   headers: {

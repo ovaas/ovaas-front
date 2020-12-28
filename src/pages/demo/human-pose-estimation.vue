@@ -25,7 +25,7 @@ import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/plugins/emitter'
 
 const { t } = useI18n()
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = import.meta.env.MODE === 'production'
 
 const image = ref<File | null>(null)
 const resultImage = ref<string>('')
@@ -35,7 +35,7 @@ watch(showAlern, (v) => {
     setTimeout(() => v = false, 5000)
 })
 
-const url: string = import.meta.env.FUNCTIONS_ENDPOINT as string || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
 const humanPoseUrl = `${url}/humanpose`
 const allowFileTypes = ['image/jpeg']
 
