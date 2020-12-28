@@ -35,7 +35,7 @@ watch(showAlern, (v) => {
     setTimeout(() => v = false, 5000)
 })
 
-const url: string = process.env.FUNCTIONS_ENDPOINT || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const url: string = import.meta.env.FUNCTIONS_ENDPOINT as string || 'https://ovaashumanpose-test.azurewebsites.net/api'
 const humanPoseUrl = `${url}/humanpose`
 const allowFileTypes = ['image/jpeg']
 

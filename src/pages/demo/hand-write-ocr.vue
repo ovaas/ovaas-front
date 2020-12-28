@@ -134,7 +134,7 @@ const doMouseUp = () => {
 }
 
 const mimeType = 'image/jpeg'
-const url = process.env.FUNCTIONS_ENDPOINT || 'https://ovaashumanpose-test.azurewebsites.net/api'
+const url: string = import.meta.env.FUNCTIONS_ENDPOINT as string || 'https://ovaashumanpose-test.azurewebsites.net/api'
 const handWriteUrl = `${url}/handwritten`
 const config: AxiosRequestConfig = {
   headers: {
