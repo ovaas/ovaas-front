@@ -30,7 +30,7 @@ import { localeSchema } from '../logics'
 const preferredLang = usePreferredLanguages()
 const { locale } = useI18n()
 
-const currentLang = computed({
+const currentLang = computed<string>({
   get() {
     return localeSchema.value ? localeSchema.value : localeSchema.value = preferredLang.value[0] === 'ja' ? 'ja' : 'en'
   },
@@ -39,11 +39,11 @@ const currentLang = computed({
   },
 })
 
-watch(
-  currentLang,
-  v => locale.value = v as string,
-  { immediate: true },
-)
+watch(currentLang, (v) => {
+  document.documentElement.lang = v
+  locale.value = v
+},
+{ immediate: true })
 </script>
 
 <style>
