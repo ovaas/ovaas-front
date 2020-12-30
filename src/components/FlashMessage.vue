@@ -6,7 +6,7 @@
         :class="[color, textColor]"
       >
         <button class="delete absolute top-0 right-0 p-1" @click="hideMessage">
-          <Icon icon="jam:close-circle-f" />
+          <jam-close-circle-f />
         </button>
         {{ message }}
       </div>

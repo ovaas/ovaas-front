@@ -1,13 +1,13 @@
 <template>
   <div class="h-14 mx-auto mt-4 px-6 border-2 border-gray-700 dark:border-gray-400 rounded-full">
     <button class="inline-flex cursor-pointer px-3 h-full items-center group hover:text-indigo-500 hover-transform" @click="downloadImage">
-      <Icon class="text-xl" icon="bx:bx-download" />
+      <bx-bx-download class="text-xl" />
       <span class="pl-2">
         {{ t('share.download') }}
       </span>
     </button>
     <div class="inline-flex cursor-pointer px-3 h-full items-center hover:text-indigo-500 hover-transform">
-      <Icon class="text-xl" icon="bx:bx-share" @click="emit('share')" />
+      <bx-bx-share class="text-xl" @click="emit('share')" />
       <span class="pl-2">
         {{ t('share.share') }}
       </span>

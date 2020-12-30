@@ -4,7 +4,7 @@
       <h1>{{ title }}</h1>
       <div v-if="backBtn" class="absolute top-0 h-full inline-flex items-center transform -translate-x-12 hover:text-gray-500 dark:hover:text-gray-300">
         <button class="focus:outline-none" @click="router.back()">
-          <Icon icon="bx:bx-left-arrow-circle" />
+          <bx-bx-left-arrow-circle />
         </button>
       </div>
     </div>

@@ -2,9 +2,15 @@
   <MainContant :title="t('demos.hand-write-ocr.title')" :back-btn="true">
     <div class="relative flex-auto flex w-full items-stretch">
       <div class="absolute right-0 top-0 transform -translate-y-14 text-gray-600 inline-flex space-x-4 text-md items-center">
-        <RoundedFullBtn icon="bx:bx-undo" :is-disable="disableUndo || disableAllBtn" @click="undo()" />
-        <RoundedFullBtn icon="bx:bx-redo" :is-disable="disableRedo || disableAllBtn" @click="redo()" />
-        <RoundedFullBtn icon="bx:bx-trash" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()" />
+        <RoundedFullBtn :is-disable="disableUndo || disableAllBtn" @click="undo()">
+          <bx-bx-undo class="text-2xl" />
+        </RoundedFullBtn>
+        <RoundedFullBtn :is-disable="disableRedo || disableAllBtn" @click="redo()">
+          <bx-bx-redo class="text-2xl" />
+        </RoundedFullBtn>
+        <RoundedFullBtn :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()">
+          <bx-bx-trash class="text-2xl" />
+        </RoundedFullBtn>
         <SendBtn :loading="loading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
       </div>
       <div ref="box" class="w-full relative rounded-2xl overflow-hidden border-2 border-gray-300">

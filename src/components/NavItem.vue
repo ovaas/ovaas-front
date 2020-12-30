@@ -12,11 +12,6 @@ const props = defineProps({
     type: String,
     default: 'Home',
   },
-  icon: {
-    type: String,
-    require: true,
-    default: 'bx:bx-home',
-  },
 })
 </script>
 

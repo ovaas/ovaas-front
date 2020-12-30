@@ -3,8 +3,8 @@
     <input type="file" accept="image/*" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="emit('update:modelValue', $event.target.files[0])">
     <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto space-y-3">
       <div class="text-5xl">
-        <Icon v-if="props.uploading" class="animate-spin" icon="mdi:loading" />
-        <Icon v-else icon="bx:bxs-cloud-upload" class="transition-transform ease-in-out transform group-hover:-translate-y-0.5" />
+        <mdi-loading v-if="props.uploading" class="animate-spin" />
+        <bx-bxs-cloud-upload v-else class="transition-transform ease-in-out transform group-hover:-translate-y-0.5" />
       </div>
       <h3 class="text-2xl font-semibold inline-flex items-center">
         {{ t('upload.image.title') }}
@@ -28,7 +28,7 @@ const { t } = useI18n()
 const props = defineProps({
   uploading: Boolean,
   showAlern: Boolean,
-  modelValue: File,
+  modelValue: Object,
 })
 const emit = defineEmit(['update:modelValue'])
 </script>

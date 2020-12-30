@@ -1,7 +1,12 @@
 <template>
   <div class="relative text-white hover:text-gray-200">
-    <Icon class="absolute inset-y-0 left-0 iconify ml-2 flex items-center" icon="carbon:language" :size="1.2" />
-    <select class="select-dark" @change="emit('update:modelValue', $event.target.value)">
+    <div class="absolute top-0 left-0 ml-2 h-full flex items-center">
+      <carbon-language />
+    </div>
+    <select
+      class="block appearance-none w-full bg-gray-700 pl-10 pr-8 py-2 rounded leading-tight focus:outline-none basic-transition dark:bg-gray-800 focus:ring-2"
+      @change="emit('update:modelValue', $event.target.value)"
+    >
       <slot />
     </select>
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
