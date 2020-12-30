@@ -30,19 +30,19 @@ watch(
     demos.value = [
       {
         title: t('demos.human-pose.title'),
-        image: '/images/human-pose-estimation-0001.png',
+        image: '/images/human-pose-estimation.webp',
         content: t('demos.human-pose.content'),
         path: '/demo/human-pose-estimation',
       },
       {
         title: t('demos.hand-write-ocr.title'),
-        image: '/images/handwriting-ocr.jpg',
+        image: '/images/handwriting-ocr.webp',
         content: t('demos.hand-write-ocr.content'),
         path: '/demo/hand-write-ocr',
       },
       {
         title: t('demos.draw-colors.title'),
-        image: '/images/draw-colors.jpeg',
+        image: '/images/draw-colors.webp',
         content: t('demos.draw-colors.content'),
         path: '/demo/draw-colors',
       },

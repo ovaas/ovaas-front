@@ -3,7 +3,7 @@
     <div class="text-4xl font-bold mb-8 relative">
       <h1>{{ title }}</h1>
       <div v-if="backBtn" class="absolute top-0 h-full inline-flex items-center transform -translate-x-12 hover:text-gray-500 dark:hover:text-gray-300">
-        <button class="focus:outline-none" @click="router.back()">
+        <button class="focus:outline-none" aria-label="Back" @click="router.push('/')">
           <bx-bx-left-arrow-circle />
         </button>
       </div>
