@@ -13,9 +13,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import humanPoseImage from '/~/assets/human-pose-estimation-0001.png'
-import handWriteOCRImage from '/~/assets/handwriting-ocr.jpg'
-import drawColorsImage from '/~/assets/draw-colors.jpeg'
 
 interface Demo {
   title: string
@@ -33,19 +30,19 @@ watch(
     demos.value = [
       {
         title: t('demos.human-pose.title'),
-        image: humanPoseImage,
+        image: '/images/human-pose-estimation-0001.png',
         content: t('demos.human-pose.content'),
         path: '/demo/human-pose-estimation',
       },
       {
         title: t('demos.hand-write-ocr.title'),
-        image: handWriteOCRImage,
+        image: '/images/handwriting-ocr.jpg',
         content: t('demos.hand-write-ocr.content'),
         path: '/demo/hand-write-ocr',
       },
       {
         title: t('demos.draw-colors.title'),
-        image: drawColorsImage,
+        image: '/images/draw-colors.jpeg',
         content: t('demos.draw-colors.content'),
         path: '/demo/draw-colors',
       },
