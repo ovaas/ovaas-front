@@ -5,7 +5,7 @@
 <h1 align='center'>OVaaS Front-End Client</h1>
 
 <br>
-<p align='center'>Azure Static Web Apps: <a href='https://wonderful-pond-0f5c05a00.azurestaticapps.net'>link</a></p>
+<p align='center'>Azure Static Web Apps: <a href='https://agreeable-rock-03bb9dd00.azurestaticapps.net'>link</a></p>
 <br>
 
 <p align='center'>
