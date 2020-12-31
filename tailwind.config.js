@@ -15,7 +15,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"M PLUS Rounded 1c"', ...defaultTheme.fontFamily.sans],
+        sans: ['source-han-sans-cjk-ja', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         teal: colors.teal,
