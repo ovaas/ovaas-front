@@ -40,7 +40,8 @@ const currentLang = computed<string>({
 })
 
 watch(currentLang, (v) => {
-  document.documentElement.lang = v
+  if (typeof document !== 'undefined')
+    document.documentElement.lang = v
   locale.value = v
 },
 { immediate: true })
