@@ -6,7 +6,6 @@
     <div class="flex-auto flex w-full items-stretch">
       <div class="w-2/3 flex flex-col">
         <ImagePreview :image="resultImage" />
-        <ImageActions :image="resultImage" />
       </div>
       <ImageInput
         v-model="image"

@@ -28,7 +28,9 @@
   },
   "share": {
     "download": "ダウンロード",
-    "share": "シェア"
+    "facebook": "Facebookにシェア",
+    "twitter": "Twitterにシェア",
+    "instagram": "Instagramにシェア"
   },
   "errors": {
     "not-image": "画像ファイルではありません !!!"

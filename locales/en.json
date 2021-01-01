@@ -28,7 +28,9 @@
   },
   "share": {
     "download": "Download",
-    "share": "Share"
+    "facebook": "Share to Facebook",
+    "twitter": "Share to Twitter",
+    "instagram": "Share to Instagram"
   },
   "errors": {
     "not-image": "Please upload a image file !!!"
