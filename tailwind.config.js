@@ -15,7 +15,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['source-han-sans-cjk-ja', ...defaultTheme.fontFamily.sans],
+        sans: ['"Helvetica Neue"', 'Arial', '"Hiragino Kaku Gothic ProN"', '"Hiragino Sans"', 'Meiryo', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         teal: colors.teal,
