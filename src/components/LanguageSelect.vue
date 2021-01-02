@@ -1,11 +1,11 @@
 <template>
-  <div class="relative h-full mx-3">
-    <div class="text-white ml-2 h-full flex items-center text-2xl px-5" @mouseenter="show = true">
-      <ion-language />
+  <div class="relative h-full">
+    <div class="text-white h-full flex items-center text-2xl px-3 md:px-5" @mouseenter="show = true">
+      <vs-language />
     </div>
-    <div class="absolute top-0 right-0 pt-14 pr-2" @mouseleave="show = false">
-      <transition name="slide-fade">
-        <div v-show="show" class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
+    <transition name="slide-fade">
+      <div v-show="show" class="absolute top-0 right-0 pt-14 pr-2" @mouseleave="show = false">
+        <div class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
           <button
             v-for="lang in langs"
             :key="lang.locale"
@@ -17,8 +17,8 @@
             {{ lang.name }}
           </button>
         </div>
-      </transition>
-    </div>
+      </div>
+    </transition>
   </div>
 </template>
 
