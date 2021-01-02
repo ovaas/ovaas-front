@@ -1,15 +1,15 @@
 <template>
   <div class="relative h-full">
-    <div class="text-white h-full flex items-center text-2xl px-3 md:px-5" @mouseenter="show = true">
+    <div class="flex items-center h-full px-3 text-2xl text-white md:px-5" @mouseenter="show = true">
       <vs-language />
     </div>
     <transition name="slide-fade">
-      <div v-show="show" class="absolute top-0 right-0 pt-14 pr-2" @mouseleave="show = false">
+      <div v-show="show" class="absolute top-0 right-0 pr-2 pt-14" @mouseleave="show = false">
         <div class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
           <button
             v-for="lang in langs"
             :key="lang.locale"
-            class=" w-full text-center rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none px-3 py-1 focus:text-gray-500 dark:focus:text-gray-400"
+            class="w-full px-3 py-1 text-center rounded-md  hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:text-gray-500 dark:focus:text-gray-400"
             :value="lang.locale"
             :selected="lang.locale === currentLang"
             @click="currentLang = lang.locale"

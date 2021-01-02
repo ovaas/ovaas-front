@@ -1,21 +1,21 @@
 <template>
-  <div class="absolute top-0 right-0 inline-flex flex-col items-end m-4 z-20">
-    <button id="shareBtn" class="text-2xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-full p-2 focus:outline-none focus:ring-1 transition-all transform" :class="{'rotate-180': show}" @click.stop="show = !show">
+  <div class="absolute top-0 right-0 z-20 inline-flex flex-col items-end m-4">
+    <button id="shareBtn" class="p-2 text-2xl transition-all transform bg-gray-100 rounded-full hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:ring-1" :class="{'rotate-180': show}" @click.stop="show = !show">
       <bx-bx-share-alt v-if="!show" />
       <bx-bx-caret-down v-else class="transform rotate-180" />
     </button>
     <transition name="fade">
-      <div v-if="show" class="bg-gray-100 dark:bg-gray-800 rounded-md p-1 mt-3 text-2xl inline-flex flex-col" @click.stop>
-        <button :aria-label="t('share.twitter')" class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md focus:outline-none" @click.stop="shareToTwitter">
+      <div v-if="show" class="inline-flex flex-col p-1 mt-3 text-2xl bg-gray-100 rounded-md dark:bg-gray-800" @click.stop>
+        <button :aria-label="t('share.twitter')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" @click.stop="shareToTwitter">
           <bx-bxl-twitter />
         </button>
-        <button :aria-label="t('share.instagram')" class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md focus:outline-none">
+        <button :aria-label="t('share.instagram')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
           <bx-bxl-instagram />
         </button>
-        <button :aria-label="t('share.facebook')" class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md focus:outline-none">
+        <button :aria-label="t('share.facebook')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
           <bx-bxl-facebook-square />
         </button>
-        <button :aria-label="t('share.download')" class="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md focus:outline-none" @click.stop="downloadImage">
+        <button :aria-label="t('share.download')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" @click.stop="downloadImage">
           <bx-bx-cloud-download />
         </button>
       </div>

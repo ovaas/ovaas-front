@@ -3,8 +3,8 @@
     :title="t('demos.human-pose.title')"
     :back-btn="true"
   >
-    <div class="flex-auto flex w-full items-stretch">
-      <div class="w-2/3 flex flex-col">
+    <div class="flex items-stretch flex-auto w-full">
+      <div class="flex flex-col w-2/3">
         <ImagePreview :image="resultImage" />
       </div>
       <ImageInput

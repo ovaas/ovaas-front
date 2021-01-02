@@ -1,8 +1,8 @@
 <template>
-  <aside class="flex-none hidden md:flex flex-col items-center bg-gray-300 dark:bg-gray-700 h-full w-18 p-2 text-gray-800 dark:text-white">
+  <aside class="flex-col items-center flex-none hidden h-full p-2 text-gray-800 bg-gray-300 md:flex dark:bg-gray-700 w-18 dark:text-white">
     <router-link to="/">
       <NavItem>
-        <bx-bx-home class="text-2xl mb-1" />
+        <bx-bx-home class="mb-1 text-2xl" />
         <p class="text-xs font-bold">
           {{ t('pages-title.home') }}
         </p>
@@ -10,8 +10,8 @@
     </router-link>
     <div class="cursor-pointer" @click="isDark = !isDark">
       <NavItem>
-        <bx-bx-sun v-if="isDark" class="text-2xl mb-1" />
-        <bx-bx-moon v-else class="text-2xl mb-1" />
+        <bx-bx-sun v-if="isDark" class="mb-1 text-2xl" />
+        <bx-bx-moon v-else class="mb-1 text-2xl" />
         <p class="text-xs font-bold">
           {{ isDark ? t('colorMode.light') : t('colorMode.dark') }}
         </p>

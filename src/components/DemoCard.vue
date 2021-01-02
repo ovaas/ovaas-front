@@ -1,14 +1,14 @@
 <template>
-  <div class="p-4 flex flex-col bg-white dark:bg-white shadow-lg dark:bg-opacity-15 rounded-xl cursor-pointer border border-transparent hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
-    <div class="relative rounded-lg overflow-hidden w-full pb-2/3">
+  <div class="flex flex-col p-4 bg-white border border-transparent shadow-lg cursor-pointer dark:bg-white dark:bg-opacity-15 rounded-xl hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
+    <div class="relative w-full overflow-hidden rounded-lg pb-2/3">
       <img
         :src="demo.image"
         alt="human-pose-estimation"
         class="absolute object-cover w-full h-full"
       >
     </div>
-    <div class="text-left px-2 w-full">
-      <h2 class="text-xl font-medium pt-4">
+    <div class="w-full px-2 text-left">
+      <h2 class="pt-4 text-xl font-medium">
         {{ demo.title }}
       </h2>
       <p class="mt-1">

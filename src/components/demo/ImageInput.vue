@@ -1,15 +1,15 @@
 <template>
-  <div class="w-1/3 group border-2 border-dashed border-gray-800 dark:border-gray-400 rounded-xl relative ml-6 basic-transition">
-    <input type="file" accept="image/*" aria-label="Upload Image" class="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50" @change="emit('update:modelValue', $event.target.files[0])">
-    <div class="flex flex-col h-full items-center justify-center text-center p-10 absolute top-0 right-0 left-0 m-auto space-y-3">
+  <div class="relative w-1/3 ml-6 border-2 border-gray-800 border-dashed group dark:border-gray-400 rounded-xl basic-transition">
+    <input type="file" accept="image/*" aria-label="Upload Image" class="relative z-50 block w-full h-full p-20 opacity-0 cursor-pointer" @change="emit('update:modelValue', $event.target.files[0])">
+    <div class="absolute top-0 left-0 right-0 flex flex-col items-center justify-center h-full p-10 m-auto space-y-3 text-center">
       <div class="text-5xl">
         <mdi-loading v-if="props.uploading" class="animate-spin" />
         <bx-bxs-cloud-upload v-else class="transition-transform ease-in-out transform group-hover:-translate-y-0.5" />
       </div>
-      <div class="text-2xl font-semibold inline-flex items-center">
+      <div class="inline-flex items-center text-2xl font-semibold">
         {{ t('upload.image.title') }}
       </div>
-      <p class="text-base w-2/3">
+      <p class="w-2/3 text-base">
         {{ t('upload.image.content') }}
       </p>
       <span v-show="showAlern" class="text-base text-red-700">

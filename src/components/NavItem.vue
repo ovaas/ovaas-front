@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-14 h-14 bg-white rounded-lg bg-opacity-0 hover:text-black hover:bg-opacity-100 basic-transition hover:shadow-sm">
+  <div class="flex flex-col items-center justify-center bg-white bg-opacity-0 rounded-lg w-14 h-14 hover:text-black hover:bg-opacity-100 basic-transition hover:shadow-sm">
     <slot />
   </div>
 </template>

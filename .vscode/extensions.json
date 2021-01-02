@@ -4,6 +4,7 @@
     "antfu.i18n-ally",
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind"
   ]
 }

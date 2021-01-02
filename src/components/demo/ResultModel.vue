@@ -1,9 +1,9 @@
 <template>
-  <div v-if="open" class="absolute object-cover h-full w-full bg-gray-800 bg-opacity-50">
-    <div class="text-white flex h-full items-center justify-center text-5xl font-semibold relative">
+  <div v-if="open" class="absolute object-cover w-full h-full bg-gray-800 bg-opacity-50">
+    <div class="relative flex items-center justify-center h-full text-5xl font-semibold text-white">
       {{ text || t('demos.hand-write-ocr.text-not-found') }}
       <div class="absolute top-0 right-0 p-6 text-lg">
-        <div class="h-10 w-10 inline-flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-opacity-75 text-gray-800 dark:text-white border border-gray-500 " @click="emit('update:open', false)">
+        <div class="inline-flex items-center justify-center w-10 h-10 text-gray-800 bg-gray-100 border border-gray-500 rounded-full dark:bg-gray-800 hover:bg-opacity-75 dark:text-white " @click="emit('update:open', false)">
           <ion-close-round />
         </div>
       </div>

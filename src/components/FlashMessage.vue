@@ -1,11 +1,11 @@
 <template>
   <transition name="popup">
-    <div v-show="show" class="fixed transition-all transform bottom-4 inset-x-0 flex justify-center text-gray-700 dark:text-gray-100">
+    <div v-show="show" class="fixed inset-x-0 flex justify-center text-gray-700 transition-all transform bottom-4 dark:text-gray-100">
       <div
         class="relative px-8 py-3 rounded-md"
         :class="[color, textColor]"
       >
-        <button class="delete absolute top-0 right-0 p-1" @click="hideMessage">
+        <button class="absolute top-0 right-0 p-1 delete" @click="hideMessage">
           <jam-close-circle-f />
         </button>
         {{ message }}
