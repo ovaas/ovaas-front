@@ -10,41 +10,11 @@
         </h1>
       </router-link>
     </div>
-    <div class="inline-block px-6">
-      <DarkSelect v-model="currentLang">
-        <option v-for="lang in langs" :key="lang.locale" :value="lang.locale" :selected="lang.locale === currentLang">
-          {{ lang.name }}
-        </option>
-      </DarkSelect>
-    </div>
+    <LanguageSelect />
   </header>
 </template>
 
 <script setup lang="ts">
-import { watch, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { languages as langs } from '/~/messages'
-import { usePreferredLanguages } from '@vueuse/core'
-import { localeSchema } from '../logics'
-
-const preferredLang = usePreferredLanguages()
-const { locale } = useI18n()
-
-const currentLang = computed<string>({
-  get() {
-    return localeSchema.value ? localeSchema.value : localeSchema.value = preferredLang.value[0] === 'ja' ? 'ja' : 'en'
-  },
-  set(v) {
-    localeSchema.value = v
-  },
-})
-
-watch(currentLang, (v) => {
-  if (typeof document !== 'undefined')
-    document.documentElement.lang = v
-  locale.value = v
-},
-{ immediate: true })
 </script>
 
 <style>
