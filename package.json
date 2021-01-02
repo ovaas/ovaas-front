@@ -7,31 +7,30 @@
   "scripts": {
     "dev": "vite",
     "dev:debug": "vite --debug",
-    "build": "cross-env NODE_ENV=production vite-ssg build --script async",
-    "build:ssg": "cross-env NODE_ENV=production vite build && esno scripts/ssg.ts"
+    "build": "cross-env NODE_ENV=production vite-ssg build --script async"
   },
   "dependencies": {
-    "@vueuse/core": "^4.0.1",
+    "@vueuse/core": "^4.0.2",
     "axios": "^0.21.1",
     "mitt": "^2.1.0",
     "nprogress": "^0.2.0",
-    "vue": "^3.0.4",
+    "vue": "^3.0.5",
     "vue-i18n": "9.0.0-beta.8",
     "vue-router": "^4.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.4.3",
-    "@iconify/json": "^1.1.278",
+    "@iconify/json": "^1.1.279",
     "@purge-icons/generated": "^0.4.1",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
-    "@vue/compiler-sfc": "^3.0.4",
-    "@vue/server-renderer": "^3.0.4",
-    "@vuedx/typescript-plugin-vue": "^0.4.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/server-renderer": "^3.0.5",
+    "@vuedx/typescript-plugin-vue": "^0.4.1",
     "autoprefixer": "^10.1.0",
     "chromium": "^3.0.2",
     "cross-env": "^7.0.3",
-    "eslint": "^7.16.0",
+    "eslint": "^7.17.0",
     "esno": "^0.3.0",
     "postcss-nested": "^5.0.3",
     "presite": "^2.1.1",
@@ -42,7 +41,7 @@
     "vite-plugin-icons": "^0.1.0",
     "vite-plugin-purge-icons": "^0.4.5",
     "vite-plugin-voie": "^0.5.0",
-    "vite-ssg": "^0.1.0",
+    "vite-ssg": "^0.1.1",
     "voie-pages": "^0.4.0",
     "vue-eslint-parser": "^7.3.0"
   },
