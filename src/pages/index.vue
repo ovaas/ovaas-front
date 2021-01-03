@@ -5,6 +5,7 @@
         v-for="demo in demos"
         :key="demo.path"
         :demo="demo"
+        @mouseenter="prefetch(demo.path)"
       />
     </div>
   </MainContant>
@@ -13,6 +14,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import prefetch from '/~/logics/prefetch'
 
 interface Demo {
   title: string
