@@ -3,8 +3,8 @@
 // https://github.com/GoogleChromeLabs/quicklink
 
 import { onMounted, onUnmounted, watch } from 'vue'
-import { useRoute } from '../router'
-import { inBrowser, pathToFile } from '../utils'
+import { useRoute } from 'vue-router'
+import { inBrowser } from '../utils'
 
 const hasFetched = new Set<string>()
 const createLink = () => document.createElement('link')
@@ -60,8 +60,8 @@ export function usePrefetch() {
           const { pathname } = link
           if (!hasFetched.has(pathname)) {
             hasFetched.add(pathname)
-            const pageChunkPath = pathToFile(pathname)
-            doFetch(pageChunkPath)
+            console.log(pathname)
+            doFetch(pathname)
           }
         }
       })

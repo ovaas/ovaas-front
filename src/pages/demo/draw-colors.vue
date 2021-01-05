@@ -22,10 +22,10 @@ import { useI18n } from 'vue-i18n'
 import { useApi, useFromData } from '/~/plugins/axios'
 import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/plugins/emitter'
+import { inBrowser } from '/~/utils'
 
 const { t } = useI18n()
-const isProd = import.meta.env.MODE === 'production'
-const isClient = typeof window !== 'undefined'
+const isProd = import.meta.env.PROD
 
 const image = ref<File | null>(null)
 const resultImage = ref<string>('')
@@ -40,7 +40,7 @@ const allowFileTypes = ['image/jpeg']
 
 let reader: FileReader
 
-if (isClient) {
+if (inBrowser) {
   reader = new FileReader()
   reader.onload = (event) => {
     resultImage.value = event.target?.result as string
