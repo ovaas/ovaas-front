@@ -3,9 +3,9 @@
     <div class="relative mb-8 text-4xl font-bold">
       <h1>{{ title }}</h1>
       <div v-if="backBtn" class="absolute top-0 inline-flex items-center h-full transform -translate-x-12 hover:text-gray-500 dark:hover:text-gray-300">
-        <button class="focus:outline-none" aria-label="Back" @click="router.push('/')">
+        <router-link to="/">
           <bx-bx-left-arrow-circle />
-        </button>
+        </router-link>
       </div>
     </div>
     <slot />
@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { useRouter } from 'vue-router'
 
 const props = defineProps({
   title: {
@@ -26,8 +25,6 @@ const props = defineProps({
     default: false,
   },
 })
-
-const router = useRouter()
 </script>
 
 <style>
