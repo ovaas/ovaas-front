@@ -60,6 +60,10 @@
     "rules": {
       "no-unused-vars": "off",
       "no-alert": "off",
+      "no-cond-assign": [
+        2,
+        "except-parens"
+      ],
       "@typescript-eslint/no-unused-vars": "off"
     }
   }
