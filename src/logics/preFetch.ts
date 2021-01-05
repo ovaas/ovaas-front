@@ -60,7 +60,6 @@ export function usePrefetch() {
           const { pathname } = link
           if (!hasFetched.has(pathname)) {
             hasFetched.add(pathname)
-            console.log(pathname)
             doFetch(pathname)
           }
         }
