@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col p-4 bg-white border border-transparent shadow-lg cursor-pointer dark:bg-white dark:bg-opacity-15 rounded-xl hover:border-gray-400 basic-transition" @click="$router.push(demo.path)">
+  <router-link :to="demo.path" class="flex flex-col p-4 bg-white border border-transparent shadow-lg cursor-pointer dark:bg-white dark:bg-opacity-15 rounded-xl hover:border-gray-400 basic-transition">
     <div class="relative w-full overflow-hidden rounded-lg pb-2/3">
       <img
         :src="demo.image"
@@ -15,7 +15,7 @@
         {{ demo.content }}
       </p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script setup lang="ts">
