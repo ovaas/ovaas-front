@@ -13,6 +13,9 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import humanPoseImg from '/~/assets/images/human-pose-estimation.webp'
+import handWritingImg from '/~/assets/images/handwriting-ocr.webp'
+import drawColorsImg from '/~/assets/images/draw-colors.webp'
 
 interface Demo {
   title: string
@@ -30,19 +33,19 @@ watch(
     demos.value = [
       {
         title: t('demos.human-pose.title'),
-        image: '/images/human-pose-estimation.webp',
+        image: humanPoseImg,
         content: t('demos.human-pose.content'),
         path: '/demo/human-pose-estimation',
       },
       {
         title: t('demos.hand-write-ocr.title'),
-        image: '/images/handwriting-ocr.webp',
+        image: handWritingImg,
         content: t('demos.hand-write-ocr.content'),
         path: '/demo/hand-write-ocr',
       },
       {
         title: t('demos.draw-colors.title'),
-        image: '/images/draw-colors.webp',
+        image: drawColorsImg,
         content: t('demos.draw-colors.content'),
         path: '/demo/draw-colors',
       },
