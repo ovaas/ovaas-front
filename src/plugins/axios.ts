@@ -2,7 +2,8 @@ import { Ref, ref } from 'vue'
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios'
 import NProgress from 'nprogress'
 import { flash, EmitTypes } from './emitter'
-const isProd = import.meta.env.MODE === 'production'
+
+const isProd = import.meta.env.PROD
 
 axios.interceptors.request.use((config) => {
   NProgress.start()
