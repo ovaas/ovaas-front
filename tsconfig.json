@@ -25,7 +25,10 @@
       "/~/*": [
         "src/*"
       ]
-    }
+    },
+    "types": [
+      "vite/client"
+    ]
   },
   "exclude": [
     "dist",
