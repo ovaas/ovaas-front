@@ -44,9 +44,6 @@ const config: UserConfig = {
   optimizeDeps: {
     include: ['mitt'],
   },
-  env: {
-    VITE_FUNCTIONS_ENDPOINT: process.env.FUNCTIONS_ENDPOINT || 'https://ovaas-backend.azurewebsites.net/api',
-  },
 }
 
 export default config
