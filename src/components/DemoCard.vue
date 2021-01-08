@@ -1,6 +1,6 @@
 <template>
   <router-link :to="demo.path" class="flex flex-col p-4 bg-white border border-transparent shadow-lg cursor-pointer dark:bg-white dark:bg-opacity-15 rounded-xl hover:border-gray-400 basic-transition">
-    <div class="relative w-full overflow-hidden rounded-lg pb-2/3">
+    <div class="relative w-full mb-4 overflow-hidden rounded-lg pb-2/3">
       <img
         :src="demo.image"
         alt="human-pose-estimation"
@@ -8,7 +8,7 @@
       >
     </div>
     <div class="w-full px-2 text-left">
-      <h2 class="pt-4 text-xl font-medium">
+      <h2 class="text-xl font-semibold">
         {{ demo.title }}
       </h2>
       <p class="mt-1">
