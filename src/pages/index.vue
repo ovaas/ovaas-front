@@ -11,11 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import humanPoseImg from '/~/assets/images/human-pose-estimation.webp'
-import handWritingImg from '/~/assets/images/handwriting-ocr.webp'
-import drawColorsImg from '/~/assets/images/draw-colors.webp'
+import HumanPoseImg from '/~/assets/images/human-pose-estimation.webp'
+import HandWritingImg from '/~/assets/images/handwriting-ocr.webp'
+import DrawColorsImg from '/~/assets/images/draw-colors.webp'
 
 interface Demo {
   title: string
@@ -24,35 +24,27 @@ interface Demo {
   path: string
 }
 
-const { t, locale } = useI18n()
-const demos = ref<Demo[]>()
-
-watch(
-  locale,
-  () => {
-    demos.value = [
-      {
-        title: t('demos.human-pose.title'),
-        image: humanPoseImg,
-        content: t('demos.human-pose.content'),
-        path: '/demo/human-pose-estimation',
-      },
-      {
-        title: t('demos.hand-write-ocr.title'),
-        image: handWritingImg,
-        content: t('demos.hand-write-ocr.content'),
-        path: '/demo/hand-write-ocr',
-      },
-      {
-        title: t('demos.draw-colors.title'),
-        image: drawColorsImg,
-        content: t('demos.draw-colors.content'),
-        path: '/demo/draw-colors',
-      },
-    ]
+const { t } = useI18n()
+const demos = computed<Demo[]>(() => ([
+  {
+    title: t('demos.human-pose.title'),
+    image: HumanPoseImg,
+    content: t('demos.human-pose.content'),
+    path: '/demo/human-pose-estimation',
   },
-  { immediate: true },
-)
+  {
+    title: t('demos.hand-write-ocr.title'),
+    image: HandWritingImg,
+    content: t('demos.hand-write-ocr.content'),
+    path: '/demo/hand-write-ocr',
+  },
+  {
+    title: t('demos.draw-colors.title'),
+    image: DrawColorsImg,
+    content: t('demos.draw-colors.content'),
+    path: '/demo/draw-colors',
+  },
+]))
 </script>
 
 <style>
