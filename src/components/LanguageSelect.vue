@@ -7,9 +7,9 @@
       <div v-show="show" class="absolute top-0 right-0 pr-2 pt-14" @mouseleave="show = false">
         <div class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
           <button
-            v-for="lang in langs"
+            v-for="lang in languages"
             :key="lang.locale"
-            class="w-full px-3 py-1 text-center rounded-md  hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:text-gray-500 dark:focus:text-gray-400"
+            class="w-full px-3 py-1 text-center rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:text-gray-500 dark:focus:text-gray-400"
             :value="lang.locale"
             :selected="lang.locale === currentLang"
             @click="currentLang = lang.locale"
@@ -23,9 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, ref, defineProps, defineEmit } from 'vue'
+import { computed, watch, ref, toRaw, defineProps, defineEmit } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { languages as langs } from '/~/messages'
+import { languages } from '/~/messages'
 import { usePreferredLanguages } from '@vueuse/core'
 import { localeSchema } from '../logics'
 
@@ -40,12 +40,16 @@ const props = defineProps({
 
 const emit = defineEmit(['update:modelValue'])
 
-const preferredLang = usePreferredLanguages()
-const { locale } = useI18n()
+const preferredLangs = usePreferredLanguages()
+const { locale, availableLocales } = useI18n()
 
 const currentLang = computed<string>({
   get() {
-    return localeSchema.value ? localeSchema.value : localeSchema.value = preferredLang.value[0] === 'ja' ? 'ja' : 'en'
+    const preferredLang = preferredLangs.value[0]
+    return localeSchema.value
+      ? localeSchema.value
+      : localeSchema.value
+      = availableLocales.includes(preferredLang) ? preferredLang : availableLocales[0]
   },
   set(v) {
     localeSchema.value = v

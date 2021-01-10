@@ -5,6 +5,7 @@ import Voie from 'vite-plugin-voie'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import PurgeIcons from 'vite-plugin-purge-icons'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const config: UserConfig = {
   alias: {
@@ -39,6 +40,10 @@ const config: UserConfig = {
     ViteIcons({
       scale: 1.1,
       defaultStyle: 'vertical-align: middle;',
+    }),
+    // https://github.com/intlify/vite-plugin-vue-i18n
+    VueI18n({
+      include: [path.resolve(__dirname, 'locales/**')],
     }),
   ],
   optimizeDeps: {

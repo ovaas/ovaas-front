@@ -1,3 +1,4 @@
+import { computed } from 'vue'
 import en from '../locales/en.json'
 import ja from '../locales/ja.json'
 
@@ -6,20 +7,14 @@ export const messages = {
   ja,
 }
 
-export const locales = Object.keys(messages)
-
-interface Lang {
-  locale: string
-  name: string
+const languageName = {
+  en: 'English',
+  ja: '日本語',
 }
 
-export const languages = [
-  {
-    locale: 'en',
-    name: 'English',
-  },
-  {
-    locale: 'ja',
-    name: '日本語',
-  },
-] as Lang[]
+export const languages = Object.keys(messages).map((locale) => {
+  return {
+    locale,
+    name: languageName[locale] as string,
+  }
+})
