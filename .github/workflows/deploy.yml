@@ -23,9 +23,9 @@ jobs:
         id: pnpm-cache
         with:
           path: node_modules/.pnpm-store
-          key: ${{ runner.os }}-pnpm-test-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-test
+            ${{ runner.os }}-pnpm-
 
       - name: Build Production
         run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
@@ -48,9 +48,9 @@ jobs:
         id: pnpm-cache
         with:
           path: node_modules/.pnpm-store
-          key: ${{ runner.os }}-pnpm-netlify-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-netlify
+            ${{ runner.os }}-pnpm-
       
       - name: Build Production
         env:
