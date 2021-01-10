@@ -27,7 +27,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ${{ github.repository_owner }}/front
+          images: ghcr.io/${{ github.repository_owner }}/ovaas-front
           tag-sha: true
 
       - name: Set up QEMU
