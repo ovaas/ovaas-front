@@ -2,5 +2,5 @@
   NPM_FLAGS = "--prefix=/dev/null"
 
 [build]
-  publish = ".presite"
+  publish = "dist"
   command = "npx pnpm i --store=node_modules/.pnpm-store && npm run build:ssg"
