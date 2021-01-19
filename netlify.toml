@@ -4,3 +4,8 @@
 [build]
   publish = "dist"
   command = "npx pnpm i --store=node_modules/.pnpm-store && npm run build:ssg"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
