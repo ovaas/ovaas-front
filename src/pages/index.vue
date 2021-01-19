@@ -17,7 +17,7 @@ import { useI18n } from 'vue-i18n'
 import HumanPoseImg from '/~/assets/images/human-pose-estimation.webp'
 import HandWritingImg from '/~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '/~/assets/images/draw-colors.webp'
-import { Demo } from '/~/types'
+import type { Demo } from '/~/types'
 import { generateHeadMeta } from '/~/logics/meta'
 
 const { t } = useI18n()
