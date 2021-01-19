@@ -28,12 +28,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { ref, reactive, onMounted, onUnmounted, computed, watch } from 'vue'
+import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import { useApi, useFromData } from '/~/plugins/axios'
 import { AxiosRequestConfig } from 'axios'
+import { generateHeadMeta } from '/~/logics/meta'
 
 const { t } = useI18n()
+
+const siteData = reactive({
+  title: `OVaaS - ${t('demos.hand-write-ocr.title')}`,
+  description: t('demos.hand-write-ocr.content'),
+})
+
+useHead(generateHeadMeta(siteData))
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const box = ref<HTMLCanvasElement | null>(null)

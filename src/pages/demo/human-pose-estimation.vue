@@ -17,14 +17,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onUnmounted } from 'vue'
+import { ref, reactive, watch, onUnmounted } from 'vue'
+import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import { useApi, useFromData } from '/~/plugins/axios'
 import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/plugins/emitter'
 import { inBrowser } from '/~/utils'
+import { generateHeadMeta } from '/~/logics/meta'
 
 const { t } = useI18n()
+
+const siteData = reactive({
+  title: `OVaaS - ${t('demos.human-pose.title')}`,
+  description: t('demos.human-pose.content'),
+})
+
+useHead(generateHeadMeta(siteData))
+
 const isProd = import.meta.env.PROD
 
 const image = ref<File | null>(null)

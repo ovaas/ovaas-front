@@ -11,20 +11,24 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, reactive } from 'vue'
+import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import HumanPoseImg from '/~/assets/images/human-pose-estimation.webp'
 import HandWritingImg from '/~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '/~/assets/images/draw-colors.webp'
-
-interface Demo {
-  title: string
-  image: string
-  content: string
-  path: string
-}
+import { Demo } from '/~/types'
+import { generateHeadMeta } from '/~/logics/meta'
 
 const { t } = useI18n()
+
+const siteData = reactive({
+  title: 'OVaaS - OpenVINO as a service',
+  description: `No setup! No command! No code! Easy to use OpenVINO™ demo website.`,
+})
+
+useHead(generateHeadMeta(siteData))
+
 const demos = computed<Demo[]>(() => ([
   {
     title: t('demos.human-pose.title'),
