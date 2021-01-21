@@ -12,7 +12,7 @@ const { t } = useI18n()
 
 const siteData = reactive({
   title: 'OVaaS - Not Found',
-  description: `The page does not exist.`,
+  description: 'The page does not exist.',
 })
 
 useHead(generateHeadMeta(siteData))

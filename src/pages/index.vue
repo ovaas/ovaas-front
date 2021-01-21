@@ -24,7 +24,7 @@ const { t } = useI18n()
 
 const siteData = reactive({
   title: 'OVaaS - OpenVINO as a service',
-  description: `No setup! No command! No code! Easy to use OpenVINO™ demo website.`,
+  description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })
 
 useHead(generateHeadMeta(siteData))
