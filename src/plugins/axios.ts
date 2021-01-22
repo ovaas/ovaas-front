@@ -55,7 +55,7 @@ export function useApi<T = any>(
     finished.value = true
     loading.value = false
   }
-  const post = async(postData: any): void => {
+  const post = async(postData: any): Promise<void> => {
     loading.value = true
     flash(EmitTypes.Info, 'Uploading...')
     await axios.post(url, postData, { ...config, cancelToken: cancelToken.token })
