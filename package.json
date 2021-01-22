@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "dev:debug": "vite --debug",
-    "build": "cross-env NODE_ENV=production vite-ssg build --script async"
+    "build": "cross-env-shell NODE_ENV=production vite-ssg build --script async"
   },
   "dependencies": {
     "@vueuse/core": "^4.0.8",

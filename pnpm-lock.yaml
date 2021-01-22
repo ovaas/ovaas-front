@@ -31,7 +31,6 @@ devDependencies:
   vite-plugin-components: 0.6.6
   vite-plugin-icons: 0.2.1_2e8f12e6b4d97ee3f083bae292486e22
   vite-plugin-pages: 0.1.7_vue@3.0.5
-  vite-plugin-purge-icons: 0.5.2_vite@2.0.0-beta.36
   vite-ssg: 0.4.1_f30deb8ab4eb573b034e1f65b483354a
 lockfileVersion: 5.2
 packages:
@@ -375,16 +374,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
-  /@purge-icons/core/0.5.2:
-    dependencies:
-      '@iconify/iconify': 2.0.0-rc.6
-      axios: 0.21.1_debug@4.3.2
-      debug: 4.3.2
-      fast-glob: 3.2.5
-      fs-extra: 9.1.0
-    dev: true
-    resolution:
-      integrity: sha512-lYPscpk562FvVS6sqSbmLiwjIR5EfOoZD8InJdnm2wi4NUzCL4s+V8MPhN6JjTfUpUfRxPin3KnJbAU4ILutuw==
   /@purge-icons/generated/0.5.2:
     dependencies:
       '@iconify/iconify': 2.0.0-rc.6
@@ -1072,14 +1061,6 @@ packages:
     dependencies:
       follow-redirects: 1.13.1
     dev: false
-    resolution:
-      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  /axios/0.21.1_debug@4.3.2:
-    dependencies:
-      follow-redirects: 1.13.1_debug@4.3.2
-    dev: true
-    peerDependencies:
-      debug: '*'
     resolution:
       integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   /babel-eslint/10.1.0_eslint@7.18.0:
@@ -2274,19 +2255,6 @@ packages:
       integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
   /follow-redirects/1.13.1:
     dev: false
-    engines:
-      node: '>=4.0'
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    resolution:
-      integrity: sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
-  /follow-redirects/1.13.1_debug@4.3.2:
-    dependencies:
-      debug: 4.3.2
-    dev: true
     engines:
       node: '>=4.0'
     peerDependencies:
@@ -4082,15 +4050,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
-  /rollup-plugin-purge-icons/0.5.2:
-    dependencies:
-      '@purge-icons/core': 0.5.2
-      '@purge-icons/generated': 0.5.2
-    dev: true
-    engines:
-      node: '>= 12'
-    resolution:
-      integrity: sha512-5QPoxSwQyHTq35nFzfH7RrB2ISmXm6YKAWUffYKhyD3gsMNOhJsq0ghrpfxbtP74jVFOmuwyReU/UvMzf09CHw==
   /rollup/2.37.1:
     dev: true
     engines:
@@ -4785,19 +4744,6 @@ packages:
       vue: ^3.0.0
     resolution:
       integrity: sha512-/IBAEAX4w4EoLzQpK+hf0D66HUn2lBSZJmLedSKXVykbKCMf9VGME4hlynT91RKMa0AXKYdcXwQJM3xmbyjxdw==
-  /vite-plugin-purge-icons/0.5.2_vite@2.0.0-beta.36:
-    dependencies:
-      '@purge-icons/core': 0.5.2
-      '@purge-icons/generated': 0.5.2
-      rollup-plugin-purge-icons: 0.5.2
-      vite: 2.0.0-beta.36
-    dev: true
-    engines:
-      node: '>= 12'
-    peerDependencies:
-      vite: ^2.0.0-beta.3
-    resolution:
-      integrity: sha512-6YsH7FBYmYIOFzmt4TEuAUIypTdLKLqo3BUQt8McR8qKbgWHhkvnXaEHS1rLCowqSYSKKcqhGVuHg5x13VwTpw==
   /vite-ssg/0.4.1_f30deb8ab4eb573b034e1f65b483354a:
     dependencies:
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
@@ -5122,7 +5068,6 @@ specifiers:
   vite-plugin-components: ^0.6.6
   vite-plugin-icons: ^0.2.1
   vite-plugin-pages: ^0.1.7
-  vite-plugin-purge-icons: ^0.5.2
   vite-ssg: ^0.4.1
   vue: ^3.0.5
   vue-i18n: ^9.0.0-rc.4

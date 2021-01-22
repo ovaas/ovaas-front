@@ -4,7 +4,6 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
-import PurgeIcons from 'vite-plugin-purge-icons'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const config: UserConfig = {
