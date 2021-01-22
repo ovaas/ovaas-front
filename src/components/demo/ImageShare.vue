@@ -6,7 +6,7 @@
     </button>
     <transition name="fade">
       <div v-if="show" class="inline-flex flex-col p-1 mt-3 text-2xl bg-gray-100 rounded-md dark:bg-gray-800" @click.stop>
-        <button :aria-label="t('share.twitter')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" @click.stop="shareToTwitter">
+        <!-- <button :aria-label="t('share.twitter')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" @click.stop="shareToTwitter">
           <bx-bxl-twitter />
         </button>
         <button :aria-label="t('share.instagram')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
@@ -14,7 +14,7 @@
         </button>
         <button :aria-label="t('share.facebook')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
           <bx-bxl-facebook-square />
-        </button>
+        </button> -->
         <button :aria-label="t('share.download')" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" @click.stop="downloadImage">
           <bx-bx-cloud-download />
         </button>
