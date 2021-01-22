@@ -9,8 +9,8 @@
       "title": "Human pose estimation",
       "content": "Human Pose Estimation is an important task in Computer Vision which has gained a lot of attention the last years and has a wide range of applications like human-computer interaction, gaming, action recognition, computer-assisted living, special effects."
     },
-    "hand-write-ocr": {
-      "title": "Hand write OCR",
+    "handwritten-ocr": {
+      "title": "Handwritten OCR",
       "content": "Optical Character Recognition (OCR) is a technology that has achieved cult status when it comes to digitizing printed documents. In this demonstration, what ever you write will instantly translate to digital characters.",
       "text-not-found": "No text found."
     },

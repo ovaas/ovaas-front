@@ -1,5 +1,5 @@
 <template>
-  <MainContant :title="t('demos.hand-write-ocr.title')" :back-btn="true">
+  <MainContant :title="t('demos.handwritten-ocr.title')" :back-btn="true">
     <div class="relative flex items-stretch flex-auto w-full">
       <div class="absolute top-0 right-0 inline-flex items-center space-x-4 text-gray-600 transform -translate-y-14 text-md">
         <RoundedFullBtn aria-label="Undo" :is-disable="disableUndo || disableAllBtn" @click="undo()">
@@ -38,8 +38,8 @@ import { generateHeadMeta } from '/~/logics/meta'
 const { t } = useI18n()
 
 const siteData = reactive({
-  title: `OVaaS - ${t('demos.hand-write-ocr.title')}`,
-  description: t('demos.hand-write-ocr.content'),
+  title: `OVaaS - ${t('demos.handwritten-ocr.title')}`,
+  description: t('demos.handwritten-ocr.content'),
 })
 
 useHead(generateHeadMeta(siteData))

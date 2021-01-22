@@ -37,10 +37,10 @@ const demos = computed<Demo[]>(() => ([
     path: '/demo/human-pose-estimation',
   },
   {
-    title: t('demos.hand-write-ocr.title'),
+    title: t('demos.handwritten-ocr.title'),
     image: HandWritingImg,
-    content: t('demos.hand-write-ocr.content'),
-    path: '/demo/hand-write-ocr',
+    content: t('demos.handwritten-ocr.content'),
+    path: '/demo/handwritten-ocr',
   },
   {
     title: t('demos.draw-colors.title'),
