@@ -54,7 +54,7 @@ jobs:
       
       - name: Build Production
         env:
-          FUNCTIONS_ENDPOINT: https://ovaashumanpose-test.azurewebsites.net/api
+          FUNCTIONS_ENDPOINT: https://ovaas-back.azurewebsites.net/api
         run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
 
       - name: Deploy to netlify
