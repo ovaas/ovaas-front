@@ -1,6 +1,6 @@
 <template>
   <transition name="popup">
-    <div v-show="show" class="fixed inset-x-0 flex justify-center text-gray-700 transition-all transform bottom-4 dark:text-gray-100">
+    <div v-show="show" class="fixed inset-x-0 z-50 flex justify-center text-gray-700 transition-all transform bottom-4 dark:text-gray-100">
       <div
         class="relative px-8 py-3 rounded-md"
         :class="[color, textColor]"

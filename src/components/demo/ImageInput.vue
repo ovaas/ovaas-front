@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-1/3 ml-6 border-2 border-gray-800 border-dashed group dark:border-gray-400 rounded-xl basic-transition">
-    <input type="file" accept="image/*" aria-label="Upload Image" class="relative z-50 block w-full h-full p-20 opacity-0 cursor-pointer" @change="emit('update:modelValue', $event.target.files[0])">
+    <input type="file" accept="image/*" aria-label="Upload Image" class="relative z-40 block w-full h-full p-20 opacity-0 cursor-pointer" @change="emit('update:modelValue', $event.target.files[0])">
     <div class="absolute top-0 left-0 right-0 flex flex-col items-center justify-center h-full p-10 m-auto space-y-3 text-center">
       <div class="text-5xl">
         <mdi-loading v-if="props.uploading" class="animate-spin" />
