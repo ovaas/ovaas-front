@@ -70,7 +70,7 @@ const { data, loading, error, post, cancel } = useApi<Blob>(humanPoseUrl, config
 const checkFileExt = (file: File) => {
   if (allowFileTypes.includes(file.type))
     return true
-  flash(EmitTypes.Warning, t('errors.not-image'))
+  flash(EmitTypes.Warning, t('errors.not-valid-image'))
   return false
 }
 

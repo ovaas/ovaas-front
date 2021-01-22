@@ -23,7 +23,8 @@
     "text": "Upload",
     "image": {
       "title": "Upload Image",
-      "content": "Click to select image file or drop image to upload."
+      "content": "Click to select image file or drop image to upload.",
+      "jpg-only": "Only support JPG file."
     }
   },
   "share": {
@@ -33,7 +34,7 @@
     "instagram": "Share to Instagram"
   },
   "errors": {
-    "not-image": "Please upload a image file !!!"
+    "not-valid-image": "Please upload a JPG format image file."
   },
   "colorMode": {
     "light": "Light",

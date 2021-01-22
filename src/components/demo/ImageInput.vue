@@ -9,9 +9,12 @@
       <div class="inline-flex items-center text-2xl font-semibold">
         {{ t('upload.image.title') }}
       </div>
-      <p class="w-2/3 text-base">
+      <p class="w-2/3">
         {{ t('upload.image.content') }}
       </p>
+      <span class="text-xs text-red-300">
+        {{ t('upload.image.jpg-only') }}
+      </span>
       <span v-show="showAlern" class="text-base text-red-700">
         {{ t('errors.not-image') }}
       </span>
