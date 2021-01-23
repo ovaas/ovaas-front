@@ -24,6 +24,7 @@ import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/logics/emitter'
 import { inBrowser } from '/~/utils'
 import { generateHeadMeta } from '/~/logics/meta'
+import { reduce } from '/~/logics/resize'
 
 const { t } = useI18n()
 
@@ -39,7 +40,7 @@ const resultImage = ref<string>('')
 
 const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
 const humanPoseUrl = `${url}/humanpose`
-const allowFileTypes = ['image/jpeg']
+const allowFileTypes = ['image/jpeg', 'image/png']
 
 let reader: FileReader
 
@@ -72,9 +73,11 @@ watch(data, (v) => {
 watch(error, (e) => {
   console.log(e)
 })
-watch(image, (file) => {
+watch(image, async(file) => {
   if (!file || !checkFileExt(file)) return
-  const formData = useFromData('image', file)
+  loading.value = true
+  const blob = await reduce.toBlob(file, { max: 1000 })
+  const formData = useFromData('image', blob)
   post(formData)
 })
 onUnmounted(() => {

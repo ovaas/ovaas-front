@@ -24,6 +24,7 @@ import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/logics/emitter'
 import { inBrowser } from '/~/utils'
 import { generateHeadMeta } from '/~/logics/meta'
+import { reduce } from '/~/logics/resize'
 
 const { t } = useI18n()
 
@@ -39,7 +40,7 @@ const resultImage = ref<string>('')
 
 const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
 const drawColorUrl = `${url}/colorization`
-const allowFileTypes = ['image/jpeg']
+const allowFileTypes = ['image/jpeg', 'image/png']
 
 let reader: FileReader
 
@@ -63,7 +64,8 @@ const { data, loading, error, post, cancel } = useApi<Blob>(
 )
 
 const checkFileExt = (file: File) => {
-  if (allowFileTypes.includes(file.type)) return true
+  if (allowFileTypes.includes(file.type))
+    return true
   flash(EmitTypes.Warning, t('errors.not-valid-image'))
   return false
 }
@@ -74,9 +76,11 @@ watch(data, (v) => {
 watch(error, (e) => {
   console.log(e)
 })
-watch(image, (file) => {
+watch(image, async(file) => {
   if (!file || !checkFileExt(file)) return
-  const formData = useFromData('image', file)
+  loading.value = true
+  const blob = await reduce.toBlob(file, { max: 1000 })
+  const formData = useFromData('image', blob)
   post(formData)
 })
 onUnmounted(() => {
