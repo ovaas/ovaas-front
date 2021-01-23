@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { emitter, FLASH_EVENT } from '../logics/emitter'
 import type { FlashPayload, Colors } from '../logics/emitter'
 import { isDark } from '/~/logics/dark'
@@ -54,8 +54,6 @@ const setTransitionDelay = () => {
     clearTimeout(timeoutId.value)
   timeoutId.value = window.setTimeout(() => show.value = true, 150)
 }
-
-const colors = computed(() => isDark.value ? darkColors : lightColors)
 
 const hideMessage = () => {
   show.value = false

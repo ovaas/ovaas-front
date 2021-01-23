@@ -38,12 +38,12 @@ const props = defineProps({
   },
 })
 
-const shareToTwitter = () => {
-  const text = 'Some Image using OVaaS power by OpenVINO'
-  const url = `https://twitter.com/intent/tweet?text=${text}`
+// const shareToTwitter = () => {
+//   const text = 'Some Image using OVaaS power by OpenVINO'
+//   const url = `https://twitter.com/intent/tweet?text=${text}`
 
-  window.open(url, '_blank')
-}
+//   window.open(url, '_blank')
+// }
 
 const downloadImage = () => {
   if (!props.image) return

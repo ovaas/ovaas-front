@@ -167,6 +167,9 @@ watch(data, async(v) => {
   modelText.value = v
   isModelOpen.value = true
 })
+watch(error, (e) => {
+  console.log(e)
+})
 
 const sendImage = async() => {
   if (!canvas.value) return
