@@ -10,11 +10,3 @@
   </div>
   <FlashMessage />
 </template>
-
-<script setup lang="ts">
-import { usePrefetch } from '/~/logics/preFetch'
-if (import.meta.env.PROD) {
-  // in prod mode, enable intersectionObserver based pre-fetch
-  usePrefetch()
-}
-</script>
