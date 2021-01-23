@@ -1,9 +1,9 @@
 <template>
-  <MainContant title="404 Not Found" />
+  <MainContant :title="t('page-not-found')" />
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from 'vue'
+import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import { generateHeadMeta } from '/~/logics/meta'

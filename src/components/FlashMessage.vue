@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch, computed } from 'vue'
-import { emitter, FLASH_EVENT } from '../plugins/emitter'
-import type { FlashPayload, Colors } from '../plugins/emitter'
+import { emitter, FLASH_EVENT } from '../logics/emitter'
+import type { FlashPayload, Colors } from '../logics/emitter'
 import { isDark } from '/~/logics/dark'
 
 const show = ref(false)

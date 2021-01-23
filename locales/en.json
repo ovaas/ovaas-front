@@ -39,5 +39,6 @@
   "colorMode": {
     "light": "Light",
     "dark": "Dark"
-  }
+  },
+  "page-not-found": "404 Page Not Found"
 }

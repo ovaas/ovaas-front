@@ -39,5 +39,6 @@
   "colorMode": {
     "light": "ライト",
     "dark": "ダーク"
-  }
+  },
+  "page-not-found": "404 ベージが見つかりません"
 }

@@ -1,4 +1,3 @@
-import { computed } from 'vue'
 import mitt from 'mitt'
 
 export type Colors = 'green' | 'red' | 'yellow' | 'white'

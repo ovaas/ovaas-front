@@ -21,7 +21,7 @@
           @mousemove="doMouseMove"
           @mouseup="doMouseUp"
         />
-        <ResultModel v-model:open="isModelOpen" :text="modelText.text" />
+        <ResultModel v-model:open="isModelOpen" :text="modelText?.text" />
       </div>
     </div>
   </MainContant>
@@ -31,9 +31,10 @@
 import { ref, reactive, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { useApi, useFromData } from '/~/plugins/axios'
+import { useApi, useFromData } from '/~/logics/axios'
 import { AxiosRequestConfig } from 'axios'
 import { generateHeadMeta } from '/~/logics/meta'
+import type { HandwrittenResult } from '/~/types'
 
 const { t } = useI18n()
 
@@ -47,7 +48,7 @@ useHead(generateHeadMeta(siteData))
 const canvas = ref<HTMLCanvasElement | null>(null)
 const box = ref<HTMLCanvasElement | null>(null)
 const isModelOpen = ref(false)
-const modelText = ref('')
+const modelText = ref<HandwrittenResult>()
 const disableAllBtn = ref(false)
 const isProd = import.meta.env.MODE === 'production'
 
@@ -155,15 +156,15 @@ const config: AxiosRequestConfig = {
   headers: {
     'Content-Type': 'multipart/form-data',
   },
-  responseType: 'blob',
+  responseType: 'json',
 }
 
-const { data, loading, error, post, cancel } = useApi<Blob>(handWriteUrl, config)
+const { data, loading, error, post, cancel } = useApi<HandwrittenResult>(handWriteUrl, config)
 
 watch(data, async(v) => {
   if (!v) return
   if (!isProd) console.log(v)
-  modelText.value = JSON.parse(await v.text())
+  modelText.value = v
   isModelOpen.value = true
 })
 
