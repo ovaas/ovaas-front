@@ -9,11 +9,11 @@
       <div class="inline-flex items-center text-2xl font-semibold">
         {{ t('upload.image.title') }}
       </div>
-      <p class="w-2/3">
+      <p class="w-2/3 pb-4">
         {{ t('upload.image.content') }}
       </p>
       <span class="text-xs text-red-300">
-        {{ t('upload.image.jpg-only') }}
+        {{ t('upload.image.support') }}
       </span>
     </div>
   </div>
@@ -31,7 +31,8 @@ const props = defineProps({
 })
 const emit = defineEmit(['update:modelValue'])
 const getFile = (e: any) => {
-  return e.target.files[0]
+  const target = e.target as HTMLInputElement
+  return target.files![0]
 }
 </script>
 

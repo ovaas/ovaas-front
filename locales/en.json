@@ -20,11 +20,11 @@
     }
   },
   "upload": {
-    "text": "Upload",
+    "recognize": "Recognize",
     "image": {
       "title": "Upload Image",
       "content": "Click to select image file or drop image to upload.",
-      "jpg-only": "Only support JPG file."
+      "support": "Only support JPG or PNG file."
     }
   },
   "share": {
@@ -34,7 +34,7 @@
     "instagram": "Share to Instagram"
   },
   "errors": {
-    "not-valid-image": "Please upload a JPG format image file."
+    "not-valid-image": "Please upload a valid image file."
   },
   "colorMode": {
     "light": "Light",
