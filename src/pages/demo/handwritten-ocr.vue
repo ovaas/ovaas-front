@@ -1,6 +1,6 @@
 <template>
   <MainContant :title="t('demos.handwritten-ocr.title')" :back-btn="true">
-    <div class="relative flex items-stretch flex-auto w-full">
+    <div class="relative flex items-stretch flex-auto w-full mt-10 md:mt-0">
       <div class="absolute top-0 right-0 inline-flex items-center space-x-4 text-gray-600 transform -translate-y-14 text-md">
         <RoundedFullBtn aria-label="Undo" :is-disable="disableUndo || disableAllBtn" @click="undo()">
           <bx-bx-undo class="text-2xl" />
