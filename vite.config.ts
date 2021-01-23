@@ -39,7 +39,7 @@ const config: UserConfig = {
     }),
   ],
   optimizeDeps: {
-    include: ['mitt'],
+    include: ['mitt', 'image-js'],
   },
 }
 

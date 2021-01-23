@@ -85,7 +85,7 @@ export function useApi<T = any>(
   }
 }
 
-export function useFromData(name: string, file: File | Blob, filename?: string): FormData {
+export function useFromData(name: string, file: File | Blob | string, filename?: string): FormData {
   const formData = new FormData()
   formData.append(name, file, filename)
   if (!isProd) {

@@ -22,9 +22,8 @@ import { useI18n } from 'vue-i18n'
 import { useApi, useFromData } from '/~/logics/axios'
 import { AxiosRequestConfig } from 'axios'
 import { flash, EmitTypes } from '/~/logics/emitter'
-import { inBrowser } from '/~/utils'
+import { inBrowser, resizeImage } from '/~/utils'
 import { generateHeadMeta } from '/~/logics/meta'
-import { reduce } from '/~/logics/resize'
 
 const { t } = useI18n()
 
@@ -79,8 +78,8 @@ watch(error, (e) => {
 watch(image, async(file) => {
   if (!file || !checkFileExt(file)) return
   loading.value = true
-  const blob = await reduce.toBlob(file, { max: 1000 })
-  const formData = useFromData('image', blob)
+  const blob = await resizeImage(file)
+  const formData = useFromData('image', blob, 'humanpose.jpg')
   post(formData)
 })
 onUnmounted(() => {
