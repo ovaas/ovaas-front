@@ -8,12 +8,11 @@ import { localeSchema } from '../logics'
 export const install: UserModule = ({ app }) => {
   const preferredLangs = usePreferredLanguages()
   const language = preferredLangs.value.find((locale) => {
-    return Object.keys(messages).includes(locale)
+    return Object.keys(messages).includes(locale) || 'ja'
   })
 
   const i18n = createI18n({
     locale: localeSchema.value ? localeSchema.value : language,
-    fallbackLocale: 'en',
     messages,
   })
 
