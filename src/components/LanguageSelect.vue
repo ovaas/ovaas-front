@@ -23,22 +23,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, ref, toRaw, defineProps, defineEmit } from 'vue'
+import { computed, watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { languages } from '/~/messages'
 import { usePreferredLanguages } from '@vueuse/core'
 import { localeSchema } from '../logics'
 
 const show = ref(false)
-
-const props = defineProps({
-  modelValue: {
-    type: String,
-    require: true,
-  },
-})
-
-const emit = defineEmit(['update:modelValue'])
 
 const preferredLangs = usePreferredLanguages()
 const { locale, availableLocales } = useI18n()

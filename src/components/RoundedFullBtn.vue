@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
-const props = defineProps({
+defineProps({
   isDisable: {
     type: Boolean,
     default: false,
