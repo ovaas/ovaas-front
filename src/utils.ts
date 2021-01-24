@@ -13,3 +13,15 @@ export async function resizeImage(file: File) {
   const resized = load.resize(options)
   return await resized.toBlob('image/jpeg')
 }
+
+export function getMousePos(
+  canvasDom: HTMLCanvasElement,
+  x: number,
+  y: number,
+) {
+  const rect = canvasDom.getBoundingClientRect()
+  return {
+    x: x - rect.left,
+    y: y - rect.top,
+  }
+}
