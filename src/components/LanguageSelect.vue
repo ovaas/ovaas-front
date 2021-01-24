@@ -11,8 +11,8 @@
             :key="lang.locale"
             class="w-full px-3 py-1 text-center rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:text-gray-500 dark:focus:text-gray-400"
             :value="lang.locale"
-            :selected="lang.locale === currentLang"
-            @click="currentLang = lang.locale"
+            :selected="lang.locale === locale"
+            @click="locale = lang.locale"
           >
             {{ lang.name }}
           </button>
@@ -23,34 +23,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue'
+import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { languages } from '/~/messages'
-import { usePreferredLanguages } from '@vueuse/core'
 import { localeSchema } from '../logics'
 
 const show = ref(false)
 
-const preferredLangs = usePreferredLanguages()
-const { locale, availableLocales } = useI18n()
+const { locale } = useI18n()
 
-const currentLang = computed<string>({
-  get() {
-    const preferredLang = preferredLangs.value[0]
-    return localeSchema.value
-      ? localeSchema.value
-      : localeSchema.value
-      = availableLocales.includes(preferredLang) ? preferredLang : availableLocales[0]
-  },
-  set(v) {
-    localeSchema.value = v
-  },
-})
-
-watch(currentLang, (v) => {
+watch(locale, (v) => {
   if (typeof document !== 'undefined')
     document.documentElement.lang = v
-  locale.value = v
+  localeSchema.value = v
 },
 { immediate: true })
 </script>
