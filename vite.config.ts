@@ -16,13 +16,10 @@ const config: UserConfig = {
     Pages(),
     // https://github.com/antfu/vite-plugin-components
     ViteComponents({
-      // as the `alias` changes the behavior of middleware, you have to pass it to ViteComponents to do the resolving
-      // allow auto import and register components used in markdown
       customComponentResolvers: [
         // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
-          // enabledCollections: ['carbon']
         }),
       ],
     }),
