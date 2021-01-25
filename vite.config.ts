@@ -11,9 +11,7 @@ const config: UserConfig = {
     '/~/': `${path.resolve(__dirname, 'src')}/`,
   },
   plugins: [
-    Vue({
-      ssr: !!process.env.SSG,
-    }),
+    Vue(),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
     // https://github.com/antfu/vite-plugin-components
