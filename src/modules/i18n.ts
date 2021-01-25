@@ -15,8 +15,6 @@ export const install: UserModule = ({ app }) => {
 
   const locale = localeSchema.value ? localeSchema.value : isClient ? language : 'ja'
 
-  console.log(locale)
-
   const i18n = createI18n({
     locale,
     messages,
