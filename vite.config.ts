@@ -36,6 +36,10 @@ const config: UserConfig = {
   optimizeDeps: {
     include: ['mitt', 'image-js'],
   },
+  ssgOptions: {
+    script: 'async',
+    formatting: 'prettify',
+  },
 }
 
 export default config
