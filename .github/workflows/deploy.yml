@@ -95,8 +95,7 @@ jobs:
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
         with:
-          source: https://ovaas-front.netlify.app
-          destination: screenshot.png
+          source: https://ovaas.netlify.app
           full-page: true
       - name: Download screenshot from last step
         uses: actions/download-artifact@v1
@@ -105,4 +104,5 @@ jobs:
       - name: Commit to Github
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
+          branch: screenshot
           commit_message: "ci: website screenshot"
