@@ -28,7 +28,7 @@ devDependencies:
   vite-plugin-components: 0.6.6
   vite-plugin-icons: 0.2.1_acdf80c247a4f343c0d3bd1aa910f194
   vite-plugin-pages: 0.1.7_vue@3.0.5
-  vite-ssg: 0.5.1_d9e315117a2d91728c6d3697cf615b58
+  vite-ssg: 0.5.2_d9e315117a2d91728c6d3697cf615b58
 lockfileVersion: 5.2
 packages:
   /@antfu/eslint-config-basic/0.4.3_eslint@7.18.0:
@@ -4093,7 +4093,7 @@ packages:
       vue: ^3.0.0
     resolution:
       integrity: sha512-/IBAEAX4w4EoLzQpK+hf0D66HUn2lBSZJmLedSKXVykbKCMf9VGME4hlynT91RKMa0AXKYdcXwQJM3xmbyjxdw==
-  /vite-ssg/0.5.1_d9e315117a2d91728c6d3697cf615b58:
+  /vite-ssg/0.5.2_d9e315117a2d91728c6d3697cf615b58:
     dependencies:
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
       '@vue/server-renderer': 3.0.5_vue@3.0.5
@@ -4118,7 +4118,7 @@ packages:
       vue: ^3.0.4
       vue-router: ^4.0.1
     resolution:
-      integrity: sha512-LRokw1gRYrjfWwpviLl3L3ieKTFq1+3/LrtaPwfP8Loaerjq4v2bw38V6iVxQnB/T5Z4Eun8YqcaXC49+lw7JQ==
+      integrity: sha512-sC/zXzYvGmW+26l+CwcUx6j0O4YCqLaAAjkM1r9CEZ1j3mbG/aAcFzXH7hzXxY3ImzUji0Wj10L7sYl7f2Fugg==
   /vite/2.0.0-beta.50:
     dependencies:
       esbuild: 0.8.36
@@ -4378,7 +4378,7 @@ specifiers:
   vite-plugin-components: ^0.6.6
   vite-plugin-icons: ^0.2.1
   vite-plugin-pages: ^0.1.7
-  vite-ssg: ^0.5.1
+  vite-ssg: ^0.5.2
   vue: ^3.0.5
   vue-i18n: ^9.0.0-rc.4
   vue-router: ^4.0.3
