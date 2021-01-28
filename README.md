@@ -1,16 +1,19 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/481b6017-918f-4fca-a136-dc08dc1d36d3/deploy-status)](https://app.netlify.com/sites/ovaas-front/deploys)
-[![Actions Status](https://github.com/OVaaS/ovaas-front/workflows/Docker/badge.svg)](https://github.com/OVaaS/ovaas-front/actions?query=workflow%3ADocker)
-[![Actions Status](https://github.com/OVaaS/ovaas-front/workflows/Deploy%20Website/badge.svg)](https://github.com/OVaaS/ovaas-front/actions?query=workflow%3ADeploy%20Website)
-
-<h1 align='center'>OVaaS Front-End Client</h1>
-
-<br>
-<p align='center'>Azure Static Web Apps: <a href='https://agreeable-rock-03bb9dd00.azurestaticapps.net'>link</a></p>
-<br>
-
 <p align='center'>
-<img src='https://raw.githubusercontent.com/OVaaS/ovaas-front/main/screenshot/screenshot.png' alt='screenshot'/>
+<a href="https://ovaas.netlify.app" target="__blank">
+<img src='https://raw.githubusercontent.com/OVaaS/ovaas-front/main/doce/logo.png' alt='OVaaS - OpenVINO as a service' width="150"/>
+</a><br>
+OpenVINO as a service
 </p>
+
+<br>
+<p align='center'>
+<a href="https://github.com/OVaaS/ovaas-front" target="__blank"><img src="https://img.shields.io/github/package-json/v/ovaas/ovaas-front?color=9061F9" alt="NPM version"></a>
+<a href="https://github.com/OVaaS/ovaas-front/blob/main/LICENSE" target="__blank"><img src="https://img.shields.io/github/license/ovaas/ovaas-front?color=7EDCE2" alt="License"></a>
+<a href="https://github.com/OVaaS/ovaas-front/actions?query=workflow%3ADocker" target="__blank"><img src="https://img.shields.io/github/workflow/status/ovaas/ovaas-front/Docker?label=Docker%20Build" alt="Docker build badge"></a>
+<a href="https://github.com/OVaaS/ovaas-front/actions?query=workflow%3ADeploy%20Website" target="__blank"><img src="https://img.shields.io/github/workflow/status/ovaas/ovaas-front/Deploy%20Website?label=Deploy" alt="Deploy badge"></a>
+</p>
+<br>
+
 
 ## Develop
 
@@ -33,8 +36,9 @@ pnpm dev
 pnpm build
 ```
 
-## License
+<br><br>
+<h2 align="center">License check</h2><br>
 
-[![GitHub](https://img.shields.io/github/license/ovaas/ovaas-front)](https://github.com/OVaaS/ovaas-front/blob/main/LICENSE)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front?ref=badge_large)
+<p align="center">
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front?ref=badge_large" target="__blank"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front.svg?type=large" alt="License check"></a>
+</p>
