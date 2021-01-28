@@ -65,7 +65,7 @@ jobs:
         with:
           args: deploy --dir=dist --prod
 
-  deploy-azure-static-web:
+  deploy-azure-web:
     needs: test
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -87,7 +87,7 @@ jobs:
           output_location: "dist"
           app_build_command: "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
 
-    deploy-azure-static-web-docker:
+    deploy-azure-web-docker:
       needs: test
       if: github.event_name == 'push'
       runs-on: ubuntu-latest
