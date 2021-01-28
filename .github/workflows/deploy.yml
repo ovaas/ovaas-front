@@ -87,27 +87,27 @@ jobs:
           output_location: "dist"
           app_build_command: "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
 
-    deploy-azure-web-docker:
-      needs: test
-      if: github.event_name == 'push'
-      runs-on: ubuntu-latest
-      name: Deploy to Azure Static Web App - Intel (Docker Back-end)
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
+  deploy-azure-web-docker:
+    needs: test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    name: Deploy to Azure Static Web App - Intel (Docker Back-end)
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - name: Build And Deploy
-          id: builddeploy
-          uses: Azure/static-web-apps-deploy@v0.0.1-preview
-          env:
-            VITE_FUNCTIONS_ENDPOINT: https://ovaas-backend-docker.azurewebsites.net/api
-          with:
-            azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0F2661300 }}
-            repo_token: ${{ secrets.GITHUB_TOKEN }}
-            action: "upload"
-            app_location: "/"
-            output_location: "dist"
-            app_build_command: "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        env:
+          VITE_FUNCTIONS_ENDPOINT: https://ovaas-backend-docker.azurewebsites.net/api
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0F2661300 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/"
+          output_location: "dist"
+          app_build_command: "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
 
   screenshot:
     needs: deploy-netlify
