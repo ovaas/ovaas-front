@@ -96,6 +96,7 @@ jobs:
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://ovaas.netlify.app
+          destination: screenshot.png
           full-page: true
       - name: Download screenshot from last step
         uses: actions/download-artifact@v1
