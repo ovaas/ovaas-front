@@ -108,23 +108,3 @@ jobs:
           app_location: "/"
           output_location: "dist"
           app_build_command: "npx pnpm i --store=node_modules/.pnpm-store && npm run build"
-
-  screenshot:
-    needs: deploy-netlify
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: https://ovaas.netlify.app
-          destination: screenshot.png
-          full-page: true
-      - name: Download screenshot from last step
-        uses: actions/download-artifact@v1
-        with:
-          name: screenshot
-      - name: Commit to Github
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "ci: website screenshot"
