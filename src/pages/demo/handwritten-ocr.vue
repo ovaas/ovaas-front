@@ -1,7 +1,7 @@
 <template>
   <MainContant :title="t('demos.handwritten-ocr.title')" :back-btn="true">
-    <div class="relative flex items-stretch flex-auto w-full mt-10 md:mt-0">
-      <div class="absolute top-0 right-0 inline-flex items-center space-x-4 text-gray-600 transform -translate-y-14 text-md">
+    <div class="relative flex flex-col items-stretch flex-auto w-full h-full">
+      <div class="inline-flex items-center justify-end mb-3 space-x-4 text-gray-600 md:absolute md:top-0 md:right-0 md:transform md:-translate-y-14 text-md">
         <RoundedFullBtn aria-label="Undo" :is-disable="disableUndo || disableAllBtn" @click="undo()">
           <bx-bx-undo class="text-2xl" />
         </RoundedFullBtn>
@@ -13,7 +13,7 @@
         </RoundedFullBtn>
         <SendBtn :loading="loading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
       </div>
-      <div ref="box" class="relative z-30 w-full overflow-hidden border-2 border-gray-300 rounded-2xl">
+      <div ref="box" class="relative z-30 w-full h-full overflow-hidden border-2 border-gray-300 rounded-2xl">
         <canvas
           ref="canvas"
           class="absolute z-10 w-full h-full bg-gray-white cursor-pen"
