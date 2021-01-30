@@ -33,7 +33,7 @@ defineProps({
 })
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .home {
   display: grid;
   grid-template-columns: 1fr;
