@@ -4,6 +4,7 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
+import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const config: UserConfig = {
@@ -27,6 +28,27 @@ const config: UserConfig = {
     ViteIcons({
       scale: 1.1,
       defaultStyle: 'vertical-align: middle;',
+    }),
+    // https://github.com/antfu/vite-plugin-pwa
+    VitePWA({
+      manifest: {
+        name: 'OVaaS',
+        short_name: 'OVaaS',
+        theme_color: '#1A202C',
+        lang: 'ja',
+        icons: [
+          {
+            src: '/pwa-200x200.png',
+            sizes: '200x200',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
     }),
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
