@@ -35,19 +35,25 @@ const config: UserConfig = {
         name: 'OVaaS',
         short_name: 'OVaaS',
         theme_color: '#1A202C',
+        start_url: '/',
         lang: 'ja',
         icons: [
           {
             src: '/pwa-200x200.png',
             sizes: '200x200',
             type: 'image/png',
+            purpose: 'any maskable',
           },
           {
             src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
+      },
+      workbox: {
+        navigateFallback: '/index.html',
       },
     }),
     // https://github.com/intlify/vite-plugin-vue-i18n
