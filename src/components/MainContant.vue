@@ -1,5 +1,5 @@
 <template>
-  <main class="h-full px-6 py-10 mx-auto md:px-10 md:pt-14 md:pb-16 md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-screen-2xl" :class="layout">
+  <main class="h-full px-6 py-10 mx-auto lg:px-10 lg:pt-14 md:pb-16 md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-screen-2xl" :class="layout">
     <div v-if="backBtn" class="items-center hidden text-4xl back md:inline-flex hover:text-gray-500 dark:hover:text-gray-300">
       <router-link to="/">
         <bx-bx-left-arrow-circle />

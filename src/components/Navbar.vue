@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex-col items-center flex-none hidden h-full p-2 text-gray-800 bg-gray-300 md:flex dark:bg-gray-700 w-18 dark:text-white">
+  <aside class="flex-col items-center flex-none hidden p-2 text-gray-800 bg-gray-300 md:flex dark:bg-gray-700 w-18 dark:text-white">
     <router-link to="/">
       <NavItem>
         <bx-bx-home class="mb-1 text-2xl" />
