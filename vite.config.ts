@@ -35,7 +35,6 @@ const config: UserConfig = {
         name: 'OVaaS',
         short_name: 'OVaaS',
         theme_color: '#1A202C',
-        start_url: '/',
         lang: 'ja',
         icons: [
           {
@@ -52,18 +51,12 @@ const config: UserConfig = {
           },
         ],
       },
-      workbox: {
-        navigateFallback: '/index.html',
-      },
     }),
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
   ],
-  optimizeDeps: {
-    include: ['mitt', 'image-js'],
-  },
   ssgOptions: {
     script: 'async',
     formatting: 'prettify',
