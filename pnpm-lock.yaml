@@ -27,7 +27,7 @@ devDependencies:
   vite: 2.0.0-beta.61
   vite-plugin-components: 0.6.6
   vite-plugin-icons: 0.2.1_f2c2b98829fb471a34d90a492f734967
-  vite-plugin-pages: 0.1.8_vue@3.0.5
+  vite-plugin-pages: 0.1.9_vite@2.0.0-beta.61+vue@3.0.5
   vite-plugin-pwa: 0.4.2
   vite-ssg: 0.7.0_fff679bc9163da0c3d7c9139a3c6781a
 lockfileVersion: 5.2
@@ -2315,12 +2315,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
-  /directory-tree/2.2.5:
+  /directory-tree/2.2.6:
     dev: true
     engines:
       node: '>=4.2'
     resolution:
-      integrity: sha512-qmeuql8N7hQB5b+cnlvbcHSjKBNpRjLY5KcvyFd9CTC5uTN7sJshEQ/ExZidAcEUEYcC/76i8ikLtbBMG81YRg==
+      integrity: sha512-0xF1t4fRkd2vYCremWjhcP4xWTnshzfPZpTCH3F1yJTXhW84YQQM1MasAMnnqyMAkNwGuUEdg9UzuuUo1uoHtA==
   /doctrine/1.5.0:
     dependencies:
       esutils: 2.0.3
@@ -5444,19 +5444,21 @@ packages:
       '@vue/compiler-sfc': ^3.0.2
     resolution:
       integrity: sha512-ZIJ8G2AHwEDt4oDST46E6Uy7W2EtVyoe1hzmJMkutbq3esUkcYVoYydT6Y12lhq1ppnVnShkbc0XzfKqolfCSg==
-  /vite-plugin-pages/0.1.8_vue@3.0.5:
+  /vite-plugin-pages/0.1.9_vite@2.0.0-beta.61+vue@3.0.5:
     dependencies:
       debug: 4.3.2
-      directory-tree: 2.2.5
+      directory-tree: 2.2.6
       fast-glob: 3.2.5
       glob-to-regexp: 0.4.1
+      vite: 2.0.0-beta.61
       vue: 3.0.5
       vue-router: 4.0.3_vue@3.0.5
     dev: true
     peerDependencies:
+      vite: ^2.0.0-beta.61
       vue: ^3.0.0
     resolution:
-      integrity: sha512-NHJDiDPGPiBw4i1opMYiO3YgD2KyDN7q4USI/0A8geDRAxVaLFMYsTW65dPAU+TKyMtywYvAEWlE8e4J+dGqug==
+      integrity: sha512-N1xYT14PORPLJaUCCgDKlC8S1SYKKztsWeA7ChPeD23FS76Cs6ST6Hr/sGN4qaesRVdEfwQwUFsYU8Vv2O5t1A==
   /vite-plugin-pwa/0.4.2:
     dependencies:
       debug: 4.3.2
@@ -5903,7 +5905,7 @@ specifiers:
   vite: ^2.0.0-beta.61
   vite-plugin-components: ^0.6.6
   vite-plugin-icons: ^0.2.1
-  vite-plugin-pages: ^0.1.8
+  vite-plugin-pages: ^0.1.9
   vite-plugin-pwa: ^0.4.2
   vite-ssg: ^0.7.0
   vue: ^3.0.5
