@@ -6,5 +6,5 @@
     "nprogress",
     "ovaas"
   ],
-  "vetur.experimental.templateInterpolationService": true
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
