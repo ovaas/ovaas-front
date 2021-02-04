@@ -5,7 +5,6 @@
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
-    "heybourn.headwind",
-    "znck.vue-language-features"
+    "heybourn.headwind"
   ]
 }
