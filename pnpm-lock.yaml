@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.4.3_eslint@7.19.0+typescript@4.1.3
   '@iconify/json': 1.1.298
-  '@intlify/vite-plugin-vue-i18n': 1.0.0-beta.15
+  '@intlify/vite-plugin-vue-i18n': 1.0.0-beta.12
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 4.14.2_eslint@7.19.0+typescript@4.1.3
   '@vitejs/plugin-vue': 1.1.4_@vue+compiler-sfc@3.0.5
@@ -1061,7 +1061,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-h+IxOqYrW5zL4O+4zyaFl3kVnErHZEBE6d9ZCd6hK+oOAOx0uMkaUgesoR0Ci54U9igyY3Mp6vdMDzHLDCdzkg==
-  /@intlify/cli/0.2.0:
+  /@intlify/cli/0.1.3:
     dependencies:
       '@intlify/core': 9.0.0-beta.16
       '@intlify/core-base': 9.0.0-rc.5
@@ -1078,7 +1078,7 @@ packages:
       node: '>= 10'
     hasBin: true
     resolution:
-      integrity: sha512-KIB6KggamrUoQJXa2CZad9D0dIH6FijPpRv020VtXvPFphprJKipG19GHndPgKRPK70t6Aj7zsJEqt5GvljKXg==
+      integrity: sha512-brLMe0hD2odyBvqH/48MjfgrsAHS0CjAKz2crO9DVyLXUPPngE8Cu3Zahs68fH+QcGxO2DhgFfb+AXEYVRH3WA==
   /@intlify/core-base/9.0.0-beta.16:
     dependencies:
       '@intlify/message-compiler': 9.0.0-beta.16
@@ -1168,17 +1168,16 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-LGurIHW/TYo07WrbCWXBuZQ3Hg2CHAv5rXLFpxBfHjZawCTrrORQfD4NA+RPVbaWFgzMgw5VJybpJRd9iB1x6g==
-  /@intlify/vite-plugin-vue-i18n/1.0.0-beta.15:
+  /@intlify/vite-plugin-vue-i18n/1.0.0-beta.12:
     dependencies:
-      '@intlify/cli': 0.2.0
+      '@intlify/cli': 0.1.3
       '@intlify/shared': 9.0.0-rc.5
       '@rollup/pluginutils': 4.1.0
-      fast-glob: 3.2.5
     dev: true
     engines:
       node: '>= 12'
     resolution:
-      integrity: sha512-G7+rtoiYDko2hAILMx5xYfWc3OLqVWQ3Sap/kuHbkXHYpsR9qo91mrTceXrgkYDy0pDXk7ouXHMK7cMeyQSJEA==
+      integrity: sha512-aoM4NigU226DB/bMdEOlf/QVlgh4sV8+ZrDpPzOTEdSvVfild1+iOwILtiCETCSC41DS2u4+znYvzrwdQzcsDg==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -5776,7 +5775,7 @@ packages:
 specifiers:
   '@antfu/eslint-config': ^0.4.3
   '@iconify/json': ^1.1.298
-  '@intlify/vite-plugin-vue-i18n': 1.0.0-beta.15
+  '@intlify/vite-plugin-vue-i18n': 1.0.0-beta.12
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^4.14.2
   '@vitejs/plugin-vue': ^1.1.4
