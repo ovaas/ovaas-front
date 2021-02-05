@@ -1,8 +1,8 @@
 import { createI18n } from 'vue-i18n'
 import { usePreferredLanguages } from '@vueuse/core'
 import { messages } from '../messages'
-import { UserModule } from '/~/types'
 import { localeSchema } from '../logics'
+import { UserModule } from '~/types'
 
 const isClient = typeof window !== 'undefined'
 

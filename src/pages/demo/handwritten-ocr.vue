@@ -34,11 +34,11 @@
 import { ref, reactive, onUnmounted, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { useApi, useFromData } from '/~/logics/axios'
 import { AxiosRequestConfig } from 'axios'
-import { generateHeadMeta } from '/~/logics/meta'
-import type { HandwrittenResult } from '/~/types'
-import { useCanvas } from '/~/logics/canvas'
+import { useApi, useFromData } from '~/logics/axios'
+import { generateHeadMeta } from '~/logics/meta'
+import type { HandwrittenResult } from '~/types'
+import { useCanvas } from '~/logics/canvas'
 
 const { t } = useI18n()
 

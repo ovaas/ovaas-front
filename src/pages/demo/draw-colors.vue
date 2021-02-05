@@ -19,11 +19,11 @@
 import { ref, reactive, watch, onUnmounted } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { useApi, useFromData } from '/~/logics/axios'
 import { AxiosRequestConfig } from 'axios'
-import { flash, EmitTypes } from '/~/logics/emitter'
-import { inBrowser, resizeImage } from '/~/utils'
-import { generateHeadMeta } from '/~/logics/meta'
+import { useApi, useFromData } from '~/logics/axios'
+import { flash, EmitTypes } from '~/logics/emitter'
+import { inBrowser, resizeImage } from '~/utils'
+import { generateHeadMeta } from '~/logics/meta'
 
 const { t } = useI18n()
 

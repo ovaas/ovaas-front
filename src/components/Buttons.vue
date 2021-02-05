@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { flash, EmitTypes } from '/~/logics/emitter'
+import { flash, EmitTypes } from '~/logics/emitter'
 const onSuccess = () => {
   flash(EmitTypes.Success, 'Success message')
 }

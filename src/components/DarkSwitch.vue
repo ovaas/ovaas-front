@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import { isDark } from '/~/logics'
+import { isDark } from '~/logics'
 </script>

@@ -18,7 +18,7 @@
 import { ref, onMounted, computed } from 'vue'
 import { emitter, FLASH_EVENT } from '../logics/emitter'
 import type { FlashPayload, Colors } from '../logics/emitter'
-import { isDark } from '/~/logics/dark'
+import { isDark } from '~/logics/dark'
 
 const show = ref(false)
 const message = ref('')

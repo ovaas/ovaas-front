@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { isDark } from '/~/logics'
+import { isDark } from '~/logics'
 
 const { t } = useI18n()
 </script>

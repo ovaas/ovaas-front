@@ -6,7 +6,7 @@
 import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { generateHeadMeta } from '/~/logics/meta'
+import { generateHeadMeta } from '~/logics/meta'
 
 const { t } = useI18n()
 

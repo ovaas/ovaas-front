@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import type { SiteData } from '/~/types'
+import type { SiteData } from '~/types'
 
 export function generateHeadMeta(siteData: SiteData) {
   return {
