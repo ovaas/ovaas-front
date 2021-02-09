@@ -10,7 +10,7 @@ dependencies:
   vue-router: 4.0.3_vue@3.0.5
 devDependencies:
   '@antfu/eslint-config': 0.4.3_eslint@7.19.0+typescript@4.1.3
-  '@iconify/json': 1.1.299
+  '@iconify/json': 1.1.300
   '@intlify/vite-plugin-vue-i18n': 1.0.0-beta.16_rollup@2.38.5
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 4.15.0_eslint@7.19.0+typescript@4.1.3
@@ -25,12 +25,12 @@ devDependencies:
   rollup: 2.38.5
   tailwindcss: 2.0.3_132a6068366276bc6a71795f98f5a160
   typescript: 4.1.3
-  vite: 2.0.0-beta.65
+  vite: 2.0.0-beta.66
   vite-plugin-components: 0.6.6
-  vite-plugin-icons: 0.2.1_ce881b3a1c35f5e976bcd29d07e3c0c0
-  vite-plugin-pages: 0.3.0_vite@2.0.0-beta.65+vue@3.0.5
+  vite-plugin-icons: 0.2.1_e16798aaae63e300dc85f826a0d43e62
+  vite-plugin-pages: 0.3.0_vite@2.0.0-beta.66+vue@3.0.5
   vite-plugin-pwa: 0.4.6
-  vite-ssg: 0.8.2_c55ab035ab38f8736c0bba324bf99d97
+  vite-ssg: 0.8.2_af896ec5c324d7a5a8e7d46bcbd8a381
 lockfileVersion: 5.2
 packages:
   /@antfu/eslint-config-basic/0.4.3_eslint@7.19.0:
@@ -1058,10 +1058,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LFelJDOLZ6JHlmlAkgrvmcu4hpNPB91KYcr4f60D/exzU1eNOb4/KCVHIydGHIQFaOacIOD+Xy+B7P1z812cZg==
-  /@iconify/json/1.1.299:
+  /@iconify/json/1.1.300:
     dev: true
     resolution:
-      integrity: sha512-oYHUgp5RZNE2CT3wKE/MWbmGK7lmubi30PD5l33HUU7yh4CznmzPL0Ewgg51Wn86NkFveZDcT+odMBTaayh9Ew==
+      integrity: sha512-Zg1xQHWoKkK4dZJzSOXMd4Jqk8G+iTJg1gOZEMjv4dxPT6idORuIfYkcdGhLD6Ky8d7BkoArQJzDGvQavpbz/w==
   /@intlify/cli/0.2.0:
     dependencies:
       '@intlify/core': 9.0.0-beta.16
@@ -1841,7 +1841,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001185
       colorette: 1.2.1
-      electron-to-chromium: 1.3.657
+      electron-to-chromium: 1.3.659
       escalade: 3.1.1
       node-releases: 1.1.70
     dev: true
@@ -2322,10 +2322,10 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
-  /electron-to-chromium/1.3.657:
+  /electron-to-chromium/1.3.659:
     dev: true
     resolution:
-      integrity: sha512-/9ROOyvEflEbaZFUeGofD+Tqs/WynbSTbNgNF+/TJJxH1ePD/e6VjZlDJpW3FFFd3nj5l3Hd8ki2vRwy+gyRFw==
+      integrity: sha512-VPc1LcvuQYGjam6k7JcB6uJFTMo2YNlJ6rSbwbxApZQdow7X81kh/vDB6LB5B8DNmvkbKnpZkLmpKmnvoKA+Gw==
   /emoji-regex/8.0.0:
     dev: true
     resolution:
@@ -2924,16 +2924,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
-  /fsevents/2.1.3:
-    deprecated: '"Please update to latest v2.3 or v2.2"'
-    dev: true
-    engines:
-      node: ^8.16.0 || ^10.6.0 || >=11.0.0
-    optional: true
-    os:
-      - darwin
-    resolution:
-      integrity: sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==
   /fsevents/2.3.2:
     dev: true
     engines:
@@ -5445,9 +5435,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tOcWm/2T+XUImJ8yFZb/i8dUWXNoraqDdKrBBpfbHGg3MES0T6AN1315iuKYHTG71fwKI0OGElw3S9B04ZUwPA==
-  /vite-plugin-icons/0.2.1_ce881b3a1c35f5e976bcd29d07e3c0c0:
+  /vite-plugin-icons/0.2.1_e16798aaae63e300dc85f826a0d43e62:
     dependencies:
-      '@iconify/json': 1.1.299
+      '@iconify/json': 1.1.300
       '@iconify/json-tools': 1.0.10
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
     dev: true
@@ -5456,7 +5446,7 @@ packages:
       '@vue/compiler-sfc': ^3.0.2
     resolution:
       integrity: sha512-ZIJ8G2AHwEDt4oDST46E6Uy7W2EtVyoe1hzmJMkutbq3esUkcYVoYydT6Y12lhq1ppnVnShkbc0XzfKqolfCSg==
-  /vite-plugin-pages/0.3.0_vite@2.0.0-beta.65+vue@3.0.5:
+  /vite-plugin-pages/0.3.0_vite@2.0.0-beta.66+vue@3.0.5:
     dependencies:
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
       chalk: 4.1.0
@@ -5466,7 +5456,7 @@ packages:
       fast-glob: 3.2.5
       glob-to-regexp: 0.4.1
       json5: 2.2.0
-      vite: 2.0.0-beta.65
+      vite: 2.0.0-beta.66
       vue: 3.0.5
       vue-router: 4.0.3_vue@3.0.5
       yaml: 2.0.0-3
@@ -5485,7 +5475,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3LonumSG4EcH9FT61d7wWouHkCmEciy3RPfvt25b835HMx9gb2Dt71t140+85Z5d+uANMSguC3miBnnGzagAMA==
-  /vite-ssg/0.8.2_c55ab035ab38f8736c0bba324bf99d97:
+  /vite-ssg/0.8.2_af896ec5c324d7a5a8e7d46bcbd8a381:
     dependencies:
       '@vue/compiler-sfc': 3.0.5_vue@3.0.5
       '@vue/server-renderer': 3.0.5_vue@3.0.5
@@ -5495,7 +5485,7 @@ packages:
       html-minifier: 4.0.0
       jsdom: 16.4.0
       prettier: 2.2.1
-      vite: 2.0.0-beta.65
+      vite: 2.0.0-beta.66
       vue: 3.0.5
       vue-router: 4.0.3_vue@3.0.5
       yargs: 16.2.0
@@ -5511,7 +5501,7 @@ packages:
       vue-router: ^4.0.1
     resolution:
       integrity: sha512-fD7UMU3t5dH7eGke6ghK+477Cuey9ulkygiKfCaopvhFErCq6VNiHmcU6BCbmyrzjbVLHss3iLpVGB7s0yN9AA==
-  /vite/2.0.0-beta.65:
+  /vite/2.0.0-beta.66:
     dependencies:
       esbuild: 0.8.43
       postcss: 8.2.5
@@ -5522,9 +5512,9 @@ packages:
       node: '>=12.0.0'
     hasBin: true
     optionalDependencies:
-      fsevents: 2.1.3
+      fsevents: 2.3.2
     resolution:
-      integrity: sha512-mdHNTP6fGeb8m8lWAM3UbSPw1+un1lUv0i4MQJcNiK2/P01RHIY02VjQeXBv3NemkExkgLji88LN9ySFMUQpIw==
+      integrity: sha512-tUn708PIWHCrj83t09OAiJ2YU5EJGz5VOSivKTPq+s5I48rN4B2B3ZTRpg4n8WMw2ZQLWnrQOXWfqXoMBEJd9g==
   /vue-demi/0.6.0_vue@3.0.5:
     dependencies:
       vue: 3.0.5
@@ -5938,7 +5928,7 @@ packages:
       integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
 specifiers:
   '@antfu/eslint-config': ^0.4.3
-  '@iconify/json': ^1.1.299
+  '@iconify/json': ^1.1.300
   '@intlify/vite-plugin-vue-i18n': ^1.0.0-beta.16
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^4.15.0
@@ -5959,7 +5949,7 @@ specifiers:
   rollup: ^2.38.5
   tailwindcss: ^2.0.3
   typescript: ^4.1.3
-  vite: ^2.0.0-beta.65
+  vite: ^2.0.0-beta.66
   vite-plugin-components: ^0.6.6
   vite-plugin-icons: ^0.2.1
   vite-plugin-pages: 0.3.0
