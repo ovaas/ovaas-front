@@ -8,8 +8,10 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const config = defineConfig({
-  alias: {
-    '~/': `${path.resolve(__dirname, 'src')}/`,
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
   },
   plugins: [
     Vue(),

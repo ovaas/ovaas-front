@@ -3,3 +3,4 @@ node_modules
 dist
 *.local
 .vite-ssg-dist
+.vite-ssg-temp
