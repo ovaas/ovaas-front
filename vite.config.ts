@@ -20,7 +20,6 @@ const config = defineConfig({
     // https://github.com/antfu/vite-plugin-components
     ViteComponents({
       customComponentResolvers: [
-        // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
         }),
@@ -59,6 +58,9 @@ const config = defineConfig({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
   ],
+  optimizeDeps: {
+    include: ['mitt', 'axios', 'image-js'],
+  },
   ssgOptions: {
     script: 'async',
     formatting: 'prettify',
