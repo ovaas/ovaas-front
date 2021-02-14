@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
-useHead({
+import { generateHeadMeta } from '~/logics/meta'
+
+const siteData = reactive({
   title: 'OVaaS - OpenVINO as a service',
-  meta: [
-    { name: 'description', content: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.' },
-  ],
+  description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })
+useHead(generateHeadMeta(siteData))
 </script>
 
 <template>
