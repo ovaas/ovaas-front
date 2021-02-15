@@ -107,7 +107,3 @@ onUnmounted(() => {
   cancel()
 })
 </script>
-
-<style>
-
-</style>

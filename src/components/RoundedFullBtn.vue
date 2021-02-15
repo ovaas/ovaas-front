@@ -14,7 +14,3 @@ defineProps({
   },
 })
 </script>
-
-<style>
-
-</style>

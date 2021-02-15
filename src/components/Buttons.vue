@@ -30,7 +30,3 @@ const onInfo = () => {
   flash(EmitTypes.Info, 'Info message')
 }
 </script>
-
-<style>
-
-</style>

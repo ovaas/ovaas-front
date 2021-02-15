@@ -50,6 +50,3 @@ const demos = computed<Demo[]>(() => ([
   },
 ]))
 </script>
-
-<style>
-</style>

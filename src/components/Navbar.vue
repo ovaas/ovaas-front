@@ -26,7 +26,3 @@ import { isDark } from '~/logics'
 
 const { t } = useI18n()
 </script>
-
-<style>
-
-</style>
