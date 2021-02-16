@@ -6,6 +6,7 @@ import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import WindiCSS from 'vite-plugin-windicss'
 
 const config = defineConfig({
   resolve: {
@@ -57,6 +58,7 @@ const config = defineConfig({
     VueI18n({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
+    ...WindiCSS(),
   ],
   optimizeDeps: {
     include: ['mitt', 'axios', 'image-js'],

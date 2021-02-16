@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('windicss/colors')
+const defaultTheme = require('windicss/defaultTheme')
 
 module.exports = {
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      './index.html',
-      './src/**/*.vue',
-      './src/**/*.js',
-      './src/**/*.ts',
-    ],
-  },
+  // purge: {
+  //   enabled: process.env.NODE_ENV === 'production',
+  //   content: [
+  //     './index.html',
+  //     './src/**/*.vue',
+  //     './src/**/*.js',
+  //     './src/**/*.ts',
+  //   ],
+  // },
   theme: {
     extend: {
       fontFamily: {
@@ -32,10 +32,10 @@ module.exports = {
       padding: {
         '2/3': '66.666%',
       },
-      height: {
+      width: {
         18: '4.5rem',
       },
-      width: {
+      height: {
         18: '4.5rem',
       },
     },
