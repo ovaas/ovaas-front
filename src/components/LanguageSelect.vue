@@ -1,10 +1,10 @@
 <template>
   <div class="relative h-full">
-    <div class="flex items-center h-full px-3 text-2xl text-white md:px-5" @mouseenter="show = true">
+    <div class="flex items-center h-full px-3 text-2xl text-white md:px-5" @click.stop="show = true">
       <vs-language />
     </div>
     <transition name="slide-fade">
-      <div v-show="show" class="absolute top-0 right-0 pr-2 pt-14" @mouseleave="show = false">
+      <div v-show="show" class="absolute top-0 right-0 pr-2 pt-14">
         <div class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
           <button
             v-for="lang in languages"
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch, ref } from 'vue'
+import { watch, ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { localeSchema } from '../logics'
 import { languages } from '~/messages'
@@ -38,6 +38,15 @@ watch(locale, (v) => {
   localeSchema.value = v
 },
 { immediate: true })
+
+onMounted(() => {
+  document.addEventListener('click', () => {
+    show.value = false
+  })
+})
+onUnmounted(() => {
+  document.removeEventListener('click', () => {})
+})
 </script>
 
 <style>
