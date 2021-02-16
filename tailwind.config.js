@@ -3,15 +3,6 @@ const colors = require('windicss/colors')
 const defaultTheme = require('windicss/defaultTheme')
 
 module.exports = {
-  // purge: {
-  //   enabled: process.env.NODE_ENV === 'production',
-  //   content: [
-  //     './index.html',
-  //     './src/**/*.vue',
-  //     './src/**/*.js',
-  //     './src/**/*.ts',
-  //   ],
-  // },
   theme: {
     extend: {
       fontFamily: {
@@ -38,16 +29,6 @@ module.exports = {
       height: {
         18: '4.5rem',
       },
-    },
-  },
-  variants: {
-    extend: {
-      translate: ['group-hover'],
-      animation: ['group-hover'],
-      backgroundOpacity: [
-        'dark',
-        'active',
-      ],
     },
   },
   darkMode: 'class',
