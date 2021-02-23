@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const colors = require('windicss/colors')
-const defaultTheme = require('windicss/defaultTheme')
+import { defineConfig } from 'vite-plugin-windicss'
+import colors from 'windicss/colors'
+import defaultTheme from 'windicss/defaultTheme'
 
-module.exports = {
+export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
@@ -32,4 +33,4 @@ module.exports = {
     },
   },
   darkMode: 'class',
-}
+})
