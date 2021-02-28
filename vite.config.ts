@@ -31,6 +31,11 @@ const config = defineConfig({
       scale: 1.1,
       defaultStyle: 'vertical-align: middle;',
     }),
+    // https://github.com/intlify/vite-plugin-vue-i18n
+    VueI18n({
+      include: [path.resolve(__dirname, 'locales/**')],
+    }),
+    WindiCSS(),
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       manifest: {
@@ -54,11 +59,6 @@ const config = defineConfig({
         ],
       },
     }),
-    // https://github.com/intlify/vite-plugin-vue-i18n
-    VueI18n({
-      include: [path.resolve(__dirname, 'locales/**')],
-    }),
-    ...WindiCSS(),
   ],
   optimizeDeps: {
     include: ['mitt', 'axios', 'image-js'],
