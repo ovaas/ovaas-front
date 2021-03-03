@@ -1,6 +1,6 @@
 {
   "name": "ovaas-front",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "OVaaS Front-end use Vue.js v3",
   "license": "Apache-2.0",
   "repository": "github:ovaas/ovaas-front",
