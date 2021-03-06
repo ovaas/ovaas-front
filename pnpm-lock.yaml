@@ -18,6 +18,7 @@ devDependencies:
   '@vue/compiler-sfc': 3.0.7_vue@3.0.7
   '@vue/server-renderer': 3.0.7_vue@3.0.7
   cross-env: 7.0.3
+  esbuild: 0.8.56
   eslint: 7.21.0
   rollup: 2.40.0
   typescript: 4.2.3
@@ -1177,7 +1178,7 @@ packages:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
       '@nodelib/fs.walk': 1.2.6
-      glob-parent: 5.1.1
+      glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.2
       picomatch: 2.2.2
@@ -3044,6 +3045,14 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==
+  /glob-parent/5.1.2:
+    dependencies:
+      is-glob: 4.0.1
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   /glob-to-regexp/0.4.1:
     dev: true
     resolution:
@@ -5902,6 +5911,7 @@ specifiers:
   '@vueuse/head': ^0.5.1
   axios: ^0.21.1
   cross-env: ^7.0.3
+  esbuild: ^0.8.56
   eslint: ^7.21.0
   image-js: ^0.31.4
   mitt: ^2.1.0
