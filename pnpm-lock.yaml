@@ -18,7 +18,6 @@ devDependencies:
   '@vue/compiler-sfc': 3.0.7_vue@3.0.7
   '@vue/server-renderer': 3.0.7_vue@3.0.7
   cross-env: 7.0.3
-  esbuild: 0.8.56
   eslint: 7.21.0
   rollup: 2.40.0
   typescript: 4.2.3
@@ -5907,7 +5906,6 @@ specifiers:
   '@vueuse/head': ^0.5.1
   axios: ^0.21.1
   cross-env: ^7.0.3
-  esbuild: ^0.8.56
   eslint: ^7.21.0
   image-js: ^0.31.4
   mitt: ^2.1.0
