@@ -31,6 +31,8 @@ devDependencies:
   vite-ssg: 0.8.12_18905f36e6473b2437d75bf1bd2c1afc
   windicss: 2.2.7
 lockfileVersion: 5.2
+overrides:
+  esbuild: latest
 packages:
   /@antfu/eslint-config-basic/0.4.3_eslint@7.21.0:
     dependencies:
@@ -2446,12 +2448,6 @@ packages:
       esbuild: '>=0.8.31'
     resolution:
       integrity: sha512-27039YMtpC3lI8yYGGm78SAQBtBo/4IPMReWVsNh4++VtvozmasBd1a2HiTdk0297iuA2pMzrzvL5cZJqQCKxQ==
-  /esbuild/0.8.54:
-    dev: true
-    hasBin: true
-    requiresBuild: true
-    resolution:
-      integrity: sha512-DJH38OiTgXJxFb/EhHrCrY8eGmtdkTtWymHpN9IYN9AF+4jykT0dQArr7wzFejpVbaB0TMIq2+vfNRWr3LXpvw==
   /esbuild/0.8.56:
     dev: true
     hasBin: true
@@ -5466,7 +5462,7 @@ packages:
       integrity: sha512-Jyn7QHluvJwTqh3O/O57eRHzNHzYsM8UmPgrX9GStvjvYN8Utdbh7H4wcJSN2iz7jAl7KXZAB5+jSIltXGUGig==
   /vite/2.0.5:
     dependencies:
-      esbuild: 0.8.54
+      esbuild: 0.8.56
       postcss: 8.2.6
       resolve: 1.20.0
       rollup: 2.40.0
