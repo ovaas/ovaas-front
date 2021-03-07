@@ -37,7 +37,7 @@ pnpm build
 ```
 
 <br><br>
-<h2 align="center">License check</h2><br>
+<h2 align="center">License</h2><br>
 
 <p align="center">
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front?ref=badge_large" target="__blank"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOVaaS%2Fovaas-front.svg?type=large" alt="License check"></a>
