@@ -21,7 +21,7 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "types": ["vite/client", "vite-plugin-pages/client"]
+    "types": ["vite/client"]
   },
   "exclude": [
     "dist",
