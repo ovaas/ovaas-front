@@ -5,6 +5,7 @@
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
     "voorjaar.windicss-intellisense",
-    "heybourn.headwind"
+    "heybourn.headwind",
+    "csstools.postcss"
   ]
 }
