@@ -9,7 +9,7 @@
           <button
             v-for="lang in languages"
             :key="lang.locale"
-            class="w-full px-3 py-1 text-center rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:text-gray-500 dark:focus:text-gray-400"
+            class="w-full px-3 py-1 text-center rounded-md hover:bg-gray-200 focus:(outline-none text-gray-500) dark:hover:bg-gray-600 dark:focus:text-gray-400"
             :value="lang.locale"
             :selected="lang.locale === locale"
             @click="locale = lang.locale"

@@ -1,6 +1,6 @@
 <template>
   <div class="absolute top-0 right-0 z-20 inline-flex flex-col items-end m-4">
-    <button id="shareBtn" class="p-2 text-2xl transition-all transform bg-gray-100 rounded-full hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:ring-1" :class="{'rotate-180': show}" @click.stop="show = !show">
+    <button id="shareBtn" class="p-2 text-2xl transition-all transform bg-gray-100 rounded-full hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 focus:(outline-none ring-1)" :class="{'rotate-180': show}" @click.stop="show = !show">
       <bx-bx-share-alt v-if="!show" />
       <bx-bx-caret-down v-else class="transform rotate-180" />
     </button>
