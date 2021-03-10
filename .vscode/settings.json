@@ -4,7 +4,8 @@
   "i18n-ally.sortKeys": true,
   "cSpell.words": [
     "nprogress",
-    "ovaas"
+    "ovaas",
+    "windi"
   ],
   "volar.style.defaultLanguage": "postcss",
   "volar.tsPlugin": true,
