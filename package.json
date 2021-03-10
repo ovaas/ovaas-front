@@ -58,10 +58,5 @@
       ],
       "@typescript-eslint/no-unused-vars": "off"
     }
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "latest"
-    }
   }
 }

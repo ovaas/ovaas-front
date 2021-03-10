@@ -30,8 +30,6 @@ devDependencies:
   vite-ssg: 0.8.12_18905f36e6473b2437d75bf1bd2c1afc
   windicss: 2.3.1
 lockfileVersion: 5.2
-overrides:
-  esbuild: latest
 packages:
   /@antfu/eslint-config-basic/0.4.3_eslint@7.21.0:
     dependencies:
@@ -1578,8 +1576,8 @@ packages:
       integrity: sha512-O1PxiG8cSD4YQKHJXWAeBVVTJNpBwCse7TkTsMqqLzqOjP2apbncfPzOcYJHVR5NkUXmtvPBIWAQuRavXKmHSw==
   /@windicss/plugin-utils/0.7.2:
     dependencies:
-      esbuild: 0.9.0
-      esbuild-register: 2.2.0_esbuild@0.9.0
+      esbuild: 0.8.57
+      esbuild-register: 2.2.0_esbuild@0.8.57
       fast-glob: 3.2.5
       micromatch: 4.0.2
       windicss: 2.3.1
@@ -2378,21 +2376,21 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==
-  /esbuild-register/2.2.0_esbuild@0.9.0:
+  /esbuild-register/2.2.0_esbuild@0.8.57:
     dependencies:
-      esbuild: 0.9.0
+      esbuild: 0.8.57
       jsonc-parser: 3.0.0
     dev: true
     peerDependencies:
       esbuild: '>=0.8.31'
     resolution:
       integrity: sha512-27039YMtpC3lI8yYGGm78SAQBtBo/4IPMReWVsNh4++VtvozmasBd1a2HiTdk0297iuA2pMzrzvL5cZJqQCKxQ==
-  /esbuild/0.9.0:
+  /esbuild/0.8.57:
     dev: true
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-IqYFO7ZKHf0y4uJpJfGqInmSRn8jMPMbyI1W0Y2PSjSjJcVP538tC8TleJAS4Y8QeqwajqBTwFKayWVzYlMIgg==
+      integrity: sha512-j02SFrUwFTRUqiY0Kjplwjm1psuzO1d6AjaXKuOR9hrY0HuPsT6sV42B6myW34h1q4CRy+Y3g4RU/cGJeI/nNA==
   /escalade/3.1.1:
     dev: true
     engines:
@@ -5406,7 +5404,7 @@ packages:
       integrity: sha512-Jyn7QHluvJwTqh3O/O57eRHzNHzYsM8UmPgrX9GStvjvYN8Utdbh7H4wcJSN2iz7jAl7KXZAB5+jSIltXGUGig==
   /vite/2.0.5:
     dependencies:
-      esbuild: 0.9.0
+      esbuild: 0.8.57
       postcss: 8.2.8
       resolve: 1.20.0
       rollup: 2.41.0
