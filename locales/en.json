@@ -6,17 +6,17 @@
   },
   "demos": {
     "human-pose": {
-      "title": "Human pose estimation",
-      "content": "Human Pose Estimation is an important task in Computer Vision which has gained a lot of attention the last years and has a wide range of applications like human-computer interaction, gaming, action recognition, computer-assisted living, special effects."
+      "title": "Human Pose Estimation",
+      "content": "This is a demo to estimate human's pose by AI. Try it with uploading your picture."
     },
     "handwritten-ocr": {
-      "title": "Handwritten OCR",
-      "content": "Optical Character Recognition (OCR) is a technology that has achieved cult status when it comes to digitizing printed documents. In this demonstration, what ever you write will instantly translate to digital characters.",
+      "title": "Japanese Handwritten OCR",
+      "content": "AI will recognize what is written in Japanese. Try it with writing some character in Japanese.",
       "text-not-found": "No text found."
     },
     "draw-colors": {
-      "title": "Draw Colors",
-      "content": "Auto fill colors to picture"
+      "title": "Colorization",
+      "content": "This is a demo to convert a monochrome image to a colorized image by AI. Try it with uploading your monochrome image."
     }
   },
   "upload": {
