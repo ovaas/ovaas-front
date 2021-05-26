@@ -12,7 +12,7 @@
     "release": "npx bumpp --commit --tag --push"
   },
   "dependencies": {
-    "@vueuse/core": "^4.11.0",
+    "@vueuse/core": "^4.11.1",
     "@vueuse/head": "^0.5.1",
     "axios": "^0.21.1",
     "image-js": "^0.31.4",
@@ -24,24 +24,24 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.6.5",
-    "@iconify/json": "^1.1.344",
+    "@iconify/json": "^1.1.348",
     "@intlify/vite-plugin-vue-i18n": "^2.1.2",
     "@types/nprogress": "^0.2.0",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/server-renderer": "^3.0.11",
     "cross-env": "^7.0.3",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "typescript": "^4.2.4",
-    "vite": "^2.3.3",
-    "vite-plugin-components": "^0.9.1",
+    "vite": "^2.3.4",
+    "vite-plugin-components": "^0.10.2",
     "vite-plugin-icons": "^0.5.1",
-    "vite-plugin-pages": "^0.11.4",
+    "vite-plugin-pages": "^0.12.1",
     "vite-plugin-pwa": "^0.7.3",
-    "vite-plugin-windicss": "0.15.10",
-    "vite-ssg": "^0.10.1",
-    "windicss": "^3.0.6"
+    "vite-plugin-windicss": "0.16.0",
+    "vite-ssg": "^0.11.1",
+    "windicss": "^3.0.12"
   },
   "eslintConfig": {
     "extends": "@antfu/eslint-config",

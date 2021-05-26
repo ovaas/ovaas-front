@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, Plugin } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
@@ -20,6 +20,7 @@ const config = defineConfig({
     Pages(),
     // https://github.com/antfu/vite-plugin-components
     ViteComponents({
+      globalComponentsDeclaration: true,
       customComponentResolvers: [
         ViteIconsResolver({
           componentPrefix: '',
@@ -34,7 +35,7 @@ const config = defineConfig({
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
       include: [path.resolve(__dirname, 'locales/**')],
-    }),
+    }) as Plugin,
     WindiCSS(),
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
