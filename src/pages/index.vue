@@ -1,5 +1,5 @@
 <template>
-  <MainContant :title="t('pages-title.home')" layout="home">
+  <MainContent :title="t('pages-title.home')" layout="home">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <DemoCard
         v-for="demo in demos"
@@ -7,7 +7,7 @@
         :demo="demo"
       />
     </div>
-  </MainContant>
+  </MainContent>
 </template>
 
 <script setup lang="ts">

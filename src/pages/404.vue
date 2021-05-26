@@ -1,5 +1,5 @@
 <template>
-  <MainContant :title="t('page-not-found')" />
+  <MainContent :title="t('page-not-found')" />
 </template>
 
 <script setup lang="ts">

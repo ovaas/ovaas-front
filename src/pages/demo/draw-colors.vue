@@ -1,5 +1,5 @@
 <template>
-  <MainContant
+  <MainContent
     :title="t('demos.draw-colors.title')"
     :back-btn="true"
   >
@@ -12,14 +12,14 @@
         :uploading="loading"
       />
     </div>
-  </MainContant>
+  </MainContent>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, watch, onUnmounted } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { AxiosRequestConfig } from 'axios'
+import type { AxiosRequestConfig } from 'axios'
 import { useApi, useFromData } from '~/logics/axios'
 import { flash, EmitTypes } from '~/logics/emitter'
 import { inBrowser, resizeImage } from '~/utils'

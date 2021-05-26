@@ -1,5 +1,5 @@
 <template>
-  <MainContant :title="t('demos.handwritten-ocr.title')" :back-btn="true">
+  <MainContent :title="t('demos.handwritten-ocr.title')" :back-btn="true">
     <div class="relative flex flex-col items-stretch flex-auto w-full h-full">
       <div class="inline-flex items-center justify-end mb-3 space-x-4 text-gray-600 md:(absolute top-0 right-0 transform -translate-y-14) text-md">
         <RoundedFullBtn aria-label="Undo" :is-disable="disableUndo || disableAllBtn" @click="undo()">
@@ -27,18 +27,18 @@
         <ResultModel v-model:open="isModelOpen" :text="modelText?.text" />
       </div>
     </div>
-  </MainContant>
+  </MainContent>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, onUnmounted, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { AxiosRequestConfig } from 'axios'
 import { useApi, useFromData } from '~/logics/axios'
 import { generateHeadMeta } from '~/logics/meta'
-import type { HandwrittenResult } from '~/types'
 import { useCanvas } from '~/logics/canvas'
+import type { AxiosRequestConfig } from 'axios'
+import type { HandwrittenResult } from '~/types'
 
 const { t } = useI18n()
 

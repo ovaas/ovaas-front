@@ -6,14 +6,14 @@ export const FLASH_EVENT = Symbol('flashMessage')
 
 export const emitter = mitt()
 
-export const enum EmitTypes {
-  Success = 'green',
-  Danger = 'red',
-  Warning = 'yellow',
-  Info = 'white'
-}
+export const EmitTypes = {
+  Success: 'green',
+  Danger: 'red',
+  Warning: 'yellow',
+  Info: 'white'
+} as const
 
-export const flash = (color: EmitTypes, message: string): void => {
+export const flash = (color: Colors, message: string): void => {
   emitter.emit<FlashPayload>(FLASH_EVENT, {
     message,
     color,

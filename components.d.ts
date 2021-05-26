@@ -9,7 +9,7 @@ declare module 'vue' {
     FlashMessage: typeof import('./src/components/FlashMessage.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     LanguageSelect: typeof import('./src/components/LanguageSelect.vue')['default']
-    MainContant: typeof import('./src/components/MainContant.vue')['default']
+    MainContent: typeof import('./src/components/MainContent.vue')['default']
     NavItem: typeof import('./src/components/NavItem.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     RoundedFullBtn: typeof import('./src/components/RoundedFullBtn.vue')['default']

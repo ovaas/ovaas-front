@@ -21,13 +21,14 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmit } from 'vue'
+import type { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 const props = defineProps({
   uploading: Boolean,
-  modelValue: Object,
+  modelValue: Object as PropType<File | null>,
 })
 const emit = defineEmit(['update:modelValue'])
 const getFile = (e: any) => {
