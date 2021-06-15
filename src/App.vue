@@ -4,7 +4,7 @@ import { useHead } from '@vueuse/head'
 import { generateHeadMeta } from '~/logics/meta'
 
 const siteData = reactive({
-  title: 'OVaaS - OpenVINO as a service',
+  title: 'OVaaS - OpenVINO as a service test',
   description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })
 useHead(generateHeadMeta(siteData))
