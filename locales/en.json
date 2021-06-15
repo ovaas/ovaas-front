@@ -25,6 +25,10 @@
     "object-detection": {
       "title": "Object Detection",
       "content": "AI will detect TENJI mark and Toilet mark in a picture. Try it with your picture!"
+    },
+    "segmentation":{
+      "title": "Segmentation",
+      "content": "AI will detect the edge of human's body in a picture. Try it with your picture!"
     }
   },
   "upload": {
