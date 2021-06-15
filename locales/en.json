@@ -21,6 +21,10 @@
     "mono-depth": {
       "title": "Mono Depth",
       "content": "AI will make people at the back grayscale in a picture. Try it with your picture!"
+    },
+    "object-detection": {
+      "title": "Object Detection",
+      "content": "AI will detect TENJI mark and Toilet mark in a picture. Try it with your picture!"
     }
   },
   "upload": {
