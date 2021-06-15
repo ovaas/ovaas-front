@@ -17,6 +17,8 @@ import { useI18n } from 'vue-i18n'
 import HumanPoseImg from '~/assets/images/human-pose-estimation.webp'
 import HandWritingImg from '~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '~/assets/images/draw-colors.webp'
+import NoImg from "~/assets/images/NoImage.webp"
+
 import type { Demo } from '~/types'
 import { generateHeadMeta } from '~/logics/meta'
 
@@ -46,6 +48,12 @@ const demos = computed<Demo[]>(() => ([
     title: t('demos.draw-colors.title'),
     image: DrawColorsImg,
     content: t('demos.draw-colors.content'),
+    path: '/demo/draw-colors',
+  },
+  {
+    title: t('demos.test.title'),
+    image: NoImg,
+    content: t('demos.test.content'),
     path: '/demo/draw-colors',
   },
 ]))

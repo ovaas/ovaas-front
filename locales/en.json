@@ -17,6 +17,10 @@
     "draw-colors": {
       "title": "Colorization",
       "content": "This is a demo to convert a monochrome image to a colorized image by AI. Try it with uploading your monochrome image."
+    },
+    "test": {
+      "title": "How old are you?",
+      "content": "AI will predict your age from a face picture. Try it with your picture!"
     }
   },
   "upload": {
