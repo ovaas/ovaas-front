@@ -38,7 +38,7 @@ const image = ref<File | null>(null)
 const resultImage = ref<string>('')
 
 const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
-const drawColorUrl = `${url}/colorization`
+const monoDepthUrl = `${url}/monodepth`
 const allowFileTypes = ['image/jpeg', 'image/png']
 
 let reader: FileReader
@@ -58,7 +58,7 @@ const config: AxiosRequestConfig = {
 }
 
 const { data, loading, error, post, cancel } = useApi<Blob>(
-  drawColorUrl,
+  monoDepthUrl,
   config,
 )
 
