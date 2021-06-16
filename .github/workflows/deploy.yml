@@ -30,41 +30,6 @@ jobs:
       - name: Build Production
         run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
 
-  deploy-netlify:
-    needs: test
-    if: github.event_name == 'push'
-    name: Deploy to Netlify
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-      
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - uses: actions/cache@v2
-        id: pnpm-cache
-        with:
-          path: node_modules/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-      
-      - name: Build Production
-        env:
-          VITE_FUNCTIONS_ENDPOINT: https://ovaas-back.azurewebsites.net/api
-        run: npx pnpm i --store=node_modules/.pnpm-store && npm run build
-
-      - name: Deploy to netlify
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=dist --prod
-
   deploy-azure-web:
     needs: test
     if: github.event_name == 'push'
