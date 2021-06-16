@@ -17,7 +17,7 @@ import { useI18n } from 'vue-i18n'
 import HumanPoseImg from '~/assets/images/human-pose-estimation.webp'
 import HandWritingImg from '~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '~/assets/images/draw-colors.webp'
-// import MonoDepthImg from '~/assets/images/mono-depth.webp'
+import MonoDepthImg from '~/assets/images/mono-depth.webp'
 import type { Demo } from '~/types'
 import { generateHeadMeta } from '~/logics/meta'
 
@@ -51,7 +51,7 @@ const demos = computed<Demo[]>(() => ([
   },
   {
     title: t('demos.mono-depth.title'),
-    image: DrawColorsImg,
+    image: MonoDepthImg,
     content: t('demos.mono-depth.content'),
     path: '/demo/mono-depth',
   },
