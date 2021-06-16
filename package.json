@@ -9,7 +9,9 @@
     "dev:debug": "vite --debug",
     "serve": "vite preview",
     "build": "cross-env-shell NODE_ENV=production vite-ssg build",
-    "release": "npx bumpp --commit --tag --push"
+    "release": "npx bumpp --commit --tag --push",
+    "lint": "eslint --ext .js,.ts,.vue,.json,.yaml,.yml .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue,.json,.yaml,.yml ."
   },
   "dependencies": {
     "@vueuse/core": "^4.11.2",
@@ -23,7 +25,7 @@
     "vue-router": "^4.0.8"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.6.5",
+    "@hannoeru/eslint-config": "^0.1.5",
     "@iconify/json": "^1.1.352",
     "@intlify/vite-plugin-vue-i18n": "^2.1.2",
     "@types/nprogress": "^0.2.0",
@@ -42,20 +44,5 @@
     "vite-plugin-windicss": "0.16.7",
     "vite-ssg": "^0.11.2",
     "windicss": "^3.0.12"
-  },
-  "eslintConfig": {
-    "extends": "@antfu/eslint-config",
-    "ignorePatterns": [
-      "dist/*",
-      "**/vendor/*.js"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "no-cond-assign": [
-        2,
-        "except-parens"
-      ],
-      "@typescript-eslint/no-unused-vars": "off"
-    }
   }
 }

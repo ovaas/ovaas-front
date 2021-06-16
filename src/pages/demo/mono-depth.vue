@@ -16,14 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watch, onUnmounted } from 'vue'
+import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import type { AxiosRequestConfig } from 'axios'
-import { useApi, useFromData } from '~/logics/axios'
-import { flash, EmitTypes } from '~/logics/emitter'
-import { inBrowser, resizeImage } from '~/utils'
 import { generateHeadMeta } from '~/logics/meta'
+import { useUploadImage } from '~/logics/upload'
 
 const { t } = useI18n()
 
@@ -34,55 +31,9 @@ const siteData = reactive({
 
 useHead(generateHeadMeta(siteData))
 
-const image = ref<File | null>(null)
-const resultImage = ref<string>('')
-
-const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
-const monoDepthUrl = `${url}/monodepth`
-const allowFileTypes = ['image/jpeg', 'image/png']
-
-let reader: FileReader
-
-if (inBrowser) {
-  reader = new FileReader()
-  reader.onload = (event) => {
-    resultImage.value = event.target?.result as string
-  }
-}
-
-const config: AxiosRequestConfig = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-  responseType: 'blob',
-}
-
-const { data, loading, error, post, cancel } = useApi<Blob>(
-  monoDepthUrl,
-  config,
-)
-
-const checkFileExt = (file: File) => {
-  if (allowFileTypes.includes(file.type))
-    return true
-  flash(EmitTypes.Warning, t('errors.not-valid-image'))
-  return false
-}
-
-watch(data, (v) => {
-  if (v) reader.readAsDataURL(v as Blob)
-})
-watch(error, (e) => {
-  console.log(e)
-})
-watch(image, async(file) => {
-  if (!file || !checkFileExt(file)) return
-  loading.value = true
-  const blob = await resizeImage(file)
-  const formData = useFromData('image', blob, 'monodepth.jpg')
-  post(formData)
-})
-onUnmounted(() => {
-  cancel()
-})
+const {
+  image,
+  loading,
+  resultImage,
+} = useUploadImage('/mono-depth')
 </script>

@@ -10,7 +10,7 @@ export const EmitTypes = {
   Success: 'green',
   Danger: 'red',
   Warning: 'yellow',
-  Info: 'white'
+  Info: 'white',
 } as const
 
 export const flash = (color: Colors, message: string): void => {

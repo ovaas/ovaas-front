@@ -34,10 +34,10 @@
 import { ref, reactive, onUnmounted, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
+import type { AxiosRequestConfig } from 'axios'
 import { useApi, useFromData } from '~/logics/axios'
 import { generateHeadMeta } from '~/logics/meta'
 import { useCanvas } from '~/logics/canvas'
-import type { AxiosRequestConfig } from 'axios'
 import type { HandwrittenResult } from '~/types'
 
 const { t } = useI18n()
@@ -87,12 +87,14 @@ const { data, loading, error, post, cancel } = useApi<HandwrittenResult>(handWri
 
 watch(data, async(v) => {
   if (!v) return
+  // eslint-disable-next-line no-console
   if (!isProd) console.log(v)
   modelText.value = v
   isModelOpen.value = true
 })
 watch(error, (e) => {
-  console.log(e)
+  // eslint-disable-next-line no-console
+  console.error(e)
 })
 
 const sendImage = async() => {

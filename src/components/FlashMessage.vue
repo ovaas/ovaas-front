@@ -22,16 +22,11 @@ import { isDark } from '~/logics/dark'
 
 const show = ref(false)
 const message = ref('')
+
 const emitColor = ref<Colors>()
 const textColor = computed(() => {
   return emitColor.value === 'yellow' || emitColor.value === 'white' ? 'text-gray-700' : ''
 })
-const color = computed(() => {
-  return isDark.value
-    ? darkColors[emitColor.value || 'green']
-    : lightColors[emitColor.value || 'green']
-})
-const timeoutId = ref<number | null>(null)
 
 const lightColors: {[key in Colors]: string} = {
   green: 'bg-green-400',
@@ -46,6 +41,14 @@ const darkColors: {[key in Colors]: string} = {
   yellow: 'bg-yellow-300',
   white: 'bg-white',
 }
+
+const color = computed(() => {
+  return isDark.value
+    ? darkColors[emitColor.value || 'green']
+    : lightColors[emitColor.value || 'green']
+})
+
+const timeoutId = ref<number | null>(null)
 
 const setTransitionDelay = () => {
   if (!show.value) return

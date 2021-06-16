@@ -90,6 +90,7 @@ export function useFromData(name: string, file: File | Blob | string, filename?:
   formData.append(name, file, filename)
   if (!isProd) {
     for (const pair of formData.entries())
+      // eslint-disable-next-line no-console
       console.log(`${pair[0]}, ${pair[1]}`)
   }
   return formData
