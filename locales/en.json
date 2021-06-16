@@ -17,6 +17,10 @@
     "draw-colors": {
       "title": "Colorization",
       "content": "This is a demo to convert a monochrome image to a colorized image by AI. Try it with uploading your monochrome image."
+    },
+    "mono-depth": {
+      "title": "Mono Depth",
+      "content": "AI will make people at the back grayscale in a picture. Try it with your picture!"
     }
   },
   "upload": {
