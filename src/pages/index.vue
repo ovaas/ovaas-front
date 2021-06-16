@@ -18,6 +18,7 @@ import HumanPoseImg from '~/assets/images/human-pose-estimation.webp'
 import HandWritingImg from '~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '~/assets/images/draw-colors.webp'
 import MonoDepthImg from '~/assets/images/mono-depth.webp'
+import ObjectDetectionImg from '~/assets/images/object-detection.webp'
 import type { Demo } from '~/types'
 import { generateHeadMeta } from '~/logics/meta'
 
@@ -54,6 +55,12 @@ const demos = computed<Demo[]>(() => ([
     image: MonoDepthImg,
     content: t('demos.mono-depth.content'),
     path: '/demo/mono-depth',
+  },
+  {
+    title: t('demos.object-detection.title'),
+    image: ObjectDetectionImg,
+    content: t('demos.object-detection.content'),
+    path: '/demo/object-detection',
   },
 ]))
 </script>
