@@ -19,7 +19,7 @@ import HandWritingImg from '~/assets/images/handwriting-ocr.webp'
 import DrawColorsImg from '~/assets/images/draw-colors.webp'
 import MonoDepthImg from '~/assets/images/mono-depth.webp'
 import ObjectDetectionImg from '~/assets/images/object-detection.webp'
-import TestImg from '~/assets/images/NewPage.webp'
+import SegmentationImg from '~/assets/images/segmentation.webp'
 import type { Demo } from '~/types'
 import { generateHeadMeta } from '~/logics/meta'
 
@@ -65,7 +65,7 @@ const demos = computed<Demo[]>(() => ([
   },
   {
     title: t('demos.segmentation.title'),
-    image: TestImg,
+    image: SegmentationImg,
     content: t('demos.segmentation.content'),
     path: '/demo/segmentation',
   },
