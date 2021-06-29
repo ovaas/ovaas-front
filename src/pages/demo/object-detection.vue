@@ -35,5 +35,5 @@ const {
   image,
   loading,
   resultImage,
-} = useUploadImage('/object-detection')
+} = useUploadImage('/objectdetection')
 </script>
