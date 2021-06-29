@@ -18,6 +18,23 @@ declare module 'vue' {
     ImageShare: typeof import('./src/components/demo/ImageShare.vue')['default']
     ResultModel: typeof import('./src/components/demo/ResultModel.vue')['default']
     SendBtn: typeof import('./src/components/demo/SendBtn.vue')['default']
+    BxBxUndo: typeof import('virtual:vite-icons/bx/bx-undo')['default']
+    BxBxRedo: typeof import('virtual:vite-icons/bx/bx-redo')['default']
+    BxBxTrash: typeof import('virtual:vite-icons/bx/bx-trash')['default']
+    JamCloseCircleF: typeof import('virtual:vite-icons/jam/close-circle-f')['default']
+    BxBxHome: typeof import('virtual:vite-icons/bx/bx-home')['default']
+    BxBxSun: typeof import('virtual:vite-icons/bx/bx-sun')['default']
+    BxBxMoon: typeof import('virtual:vite-icons/bx/bx-moon')['default']
+    BxBxLeftArrowCircle: typeof import('virtual:vite-icons/bx/bx-left-arrow-circle')['default']
+    VsLanguage: typeof import('virtual:vite-icons/vs/language')['default']
+    MdiLoading: typeof import('virtual:vite-icons/mdi/loading')['default']
+    BxBxsCloudUpload: typeof import('virtual:vite-icons/bx/bxs-cloud-upload')['default']
+    BxBxRefresh: typeof import('virtual:vite-icons/bx/bx-refresh')['default']
+    BxBxCloudUpload: typeof import('virtual:vite-icons/bx/bx-cloud-upload')['default']
+    IonCloseRound: typeof import('virtual:vite-icons/ion/close-round')['default']
+    BxBxShareAlt: typeof import('virtual:vite-icons/bx/bx-share-alt')['default']
+    BxBxCaretDown: typeof import('virtual:vite-icons/bx/bx-caret-down')['default']
+    BxBxCloudDownload: typeof import('virtual:vite-icons/bx/bx-cloud-download')['default']
   }
 }
 
