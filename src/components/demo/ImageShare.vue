@@ -31,12 +31,7 @@ const { t } = useI18n()
 
 const show = ref(false)
 
-const props = defineProps({
-  image: {
-    type: String,
-    require: true,
-  },
-})
+const props = defineProps<{ image: string }>()
 
 // const shareToTwitter = () => {
 //   const text = 'Some Image using OVaaS power by OpenVINO'

@@ -17,16 +17,10 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-defineProps({
-  open: {
-    type: Boolean,
-    require: true,
-  },
-  text: {
-    type: String,
-    require: true,
-  },
-})
+defineProps<{
+  open: boolean
+  text: string
+}>()
 
 const emit = defineEmit(['update:open'])
 </script>

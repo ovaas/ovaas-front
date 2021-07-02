@@ -8,10 +8,5 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
-defineProps({
-  image: {
-    type: String,
-    require: true,
-  },
-})
+defineProps<{ image: string }>()
 </script>

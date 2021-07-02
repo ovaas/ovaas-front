@@ -3,7 +3,7 @@
     <input type="file" accept="image/*" aria-label="Upload Image" class="absolute inset-0 z-40 block w-full h-full opacity-0 cursor-pointer" @change="emit('update:modelValue', getFile($event))">
     <div class="flex flex-col items-center justify-center h-full p-6 m-auto text-center md:p-10">
       <div class="mb-3 text-5xl">
-        <mdi-loading v-if="props.uploading" class="animate-spin" />
+        <mdi-loading v-if="uploading" class="animate-spin" />
         <bx-bxs-cloud-upload v-else class="transition-transform ease-in-out transform group-hover:-translate-y-0.5" />
       </div>
       <div class="inline-flex items-center mb-4 text-xl font-semibold md:text-2xl">
@@ -21,16 +21,17 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmit } from 'vue'
-import type { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const props = defineProps({
-  uploading: Boolean,
-  modelValue: Object as PropType<File | null>,
-})
+defineProps<{
+  uploading: boolean
+  modelValue: File | null
+}>()
+
 const emit = defineEmit(['update:modelValue'])
+
 const getFile = (e: any) => {
   const target = e.target as HTMLInputElement
   return target.files![0]

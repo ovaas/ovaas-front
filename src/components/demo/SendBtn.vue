@@ -14,11 +14,13 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-defineProps({
-  loading: Boolean,
-  isDisabled: Boolean,
-})
+defineProps<{
+  loading: boolean
+  isDisabled: boolean
+}>()
+
 const emit = defineEmit(['click'])
+
 </script>
 
 <style>
