@@ -17,7 +17,7 @@
     "@vueuse/core": "^5.1.2",
     "@vueuse/head": "^0.6.0",
     "axios": "^0.21.1",
-    "image-js": "^0.31.4",
+    "compressorjs": "^1.0.7",
     "mitt": "^3.0.0",
     "nprogress": "^0.2.0",
     "vue": "^3.1.4",

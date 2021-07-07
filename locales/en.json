@@ -46,6 +46,7 @@
     "instagram": "Share to Instagram"
   },
   "errors": {
+    "upload-error": "Upload error.",
     "not-valid-image": "Please upload a valid image file."
   },
   "colorMode": {

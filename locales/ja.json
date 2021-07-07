@@ -46,6 +46,7 @@
     "instagram": "Instagramにシェア"
   },
   "errors": {
+    "upload-error": "アップロードエラー",
     "not-valid-image": "JPG画像ファイルではありません"
   },
   "colorMode": {

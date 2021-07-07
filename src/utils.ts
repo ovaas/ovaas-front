@@ -1,17 +1,21 @@
-import { Image } from 'image-js'
+import Compressor from 'compressorjs'
 
 export const inBrowser = typeof window !== 'undefined'
 
-export async function resizeImage(file: File) {
-  const load = await Image.load(await file.arrayBuffer())
-  const defaultHW = 2000
-  let options: {
-    width?: number
-    height?: number
-  }
-  load.width >= load.height ? options = { width: defaultHW } : options = { height: defaultHW }
-  const resized = load.resize(options)
-  return await resized.toBlob('image/jpeg')
+export async function resizeImage(file: File): Promise<Blob> {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line no-new
+    new Compressor(file, {
+      maxHeight: 2000,
+      maxWidth: 2000,
+      success(result) {
+        resolve(result)
+      },
+      error(err) {
+        reject(err)
+      },
+    })
+  })
 }
 
 export function getMousePos(

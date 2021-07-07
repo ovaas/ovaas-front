@@ -54,9 +54,13 @@ export function useUploadImage(path: string) {
   watch(image, async(file) => {
     if (!file || !checkFileExt(file)) return
     loading.value = true
-    const blob = await resizeImage(file)
-    const formData = useFromData('image', blob, 'image.jpg')
-    post(formData)
+    try {
+      const blob = await resizeImage(file)
+      const formData = useFromData('image', blob, 'image.jpg')
+      post(formData)
+    } catch (e) {
+      flash(EmitTypes.Danger, t('errors.upload-error'))
+    }
   })
   onUnmounted(() => {
     cancel()
