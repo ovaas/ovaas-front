@@ -62,7 +62,7 @@ const config = defineConfig({
     }),
   ],
   optimizeDeps: {
-    include: ['mitt', 'axios', 'image-js'],
+    include: ['mitt', 'axios'],
   },
   ssgOptions: {
     script: 'async',
