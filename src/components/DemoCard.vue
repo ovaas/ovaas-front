@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import type { Demo } from '~/types'
+import type { Demo } from '@/types'
 
 defineProps<{ demo: Demo }>()
 </script>

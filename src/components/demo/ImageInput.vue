@@ -1,6 +1,26 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+defineProps<{
+  uploading: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'change', value: File): void
+}>()
+
+const handleImage = (e: Event) => {
+  const target = e.target as HTMLInputElement
+  if (!target.files) return
+  emit('change', target.files[0])
+}
+</script>
+
 <template>
   <div class="relative border-2 border-gray-500 border-dashed md:w-1/3 group dark:border-gray-400 rounded-xl basic-transition">
-    <input type="file" accept="image/*" aria-label="Upload Image" class="absolute inset-0 z-40 block w-full h-full opacity-0 cursor-pointer" @change="emit('update:modelValue', getFile($event))">
+    <input type="file" accept="image/*" aria-label="Upload Image" class="absolute inset-0 z-40 block w-full h-full opacity-0 cursor-pointer" @change="handleImage">
     <div class="flex flex-col items-center justify-center h-full p-6 m-auto text-center md:p-10">
       <div class="mb-3 text-5xl">
         <mdi-loading v-if="uploading" class="animate-spin" />
@@ -18,26 +38,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { defineProps, defineEmit } from 'vue'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-
-defineProps<{
-  uploading: boolean
-  modelValue: File | null
-}>()
-
-const emit = defineEmit(['update:modelValue'])
-
-const getFile = (e: any) => {
-  const target = e.target as HTMLInputElement
-  return target.files![0]
-}
-</script>
-
-<style>
-
-</style>

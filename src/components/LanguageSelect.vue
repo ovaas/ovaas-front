@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import { watch, ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { languages } from '@/messages'
+import { localeSchema } from '../logics'
+
+const show = ref(false)
+
+const { locale } = useI18n()
+
+watch(locale, (v) => {
+  if (typeof document !== 'undefined')
+    document.documentElement.lang = v
+  localeSchema.value = v
+},
+{ immediate: true })
+
+onMounted(() => {
+  document.addEventListener('click', () => {
+    show.value = false
+  })
+})
+onUnmounted(() => {
+  document.removeEventListener('click', () => {})
+})
+</script>
+
 <template>
   <div class="relative h-full">
     <div class="flex items-center h-full px-3 text-2xl text-white md:px-5 hover:text-gray-300" @click.stop="show = true">
@@ -21,33 +48,6 @@
     </transition>
   </div>
 </template>
-
-<script setup lang="ts">
-import { watch, ref, onMounted, onUnmounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { localeSchema } from '../logics'
-import { languages } from '~/messages'
-
-const show = ref(false)
-
-const { locale } = useI18n()
-
-watch(locale, (v) => {
-  if (typeof document !== 'undefined')
-    document.documentElement.lang = v
-  localeSchema.value = v
-},
-{ immediate: true })
-
-onMounted(() => {
-  document.addEventListener('click', () => {
-    show.value = false
-  })
-})
-onUnmounted(() => {
-  document.removeEventListener('click', () => {})
-})
-</script>
 
 <style>
 .slide-fade-leave-active,

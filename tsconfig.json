@@ -19,9 +19,8 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "~/*": ["src/*"]
-    },
-    "types": ["vite/client"]
+      "@/*": ["src/*"]
+    }
   },
   "exclude": [
     "dist",

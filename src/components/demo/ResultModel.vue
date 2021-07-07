@@ -12,15 +12,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmit } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 defineProps<{
   open: boolean
-  text: string
+  text?: string
 }>()
 
-const emit = defineEmit(['update:open'])
+const emit = defineEmits(['update:open'])
 </script>

@@ -1,9 +1,9 @@
 import { ref, watch, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { AxiosRequestConfig } from 'axios'
-import { useApi, useFromData } from '~/logics/axios'
-import { flash, EmitTypes } from '~/logics/emitter'
-import { inBrowser, resizeImage } from '~/utils'
+import { useApi, useFromData } from '@/logics/axios'
+import { flash, EmitTypes } from '@/logics/emitter'
+import { inBrowser, resizeImage } from '@/utils'
 
 export function useUploadImage(path: string) {
   const { t } = useI18n()
@@ -22,6 +22,10 @@ export function useUploadImage(path: string) {
     reader.onload = (event) => {
       resultImage.value = event.target?.result as string
     }
+  }
+
+  function handleInput(file: File) {
+    image.value = file
   }
 
   const config: AxiosRequestConfig = {
@@ -59,7 +63,7 @@ export function useUploadImage(path: string) {
   })
 
   return {
-    image,
+    handleInput,
     loading,
     resultImage,
   }

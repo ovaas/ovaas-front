@@ -1,22 +1,4 @@
-<template>
-  <main class="h-full px-6 py-10 mx-auto lg:(px-10 pt-14) md:(pb-16 max-w-4xl) lg:max-w-5xl xl:max-w-screen-2xl" :class="layout">
-    <div v-if="backBtn" class="items-center hidden text-4xl back md:inline-flex hover:text-gray-500 dark:hover:text-gray-300">
-      <router-link to="/">
-        <bx-bx-left-arrow-circle />
-      </router-link>
-    </div>
-    <div class="text-4xl font-bold title">
-      <h1>{{ title }}</h1>
-    </div>
-    <div class="content">
-      <slot />
-    </div>
-  </main>
-</template>
-
 <script setup lang="ts">
-import { defineProps } from 'vue'
-
 defineProps({
   title: {
     type: String,
@@ -32,6 +14,22 @@ defineProps({
   },
 })
 </script>
+
+<template>
+  <main class="h-full px-6 py-10 mx-auto lg:(px-10 pt-14) md:(pb-16 max-w-4xl) lg:max-w-5xl xl:max-w-screen-2xl" :class="layout">
+    <div v-if="backBtn" class="items-center hidden text-4xl back md:inline-flex hover:text-gray-500 dark:hover:text-gray-300">
+      <router-link to="/">
+        <bx-bx-left-arrow-circle />
+      </router-link>
+    </div>
+    <div class="text-4xl font-bold title">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="content">
+      <slot />
+    </div>
+  </main>
+</template>
 
 <style scoped lang="postcss">
 .home {

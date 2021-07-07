@@ -1,5 +1,5 @@
 import NProgress from 'nprogress'
-import { UserModule } from '~/types'
+import { UserModule } from '@/types'
 
 // progress bar
 export const install: UserModule = ({ isClient, router }) => {

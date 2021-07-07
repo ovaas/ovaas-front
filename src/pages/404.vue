@@ -1,12 +1,8 @@
-<template>
-  <MainContent :title="t('page-not-found')" />
-</template>
-
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { generateHeadMeta } from '~/logics/meta'
+import { generateHeadMeta } from '@/logics/meta'
 
 const { t } = useI18n()
 
@@ -17,3 +13,7 @@ const siteData = reactive({
 
 useHead(generateHeadMeta(siteData))
 </script>
+
+<template>
+  <MainContent :title="t('page-not-found')" />
+</template>

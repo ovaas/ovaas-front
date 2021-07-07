@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { isDark } from '@/logics'
+
+const { t } = useI18n()
+</script>
+
 <template>
   <aside class="flex-col items-center flex-none hidden p-2 text-gray-800 bg-gray-300 md:flex dark:(bg-gray-700 text-white) w-18">
     <router-link to="/">
@@ -19,10 +26,3 @@
     </div>
   </aside>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { isDark } from '~/logics'
-
-const { t } = useI18n()
-</script>

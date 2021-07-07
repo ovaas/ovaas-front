@@ -11,7 +11,7 @@ import WindiCSS from 'vite-plugin-windicss'
 const config = defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
