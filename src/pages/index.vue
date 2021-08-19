@@ -8,6 +8,7 @@ import DrawColorsImg from '@/assets/images/draw-colors.webp'
 import MonoDepthImg from '@/assets/images/mono-depth.webp'
 import ObjectDetectionImg from '@/assets/images/object-detection.webp'
 import SegmentationImg from '@/assets/images/segmentation.webp'
+import ObjectDetectionYoloImg from '@/assets/images/object-detection-yolo.webp'
 import type { Demo } from '@/types'
 import { generateHeadMeta } from '@/logics/meta'
 
@@ -56,6 +57,12 @@ const demos = computed<Demo[]>(() => ([
     image: SegmentationImg,
     content: t('demos.segmentation.content'),
     path: '/demo/segmentation',
+  },
+  {
+    title: t('demos.object-detection-yolo.title'),
+    image: ObjectDetectionYoloImg,
+    content: t('demos.object-detection-yolo.content'),
+    path: '/demo/object-detection-yolo',
   },
 ]))
 </script>
