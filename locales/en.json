@@ -29,7 +29,12 @@
     "segmentation": {
       "title": "Segmentation",
       "content": "AI will detect the edge of human's body in a picture. Try it with your picture!"
+    },
+    "object-detection-yolo": {
+      "title": "Object Detection Yolo",
+      "content": "AI estimates the type of objects in a picture. This AI can estimate 80 kinds of objects. Try it with your picture!"
     }
+
   },
   "upload": {
     "recognize": "Recognize",
