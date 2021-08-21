@@ -8,7 +8,7 @@ import DrawColorsImg from '@/assets/images/draw-colors.webp'
 import MonoDepthImg from '@/assets/images/mono-depth.webp'
 import ObjectDetectionImg from '@/assets/images/object-detection.webp'
 import SegmentationImg from '@/assets/images/segmentation.webp'
-import SuperResolutionIMG from '@/assets/images/super_resolution.webp'
+import SuperResolutionImg from '@/assets/images/super_resolution.webp'
 import type { Demo } from '@/types'
 import { generateHeadMeta } from '@/logics/meta'
 
