@@ -18,7 +18,7 @@ const {
   handleInput,
   loading,
   resultImage,
-} = useUploadImage('/humansegmentation')
+} = useUploadImage('/segmentation')
 </script>
 
 <template>
