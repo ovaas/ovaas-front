@@ -8,8 +8,8 @@ import { useUploadImage } from '@/logics/upload'
 const { t } = useI18n()
 
 const siteData = reactive({
-  title: `OVaaS - ${t('demos.segmentation.title')}`,
-  description: t('demos.segmentation.content'),
+  title: `OVaaS - ${t('demos.super-resolution.title')}`,
+  description: t('demos.super-resolution.content'),
 })
 
 useHead(generateHeadMeta(siteData))
@@ -18,12 +18,12 @@ const {
   handleInput,
   loading,
   resultImage,
-} = useUploadImage('/humansegmentation')
+} = useUploadImage('/superresolution')
 </script>
 
 <template>
   <MainContent
-    :title="t('demos.segmentation.title')"
+    :title="t('demos.super-resolution.title')"
     :back-btn="true"
   >
     <div class="flex flex-col items-stretch flex-auto w-full h-full space-y-4  md:(space-y-0 space-x-6 flex-row)">

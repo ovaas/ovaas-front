@@ -29,6 +29,10 @@
     "segmentation": {
       "title": "Segmentation",
       "content": "AI will detect the edge of human's body in a picture. Try it with your picture!"
+    },
+    "super-resolution" : {
+      "title": "Super Resolution",
+      "content": "AI corrects a fuzzy image to high resolution image. Try it with your image! "
     }
   },
   "upload": {
