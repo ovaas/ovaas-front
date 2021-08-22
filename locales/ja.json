@@ -29,6 +29,10 @@
     "segmentation": {
       "title": "セグメンテーション",
       "content": "人間の体が映った画像をアップロードするとAIがその輪郭を検出します"
+    },
+    "object-detection-yolo": {
+      "title": "物体検出(Yolo)",
+      "content": "AIが画像内に写っているモノの種類を推定します。画像をアップロードしてお試しください。"
     }
   },
   "upload": {
