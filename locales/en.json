@@ -32,7 +32,11 @@
     },
     "super-resolution" : {
       "title": "Super Resolution",
-      "content": "AI corrects a fuzzy image to high resolution image. Try it with your image! "
+      "content": "AI corrects a fuzzy image to high resolution image. Try it with your image!"
+    },
+    "object-detection-yolo": {
+      "title": "Object Detection Yolo",
+      "content": "AI estimates the type of objects in a picture. This AI can estimate 80 kinds of objects. Try it with your picture!"
     }
   },
   "upload": {

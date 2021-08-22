@@ -9,6 +9,7 @@ import MonoDepthImg from '@/assets/images/mono-depth.webp'
 import ObjectDetectionImg from '@/assets/images/object-detection.webp'
 import SegmentationImg from '@/assets/images/segmentation.webp'
 import SuperResolutionImg from '@/assets/images/super_resolution.webp'
+import ObjectDetectionYoloImg from '@/assets/images/object-detection-yolo.webp'
 import type { Demo } from '@/types'
 import { generateHeadMeta } from '@/logics/meta'
 
@@ -63,6 +64,12 @@ const demos = computed<Demo[]>(() => ([
     image: SuperResolutionImg,
     content: t('demos.super-resolution.content'),
     path: '/demo/super-resolution',
+  },
+  {
+    title: t('demos.object-detection-yolo.title'),
+    image: ObjectDetectionYoloImg,
+    content: t('demos.object-detection-yolo.content'),
+    path: '/demo/object-detection-yolo',
   },
 ]))
 </script>
