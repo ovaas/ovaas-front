@@ -19,6 +19,7 @@ declare module 'vue' {
     BxBxUndo: typeof import('virtual:vite-icons/bx/bx-undo')['default']
     DarkSwitch: typeof import('./src/components/DarkSwitch.vue')['default']
     DemoCard: typeof import('./src/components/DemoCard.vue')['default']
+    DemoImageUpload: typeof import('./src/components/DemoImageUpload.vue')['default']
     FlashMessage: typeof import('./src/components/FlashMessage.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     ImageInput: typeof import('./src/components/demo/ImageInput.vue')['default']
