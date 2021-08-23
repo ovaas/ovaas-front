@@ -26,7 +26,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative h-full">
+  <div class="relative h-full" @mouseenter="show = true" @mouseleave="show = false">
     <div class="flex items-center h-full px-3 text-2xl text-white md:px-5 hover:text-gray-300" @click.stop="show = true">
       <vs-language />
     </div>
