@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, reactive, onUnmounted, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import type { AxiosRequestConfig } from 'axios'

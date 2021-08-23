@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { watch, ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { languages } from '@/messages'
-import { localeSchema } from '../logics'
+import { localeSchema } from '@/logics'
 
 const show = ref(false)
 

@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import HumanPoseImg from '@/assets/images/human-pose-estimation.webp'
-import HandWritingImg from '@/assets/images/handwriting-ocr.webp'
-import DrawColorsImg from '@/assets/images/draw-colors.webp'
-import MonoDepthImg from '@/assets/images/mono-depth.webp'
-import ObjectDetectionImg from '@/assets/images/object-detection.webp'
-import SegmentationImg from '@/assets/images/segmentation.webp'
-import SuperResolutionImg from '@/assets/images/super_resolution.webp'
-import ObjectDetectionYoloImg from '@/assets/images/object-detection-yolo.webp'
-import type { Demo } from '@/types'
 import { generateHeadMeta } from '@/logics/meta'
+
+import type { Demo } from '@/types'
 
 const { t } = useI18n()
 
@@ -25,49 +17,49 @@ useHead(generateHeadMeta(siteData))
 const demos = computed<Demo[]>(() => ([
   {
     title: t('demos.human-pose.title'),
-    image: HumanPoseImg,
+    image: '/images/human-pose-estimation.webp',
     content: t('demos.human-pose.content'),
     path: '/demo/human-pose-estimation',
   },
   {
     title: t('demos.handwritten-ocr.title'),
-    image: HandWritingImg,
+    image: '/images/handwriting-ocr.webp',
     content: t('demos.handwritten-ocr.content'),
     path: '/demo/handwritten-ocr',
   },
   {
     title: t('demos.draw-colors.title'),
-    image: DrawColorsImg,
+    image: '/images/draw-colors.webp',
     content: t('demos.draw-colors.content'),
     path: '/demo/draw-colors',
   },
   {
     title: t('demos.mono-depth.title'),
-    image: MonoDepthImg,
+    image: '/images/mono-depth.webp',
     content: t('demos.mono-depth.content'),
     path: '/demo/mono-depth',
   },
   {
     title: t('demos.object-detection.title'),
-    image: ObjectDetectionImg,
+    image: '/images/object-detection.webp',
     content: t('demos.object-detection.content'),
     path: '/demo/object-detection',
   },
   {
     title: t('demos.segmentation.title'),
-    image: SegmentationImg,
+    image: '/images/segmentation.webp',
     content: t('demos.segmentation.content'),
     path: '/demo/segmentation',
   },
   {
     title: t('demos.super-resolution.title'),
-    image: SuperResolutionImg,
+    image: '/images/super_resolution.webp',
     content: t('demos.super-resolution.content'),
     path: '/demo/super-resolution',
   },
   {
     title: t('demos.object-detection-yolo.title'),
-    image: ObjectDetectionYoloImg,
+    image: '/images/object-detection-yolo.webp',
     content: t('demos.object-detection-yolo.content'),
     path: '/demo/object-detection-yolo',
   },

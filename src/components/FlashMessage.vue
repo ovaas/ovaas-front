@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { onFlash } from '@/logics/emitter'
 import { isDark } from '@/logics/dark'
-import { onFlash } from '../logics/emitter'
-import type { Colors } from '../logics/emitter'
+
+import type { Colors } from '@/logics/emitter'
 
 const show = ref(false)
 const message = ref('')

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import { generateHeadMeta } from '@/logics/meta'
 import { useUploadImage } from '@/logics/upload'
