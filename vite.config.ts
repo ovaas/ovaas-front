@@ -66,7 +66,7 @@ const config = defineConfig({
   },
   ssgOptions: {
     script: 'async',
-    formatting: 'prettify',
+    formatting: 'minify',
   },
 })
 
