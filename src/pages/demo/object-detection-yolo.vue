@@ -8,6 +8,6 @@ const { t } = useI18n()
   <DemoImageUpload
     :title="t('demos.object-detection-yolo.title')"
     :description="t('demos.object-detection-yolo.content')"
-    upload-path="/object-detection-yolo"
+    upload-path="/yolov3"
   />
 </template>

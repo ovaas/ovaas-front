@@ -8,6 +8,6 @@ const { t } = useI18n()
   <DemoImageUpload
     :title="t('demos.mono-depth.title')"
     :description="t('demos.mono-depth.content')"
-    upload-path="/mono-depth"
+    upload-path="/monodepth"
   />
 </template>

@@ -8,6 +8,6 @@ const { t } = useI18n()
   <DemoImageUpload
     :title="t('demos.segmentation.title')"
     :description="t('demos.segmentation.content')"
-    upload-path="/segmentation"
+    upload-path="/humansegmentation"
   />
 </template>
