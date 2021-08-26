@@ -34,6 +34,12 @@ const demos = computed<Demo[]>(() => ([
     path: '/demo/draw-colors',
   },
   {
+    title: t('demos.face-age.title'),
+    image: '/images/face-age.webp',
+    content: t('demos.face-age.content'),
+    path: '/demo/face-age',
+  },
+  {
     title: t('demos.mono-depth.title'),
     image: '/images/mono-depth.webp',
     content: t('demos.mono-depth.content'),
