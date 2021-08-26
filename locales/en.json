@@ -18,6 +18,10 @@
       "title": "Colorization",
       "content": "This is a demo to convert a monochrome image to a colorized image by AI. Try it with uploading your monochrome image."
     },
+    "face-age": {
+      "title": "Face Age",
+      "content": "This is a demo to estimate age of a person in a picture by AI. Try it with your picture! "
+    },
     "mono-depth": {
       "title": "Mono Depth",
       "content": "AI will make people at the back grayscale in a picture. Try it with your picture!"
