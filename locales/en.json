@@ -24,7 +24,7 @@
     },
     "mono-depth": {
       "title": "Mono Depth",
-      "content": "AI will make people at the back grayscale in a picture. Try it with your picture!"
+      "content": "AI estimates the relative distances in a picture. The farther objects in a picture are converted to grayscale. Try it with your picture!"
     },
     "object-detection": {
       "title": "Object Detection",
@@ -32,7 +32,7 @@
     },
     "segmentation": {
       "title": "Segmentation",
-      "content": "AI will detect the edge of human's body in a picture. Try it with your picture!"
+      "content": "AI finds people in a picture. People remain in color, while the others are converted to grayscale. Try it with your picture!"
     },
     "super-resolution" : {
       "title": "Super Resolution",
