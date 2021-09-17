@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
-import type { AxiosRequestConfig } from 'axios'
-import { createDrauu, Brush, DrawingMode, Drauu } from 'drauu'
-import { useApi, useFromData } from '@/logics/axios'
-import { generateHeadMeta } from '@/logics/head'
-import { useCanvas } from '@/logics/canvas'
-import type { HandwrittenResult } from '@/types'
 import { useHandWritten } from '@/logics/demo'
 
 const { t } = useI18n()
@@ -15,7 +9,7 @@ useHead(computed(() => ({
   description: t('demos.handwritten-ocr.content'),
 })))
 
-const svgEl = ref<SVGSVGElement>(null)
+const svgEl = ref<SVGSVGElement | null>(null)
 const {
   drauu,
   mode,

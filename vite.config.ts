@@ -84,7 +84,7 @@ const config = defineConfig({
     script: 'async',
     formatting: 'minify',
     onFinished() {
-      fs.cpSync(resolve(__dirname, 'dist/index.html'), resolve(__dirname, 'dist/404.html'))
+      fs.copyFileSync(resolve(__dirname, 'dist/index.html'), resolve(__dirname, 'dist/404.html'))
     },
   },
 })

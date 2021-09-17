@@ -6,7 +6,7 @@ import { isDev, DOMURL } from '@/utils'
 
 import type { HandwrittenResult } from '@/types'
 
-export function useHandWritten(svgEl: Ref<SVGSVGElement>) {
+export function useHandWritten(svgEl: Ref<SVGSVGElement | null>) {
   const mode = ref<DrawingMode>('stylus')
   const canUndo = ref(false)
   const canRedo = ref(false)
@@ -45,11 +45,11 @@ export function useHandWritten(svgEl: Ref<SVGSVGElement>) {
       ctx!.fillRect(0, 0, canvas.width, canvas.height)
       const img = new Image()
       const blob = new Blob([svg.outerHTML], { type: 'image/svg+xml' })
-      const url = DOMURL.createObjectURL(blob)
+      const url = DOMURL!.createObjectURL(blob)
 
       img.onload = function() {
         ctx!.drawImage(img, 0, 0)
-        DOMURL.revokeObjectURL(url)
+        DOMURL!.revokeObjectURL(url)
         canvas.toBlob((blob) => {
           if (blob)
             resolve(blob)
@@ -71,7 +71,7 @@ export function useHandWritten(svgEl: Ref<SVGSVGElement>) {
       return
 
     const link = document.createElement('a')
-    link.href = DOMURL.createObjectURL(blob)
+    link.href = DOMURL!.createObjectURL(blob)
     link.download = 'hand-written.jpeg'
     document.body.appendChild(link)
     link.click()

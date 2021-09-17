@@ -2,7 +2,7 @@ import Compressor from 'compressorjs'
 
 export const inBrowser = typeof window !== 'undefined'
 export const isDev = import.meta.env.DEV
-export const DOMURL = window.URL || window.webkitURL || window
+export const DOMURL = inBrowser ? window.URL || window.webkitURL || window : null
 
 export async function resizeImage(file: File): Promise<Blob> {
   return new Promise((resolve, reject) => {

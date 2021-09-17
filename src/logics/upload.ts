@@ -30,7 +30,7 @@ export function useUploadImage(path: string) {
 
   watch(data, (v) => {
     if (!v) return
-    resultImage.value = DOMURL.createObjectURL(v)
+    resultImage.value = DOMURL!.createObjectURL(v)
   })
 
   watch(image, async(file) => {
