@@ -1,4 +1,4 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 export const localeSchema = useStorage('locale', '') as Ref<string>

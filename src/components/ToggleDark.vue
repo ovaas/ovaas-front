@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { isDark } from '@/logics'
+import { isDark, toggleDark } from '@/logics'
 </script>
 
 <template>
-  <button class="h-full px-3 text-white cursor-pointer focus:outline-none md:px-5" @click="isDark = !isDark">
+  <button class="p-2 text-white cursor-pointer focus:outline-none" @click="toggleDark()">
     <bx-bx-moon v-if="isDark" class="text-2xl" />
     <bx-bx-sun v-else class="text-2xl" />
   </button>

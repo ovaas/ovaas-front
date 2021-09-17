@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { languages } from '@/messages'
 import { localeSchema } from '@/logics'
 
@@ -25,17 +24,24 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative h-full" @mouseenter="show = true" @mouseleave="show = false">
-    <div class="flex items-center h-full px-3 text-2xl text-white md:px-5 hover:text-gray-300" @click.stop="show = true">
+  <div class="relative h-full" @click.stop="show = true" @mouseenter="show = true" @mouseleave="show = false">
+    <div class="flex items-center p-2 text-2xl text-white hover:text-gray-300">
       <vs-language />
     </div>
     <transition name="slide-fade">
-      <div v-show="show" class="absolute top-0 right-0 pr-2 pt-14">
-        <div class="bg-white dark:bg-gray-700 inline-flex flex-col rounded-md p-1.5 shadow-md">
+      <div v-show="show" class="absolute top-0 left-0 pt-12">
+        <div class="bg-dark-100 dark:bg-dark-200 inline-flex flex-col rounded-md p-1.5 shadow-md">
           <button
             v-for="lang in languages"
             :key="lang.locale"
-            class="w-full px-3 py-1 text-center rounded-md hover:bg-gray-200 focus:(outline-none text-gray-500) dark:hover:bg-gray-600 dark:focus:text-gray-400"
+            class="
+              w-full px-4 py-1.5
+              text-center rounded-md
+              hover:bg-dark-300
+              focus:(outline-none text-true-gray-400)
+              dark:hover:bg-dark-400
+              dark:focus:text-gray-400
+            "
             :value="lang.locale"
             :selected="lang.locale === locale"
             @click="locale = lang.locale"

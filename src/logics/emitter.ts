@@ -1,5 +1,4 @@
 import mitt from 'mitt'
-import { onMounted } from 'vue'
 
 export type Colors = 'green' | 'red' | 'yellow' | 'white'
 export type FlashPayload = { color: Colors; message: string }

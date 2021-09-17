@@ -1,4 +1,4 @@
-import { onMounted, Ref, ref, computed } from 'vue'
+import type { Ref } from 'vue'
 import { getMousePos } from '@/utils'
 export function useCanvas(
   canvas: Ref<HTMLCanvasElement | null>,

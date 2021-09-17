@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { useHead } from '@vueuse/head'
-import { useI18n } from 'vue-i18n'
-import { generateHeadMeta } from '@/logics/meta'
+import { useHead } from '@/logics/head'
 
 const { t } = useI18n()
 
-const siteData = reactive({
+useHead(computed(() => ({
   title: 'OVaaS - Not Found',
   description: 'The page does not exist.',
-})
-
-useHead(generateHeadMeta(siteData))
+})))
 </script>
 
 <template>
-  <MainContent :title="t('page-not-found')" />
+  <PageTitle :title="t('page-not-found')" />
 </template>

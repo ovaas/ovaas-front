@@ -1,9 +1,7 @@
-import { Ref, ref } from 'vue'
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios'
 import NProgress from 'nprogress'
+import type { Ref } from 'vue'
 import { flash, EmitTypes } from './emitter'
-
-const isProd = import.meta.env.PROD
 
 axios.interceptors.request.use((config) => {
   NProgress.start()
@@ -73,6 +71,11 @@ export function useApi<T = any>(
       })
   }
 
+  watch(error, (e) => {
+    // eslint-disable-next-line no-console
+    console.error(e)
+  })
+
   return {
     response,
     data,
@@ -83,15 +86,4 @@ export function useApi<T = any>(
     canceled,
     post,
   }
-}
-
-export function useFromData(name: string, file: File | Blob | string, filename?: string): FormData {
-  const formData = new FormData()
-  formData.append(name, file, filename)
-  if (!isProd) {
-    for (const pair of formData.entries())
-      // eslint-disable-next-line no-console
-      console.log(`${pair[0]}, ${pair[1]}`)
-  }
-  return formData
 }
