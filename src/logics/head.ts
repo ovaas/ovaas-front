@@ -1,6 +1,6 @@
 import { useHead as _useHead } from '@vueuse/head'
-import type { Ref } from 'vue'
 import type { SiteData } from '@/types'
+import type { Ref } from 'vue'
 
 export function generateHeadMeta(siteData: Ref<SiteData>) {
   return computed(() => {

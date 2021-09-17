@@ -1,7 +1,8 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios'
 import NProgress from 'nprogress'
-import type { Ref } from 'vue'
 import { flash, EmitTypes } from './emitter'
+
+import type { Ref } from 'vue'
 
 axios.interceptors.request.use((config) => {
   NProgress.start()

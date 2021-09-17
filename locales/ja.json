@@ -33,9 +33,9 @@
     "segmentation": {
       "title": "セグメンテーション",
       "content": "AIが画像内に写っている人物を発見します。人物はカラーのままで、他のモノはグレースケールになります。"
-    }, 
+    },
     "super-resolution": {
-      "title": "超解像", 
+      "title": "超解像",
       "content": "AIが画像内に写っているモノの種類を推定します．画像をアップロードしてお試しください。"
     },
     "object-detection-yolo": {

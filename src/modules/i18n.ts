@@ -1,9 +1,8 @@
 import { createI18n } from 'vue-i18n'
 import { usePreferredLanguages } from '@vueuse/core'
+import type { UserModule } from '@/types'
 import { messages } from '../messages'
 import { localeSchema } from '../logics'
-
-import type { UserModule } from '@/types'
 
 // multiple language
 export const install: UserModule = ({ app }) => {

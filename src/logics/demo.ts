@@ -1,10 +1,10 @@
 import { createDrauu, DrawingMode } from 'drauu'
-import type { Ref } from 'vue'
 import { API_ENDPOINT } from '@/constants'
 import { useFromData, useApi } from '@/logics'
 import { isDev, DOMURL } from '@/utils'
 
 import type { HandwrittenResult } from '@/types'
+import type { Ref } from 'vue'
 
 export function useHandWritten(svgEl: Ref<SVGSVGElement | null>) {
   const mode = ref<DrawingMode>('stylus')

@@ -1,5 +1,6 @@
-import type { Ref } from 'vue'
 import { getMousePos } from '@/utils'
+import type { Ref } from 'vue'
+
 export function useCanvas(
   canvas: Ref<HTMLCanvasElement | null>,
   box: Ref<HTMLElement | null>,
