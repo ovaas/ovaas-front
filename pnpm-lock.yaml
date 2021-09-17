@@ -24,8 +24,6 @@ specifiers:
   unplugin-icons: ^0.11.3
   unplugin-vue-components: ^0.15.2
   vite: ^2.5.8
-  vite-plugin-components: ^0.13.3
-  vite-plugin-icons: ^0.6.5
   vite-plugin-pages: ^0.18.1
   vite-plugin-pwa: ^0.11.2
   vite-plugin-windicss: 1.4.3
@@ -68,8 +66,6 @@ devDependencies:
   unplugin-icons: 0.11.3_fd5a4923c948631ae5dd6eea4a9dc450
   unplugin-vue-components: 0.15.2_vite@2.5.8+vue@3.2.12
   vite: 2.5.8
-  vite-plugin-components: 0.13.3_vite@2.5.8
-  vite-plugin-icons: 0.6.5_18bf594c4c24b57cac7f22f705fc2349
   vite-plugin-pages: 0.18.1_8e465105128f470455b13d0620b83b22
   vite-plugin-pwa: 0.11.2_vite@2.5.8
   vite-plugin-windicss: 1.4.3_typescript@4.4.3+vite@2.5.8
@@ -5495,40 +5491,6 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-components/0.13.3_vite@2.5.8:
-    resolution: {integrity: sha512-6vLWPrEqFSW7REYvux/WVwxsytg/DcstVhdgAT806cZi/KGiQgB8dyFnLkrkFawxUQruuGkLWfS99Z/64mMC0w==}
-    deprecated: renamed to `unplugin-vue-components`, see https://github.com/antfu/unplugin-vue-components/releases/tag/v0.14.0
-    peerDependencies:
-      vite: ^2.0.0
-    dependencies:
-      debug: 4.3.2
-      fast-glob: 3.2.7
-      magic-string: 0.25.7
-      minimatch: 3.0.4
-      vite: 2.5.8
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /vite-plugin-icons/0.6.5_18bf594c4c24b57cac7f22f705fc2349:
-    resolution: {integrity: sha512-lfePr8juO2ajp0571iLL+9zIoyBD9nSSSHlC4JYXbAeMOJB6WTP+Vdc2gze8yI8JRO+Z0TXCCvvL9bPgvkI4Cg==}
-    deprecated: renamed to `unplugin-icons`, see https://github.com/antfu/unplugin-icons/releases/tag/v0.7.0
-    peerDependencies:
-      '@iconify/json': '*'
-      '@vue/compiler-sfc': ^3.0.2
-      vue-template-compiler: ^2.6.12
-    peerDependenciesMeta:
-      '@vue/compiler-sfc':
-        optional: true
-      vue-template-compiler:
-        optional: true
-    dependencies:
-      '@iconify/json': 1.1.403
-      '@iconify/json-tools': 1.0.10
-      '@vue/compiler-sfc': 3.2.12
-      vue-template-es2015-compiler: 1.9.1
-    dev: true
-
   /vite-plugin-pages/0.18.1_8e465105128f470455b13d0620b83b22:
     resolution: {integrity: sha512-+hNe98nkKoN/jK5dEdsTWRpTEpF++5A523cdNXE329eLedp9nql1EmWAuR5UqvP8aU+LCtWJN6Nnw3NWGWB9gQ==}
     peerDependencies:
@@ -5819,10 +5781,6 @@ packages:
       '@vue/devtools-api': 6.0.0-beta.15
       vue: 3.2.12
     dev: false
-
-  /vue-template-es2015-compiler/1.9.1:
-    resolution: {integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==}
-    dev: true
 
   /vue-tsc/0.3.0_typescript@4.4.3:
     resolution: {integrity: sha512-zaDRZBxwRIz1XjhNP92FqugG71st6BUMnA2EwPeXrAyzbEYVRz6TezNFceYl3QYqqN8CtaxbqUhaQEDj/ntoCA==}
