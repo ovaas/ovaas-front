@@ -3,9 +3,9 @@
 // https://vitejs.dev/guide/features.html#glob-import
 export const messages = Object.fromEntries(
   Object.entries(
-    import.meta.globEager('../locales/*.json'))
+    import.meta.globEager('../locales/*.yml'))
     .map(([key, value]) => {
-      const msgKey = key.split('/').pop()?.replace('.json', '')
+      const msgKey = key.split('/').pop()?.replace('.yml', '')
       return [msgKey, value.default]
     }),
 )

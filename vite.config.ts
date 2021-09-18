@@ -78,7 +78,7 @@ const config = defineConfig({
     }),
   ],
   optimizeDeps: {
-    include: ['mitt', 'axios'],
+    include: ['vue', 'vue-router', 'drauu', 'dayjs', 'mitt', 'axios'],
   },
   ssgOptions: {
     script: 'async',

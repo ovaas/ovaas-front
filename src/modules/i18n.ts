@@ -4,8 +4,8 @@ import type { UserModule } from '@/types'
 import { messages } from '../messages'
 import { localeSchema } from '../logics'
 
-// multiple language
 export const install: UserModule = ({ app }) => {
+  // auto detect browser language
   const preferredLangs = usePreferredLanguages()
   const language = preferredLangs.value.find((locale) => {
     return Object.keys(messages).includes(locale)

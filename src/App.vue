@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { Head } from '@vueuse/head'
+import { setLocale } from '@vee-validate/i18n'
 import { useHead } from '@/logics/head'
+import { isDev } from '@/utils'
+
+const { locale } = useI18n()
 
 useHead(computed(() => ({
   title: 'OVaaS - OpenVINO as a service',
   description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })))
-const isDev = import.meta.env.DEV
+
+watch(locale, (v) => {
+  setLocale(v)
+}, { immediate: true })
 </script>
 
 <template>
