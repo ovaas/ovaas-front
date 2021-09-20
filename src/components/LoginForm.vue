@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { FormSchema } from '@/types'
+import axios from "axios"
 
 const { t } = useI18n()
 
@@ -21,8 +22,26 @@ const schema: FormSchema = {
 const loading = ref(false)
 
 function onSubmit(values: any) {
+  // TODO: loading refの更新
+  loading.value = true
+  loginProcess()
   alert(JSON.stringify(values, null, 2))
 }
+
+function loginProcess(){
+  axios.post("/api/v1/auth", {
+      // TODO: 送信データを決める
+      password: "password"
+    })
+    .then(function(res) {
+      // TODO: ログイン成功
+      // TODO: loading refをfalseに更新
+    })
+    .catch(function(err) {
+      console.error(err)
+    });
+}
+
 </script>
 
 <template>
