@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { FormSchema } from '@/types'
-// import axios from "axios"
-import { API_ENDPOINT } from '@/constants'
 import { useApi } from "../logics/axios"
 
 const { t } = useI18n()
@@ -29,19 +27,17 @@ function onSubmit(values: any) {
 }
 
 function loginUseApi(path: string) {
-  const { data, loading, error, post, cancel } = useApi<Blob>(`${API_ENDPOINT}${path}`,{
+  const { loading, post} = useApi<Blob>(`${path}`,{
     headers: {
       'Content-Type': 'application/json',
-      'Password': 'password' // TODO: 入力値を入れる?
     },
+    responseType: 'blob',
   })
-  
+
+  post({'Password': 'pass'}) // TODO: 入力されたpassを入れる
+
   return (
-    data.value,
-    loading.value,
-    error.value,
-    post,
-    cancel
+    loading
   )
 }
 
