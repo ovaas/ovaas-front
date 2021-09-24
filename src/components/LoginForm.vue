@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FormSchema } from '@/types'
-import { useApi } from "../logics/axios"
+import { useApi } from '../logics/axios'
 
 const { t } = useI18n()
 
@@ -19,15 +19,11 @@ const schema: FormSchema = {
   submitText: 'form.login',
 }
 
-const { loading, post } = useApi<Blob>(`api/v1/auth`,{
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+const { loading, post } = useApi<Blob>('api/v1/auth',{})
 
 function onSubmit(values: any) {
   alert(JSON.stringify(values, null, 2))
-  post({'Password': 'pass'}) // TODO: 入力されたpassを入れる
+  post({'Password': values.password})
 }
 
 </script>
