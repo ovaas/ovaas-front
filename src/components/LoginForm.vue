@@ -19,11 +19,15 @@ const schema: FormSchema = {
   submitText: 'form.login',
 }
 
-const { loading, post } = useApi<Blob>('api/v1/auth',{})
+interface LoginRes {
+  access_token: string
+}
+
+const { loading, post } = useApi<LoginRes>('api/v1/auth')
 
 function onSubmit(values: any) {
   alert(JSON.stringify(values, null, 2))
-  post({'Password': values.password})
+  post({ password: values.password })
 }
 
 </script>
