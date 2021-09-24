@@ -23,7 +23,6 @@ const { loading, post } = useApi<Blob>(`api/v1/auth`,{
   headers: {
     'Content-Type': 'application/json',
   },
-  responseType: 'blob',
 })
 
 function onSubmit(values: any) {
