@@ -21,6 +21,7 @@ const schema: FormSchema = {
   ],
   validation: {
     password: 'required',
+    user: 'required',
   },
   submitText: 'form.login',
 }
