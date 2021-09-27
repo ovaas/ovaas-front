@@ -7,6 +7,12 @@ const { t } = useI18n()
 const schema: FormSchema = {
   fields: [
     {
+      name: 'user',
+      type: 'user',
+      label: 'form.username',
+      placeholder: '',
+    },
+    {
       name: 'password',
       type: 'password',
       label: 'form.password',
@@ -26,8 +32,11 @@ interface LoginRes {
 const { loading, post } = useApi<LoginRes>('api/v1/auth')
 
 function onSubmit(values: any) {
-  alert(JSON.stringify(values, null, 2))
-  post({ password: values.password })
+  alert(JSON.stringify(values, null, 2)) // eslint-disable-line no-alert
+  post({
+    password: values.password,
+    user: values.user,
+  })
 }
 
 </script>
