@@ -1,5 +1,5 @@
 import { createDrauu, DrawingMode } from 'drauu'
-import { API_ENDPOINT } from '@/constants'
+import { DEMO_API_ENDPOINT } from '@/constants'
 import { useFromData, useApi } from '@/logics'
 import { isDev, DOMURL } from '@/utils'
 
@@ -77,7 +77,7 @@ export function useHandWritten(svgEl: Ref<SVGSVGElement | null>) {
     link.click()
   }
 
-  const { data, loading, error, post, cancel } = useApi<HandwrittenResult>(`${API_ENDPOINT}/handwritten`, {
+  const { data, loading, error, post, cancel } = useApi<HandwrittenResult>(`${DEMO_API_ENDPOINT}/handwritten`, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },

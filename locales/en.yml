@@ -75,4 +75,6 @@ form:
   username: "Username"
   password: "Password"
   login: Login
+button:
+  logout: Logout
 page-not-found: 404 Page Not Found

@@ -10,6 +10,7 @@
       <div class="flex space-x-2 md:space-x-6">
         <LanguageSelect />
         <ToggleDark />
+        <LogoutButton />
       </div>
     </div>
   </header>

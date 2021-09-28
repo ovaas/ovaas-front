@@ -40,8 +40,8 @@ export function useApi<T = any>(
   url: string,
   config?: AxiosRequestConfig,
 ) {
-  const response = ref<any>(null) as Ref<AxiosResponse<T> | undefined>
-  const data = ref<any>(undefined) as Ref<T | undefined>
+  const response = ref<any>(null) as Ref<AxiosResponse<T> | null>
+  const data = ref<any>(null) as Ref<T | null>
   const finished = ref(false)
   const loading = ref(false)
   const canceled = ref(false)

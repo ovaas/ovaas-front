@@ -37,11 +37,7 @@ defineEmits<{
     </div>
     <div class="flex justify-center">
       <button
-        class="
-          py-2 px-4 bg-dark-100 rounded
-          text-center font-medium uppercase text-white
-          focus:(outline-none ring)
-          disabled:(opacity-60 cursor-not-allowed)"
+        class="btn"
         :disabled="!meta.valid"
       >
         <eos-icons:three-dots-loading v-if="isLoading" />

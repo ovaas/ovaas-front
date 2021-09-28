@@ -29,6 +29,7 @@ declare module 'vue' {
     JamCloseCircleF: typeof import('~icons/jam/close-circle-f')['default']
     LanguageSelect: typeof import('./src/components/LanguageSelect.vue')['default']
     LoginForm: typeof import('./src/components/LoginForm.vue')['default']
+    LogoutButton: typeof import('./src/components/LogoutButton.vue')['default']
     MdiLoading: typeof import('~icons/mdi/loading')['default']
     MessageButtons: typeof import('./src/components/MessageButtons.vue')['default']
     PageTitle: typeof import('./src/components/PageTitle.vue')['default']

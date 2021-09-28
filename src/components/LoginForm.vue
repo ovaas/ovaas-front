@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import type { FormSchema } from '@/types'
-import { useApi } from '../logics/axios'
+import { AccessToken } from '@/logics/store'
+import { useApi } from '@/logics/axios'
+import { API_ENDPOINT } from '@/constants'
 
 const { t } = useI18n()
+const router = useRouter()
 
 const schema: FormSchema = {
   fields: [
@@ -30,7 +33,7 @@ interface LoginRes {
   access_token: string
 }
 
-const { loading, post } = useApi<LoginRes>('api/v1/auth')
+const { loading, post, data } = useApi<LoginRes>(`${API_ENDPOINT}/auth`)
 
 function onSubmit(values: any) {
   alert(JSON.stringify(values, null, 2)) // eslint-disable-line no-alert
@@ -39,6 +42,17 @@ function onSubmit(values: any) {
     user: values.user,
   })
 }
+
+watch(data, (v) => {
+  if (!v) return
+  AccessToken.value = v.access_token
+  router.push('/')
+})
+
+onMounted(() => {
+  if (AccessToken.value)
+    router.push('/')
+})
 
 </script>
 

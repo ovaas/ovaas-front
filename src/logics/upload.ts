@@ -2,7 +2,7 @@ import { useApi } from '@/logics/axios'
 import { useFromData } from '@/logics'
 import { flash, EmitTypes } from '@/logics/emitter'
 import { resizeImage, DOMURL } from '@/utils'
-import { API_ENDPOINT, allowFileTypes } from '@/constants'
+import { DEMO_API_ENDPOINT, allowFileTypes } from '@/constants'
 
 export function useUploadImage(path: string) {
   const { t } = useI18n()
@@ -14,7 +14,7 @@ export function useUploadImage(path: string) {
     image.value = file
   }
 
-  const { data, loading, error, post, cancel } = useApi<Blob>(`${API_ENDPOINT}${path}`, {
+  const { data, loading, error, post, cancel } = useApi<Blob>(`${DEMO_API_ENDPOINT}${path}`, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
