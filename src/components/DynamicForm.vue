@@ -17,7 +17,7 @@ defineEmits<{
 </script>
 
 <template>
-  <Form :validation-schema="schema.validation" :initial-values="schema.values" @submit="$emit('submit', $event)">
+  <Form v-slot="{ meta }" :validation-schema="schema.validation" :initial-values="schema.values" @submit="$emit('submit', $event)">
     <div class="mb-8">
       <div v-for="{ name, as, label, sublabel, ...attrs } in schema.fields" :key="name" class="mb-4">
         <label class="block mb-1" :for="name">
@@ -36,7 +36,14 @@ defineEmits<{
       </div>
     </div>
     <div class="flex justify-center">
-      <button class="uppercase font-medium py-2 px-4 bg-dark-100 rounded text-center text-white focus:outline-none focus:ring">
+      <button
+        class="
+          py-2 px-4 bg-dark-100 rounded
+          text-center font-medium uppercase text-white
+          focus:(outline-none ring)
+          disabled:(opacity-60 cursor-not-allowed)"
+        :disabled="!meta.valid"
+      >
         <eos-icons:three-dots-loading v-if="isLoading" />
         <span v-else>{{ t(schema.submitText) }}</span>
       </button>
