@@ -10,7 +10,7 @@ const schema: FormSchema = {
       name: 'user',
       type: 'user',
       label: 'form.username',
-      placeholder: '',
+      placeholder: 'username',
     },
     {
       name: 'password',
@@ -20,8 +20,8 @@ const schema: FormSchema = {
     },
   ],
   validation: {
-    password: 'required',
     user: 'required',
+    password: 'required',
   },
   submitText: 'form.login',
 }
