@@ -1,10 +1,17 @@
 <script setup lang="ts">
 import type { FormSchema } from '@/types'
+import { useApi } from '../logics/axios'
 
 const { t } = useI18n()
 
 const schema: FormSchema = {
   fields: [
+    {
+      name: 'user',
+      type: 'user',
+      label: 'form.username',
+      placeholder: '',
+    },
     {
       name: 'password',
       type: 'password',
@@ -14,15 +21,25 @@ const schema: FormSchema = {
   ],
   validation: {
     password: 'required',
+    user: 'required',
   },
   submitText: 'form.login',
 }
 
-const loading = ref(false)
+interface LoginRes {
+  access_token: string
+}
+
+const { loading, post } = useApi<LoginRes>('api/v1/auth')
 
 function onSubmit(values: any) {
-  alert(JSON.stringify(values, null, 2))
+  alert(JSON.stringify(values, null, 2)) // eslint-disable-line no-alert
+  post({
+    password: values.password,
+    user: values.user,
+  })
 }
+
 </script>
 
 <template>
