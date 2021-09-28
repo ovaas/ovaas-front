@@ -10,6 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import WindiCSS from 'vite-plugin-windicss'
 import AutoImport from 'unplugin-auto-import/vite'
+import { viteMockServe } from 'vite-plugin-mock'
 
 const config = defineConfig({
   resolve: {
@@ -75,6 +76,9 @@ const config = defineConfig({
       runtimeOnly: true,
       compositionOnly: true,
       include: [resolve(__dirname, 'locales/**')],
+    }),
+    viteMockServe({
+      mockPath: 'mock',
     }),
   ],
   optimizeDeps: {
