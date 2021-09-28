@@ -15,13 +15,19 @@ export const install: UserModule = () => {
       en: {
         messages: {
           ...en.messages,
-          ...messages.en.validate,
+          ...Object.fromEntries(
+            Object.entries(messages.en.validate.messages)
+              .map(([key, value]) => [key, (value as any).source]),
+          ),
         },
       },
       ja: {
         messages: {
           ...ja.messages,
-          ...messages.ja.validate,
+          ...Object.fromEntries(
+            Object.entries(messages.ja.validate.messages)
+              .map(([key, value]) => [key, (value as any).source]),
+          ),
         },
       },
     }),

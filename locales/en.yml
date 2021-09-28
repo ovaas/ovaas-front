@@ -68,7 +68,7 @@ colorMode:
   light: Light
   dark: Dark
 validate:
-  message:
+  messages:
     required: "This field is required"
     email: "This field must be a valid email"
 form:

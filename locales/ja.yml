@@ -50,7 +50,7 @@ colorMode:
   light: ライト
   dark: ダーク
 validate:
-  message:
+  messages:
     required: "こちらは必須項目です"
     email: "有効のメールアドレスではありません"
 form:
