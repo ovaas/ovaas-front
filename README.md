@@ -1,6 +1,6 @@
 <p align='center'>
 <a href="https://ovaas.netlify.app" target="__blank">
-<img src='https://raw.githubusercontent.com/OVaaS/ovaas-front/main/doce/logo.png' alt='OVaaS - OpenVINO as a service' width="200"/>
+<img src='https://raw.githubusercontent.com/OVaaS/ovaas-front/main/docs/logo.png' alt='OVaaS - OpenVINO as a service' width="200"/>
 </a><br>
 OpenVINO as a service
 </p>
