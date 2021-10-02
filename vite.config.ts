@@ -18,6 +18,14 @@ const config = defineConfig({
       '@/': `${resolve(__dirname, 'src')}/`,
     },
   },
+  server: {
+    hmr: {
+      host: process.env.CODESPACES
+        ? `${process.env.CODESPACE_NAME}-3000.apps.codespaces.githubusercontent.com`
+        : undefined,
+      clientPort: process.env.CODESPACES ? 443 : undefined,
+    },
+  },
   plugins: [
     Vue(),
     // https://github.com/hannoeru/vite-plugin-pages
