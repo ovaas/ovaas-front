@@ -17,7 +17,7 @@ const handleImage = (e: Event) => {
 </script>
 
 <template>
-  <div class="relative border-2 border-true-gray-300 border-dashed md:w-1/3 group dark:border-true-gray-600 rounded-xl basic-transition">
+  <div class="relative border-2 border-gray-300 border-dashed md:w-1/3 group dark:border-cool-gray-600 rounded-xl basic-transition">
     <input type="file" accept="image/*" aria-label="Upload Image" class="absolute inset-0 z-40 block w-full h-full opacity-0 cursor-pointer" @change="handleImage">
     <div class="flex flex-col items-center justify-center h-full p-6 m-auto text-center md:p-10">
       <div class="mb-3 text-5xl">
