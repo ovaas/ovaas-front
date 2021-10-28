@@ -15,7 +15,7 @@
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
     "voorjaar.windicss-intellisense",
-    "csstools.postcss"
+    "cpylua.language-postcss"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
