@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { defineConfig } from 'vite-plugin-windicss'
-import colors from 'windicss/colors'
 import defaultTheme from 'windicss/defaultTheme'
 
 export default defineConfig({
