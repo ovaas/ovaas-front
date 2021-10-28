@@ -27,6 +27,7 @@ const config = defineConfig({
     },
   },
   plugins: [
+    // @ts-expect-error
     Vue(),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
