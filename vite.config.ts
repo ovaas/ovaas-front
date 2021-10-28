@@ -39,11 +39,11 @@ const config = defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
-      dts: true,
+      dts: 'src/auto-imports.d.ts',
     }),
     // https://github.com/antfu/vite-plugin-components
     Components({
-      dts: true,
+      dts: 'src/components.d.ts',
       resolvers: [
         IconsResolver({
           componentPrefix: '',
@@ -79,6 +79,7 @@ const config = defineConfig({
         ],
       },
     }),
+    // @ts-expect-error
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
