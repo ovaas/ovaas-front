@@ -27,7 +27,6 @@ const config = defineConfig({
     },
   },
   plugins: [
-    // @ts-expect-error
     Vue(),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
@@ -80,7 +79,6 @@ const config = defineConfig({
         ],
       },
     }),
-    // @ts-expect-error
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
