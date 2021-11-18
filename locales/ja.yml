@@ -32,6 +32,9 @@ demos:
   object-detection-yolo:
     title: 物体検出(Yolo)
     content: AIが画像内に写っているモノの種類を推定します。画像をアップロードしてお試しください。
+  hide-distant-person":
+    title: セグメンテーションと距離推定
+    content: AIが画像内の人物と距離を推定し、距離に応じて人物のみ明暗を変更します。
 upload:
   recognize: 認識
   image:
