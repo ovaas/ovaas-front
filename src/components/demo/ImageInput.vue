@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
 const { t } = useI18n()
 
 defineProps<{
@@ -19,7 +17,7 @@ const handleImage = (e: Event) => {
 </script>
 
 <template>
-  <div class="relative border-2 border-gray-500 border-dashed md:w-1/3 group dark:border-gray-400 rounded-xl basic-transition">
+  <div class="relative border-2 border-gray-300 border-dashed md:w-1/3 group dark:border-cool-gray-600 rounded-xl basic-transition">
     <input type="file" accept="image/*" aria-label="Upload Image" class="absolute inset-0 z-40 block w-full h-full opacity-0 cursor-pointer" @change="handleImage">
     <div class="flex flex-col items-center justify-center h-full p-6 m-auto text-center md:p-10">
       <div class="mb-3 text-5xl">
@@ -32,7 +30,7 @@ const handleImage = (e: Event) => {
       <p class="mb-4 md:w-2/3">
         {{ t('upload.image.content') }}
       </p>
-      <span class="text-xs text-red-500 dark:text-red-300">
+      <span class="text-xs text-red-500">
         {{ t('upload.image.support') }}
       </span>
     </div>

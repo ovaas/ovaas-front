@@ -5,7 +5,6 @@
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
     "voorjaar.windicss-intellisense",
-    "heybourn.headwind",
-    "csstools.postcss"
+    "cpylua.language-postcss"
   ]
 }

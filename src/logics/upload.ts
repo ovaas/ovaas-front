@@ -1,9 +1,8 @@
-import { ref, watch, onUnmounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import type { AxiosRequestConfig } from 'axios'
-import { useApi, useFromData } from '@/logics/axios'
+import { useApi } from '@/logics/axios'
+import { useFromData } from '@/logics'
 import { flash, EmitTypes } from '@/logics/emitter'
-import { inBrowser, resizeImage } from '@/utils'
+import { resizeImage, DOMURL } from '@/utils'
+import { DEMO_API_ENDPOINT, allowFileTypes } from '@/constants'
 
 export function useUploadImage(path: string) {
   const { t } = useI18n()
@@ -11,31 +10,16 @@ export function useUploadImage(path: string) {
   const image = ref<File | null>(null)
   const resultImage = ref<string>('')
 
-  const baseUrl = import.meta.env.VITE_FUNCTIONS_ENDPOINT
-  const objectDetectionUrl = `${baseUrl}${path}`
-  const allowFileTypes = ['image/jpeg', 'image/png']
-
-  let reader: FileReader
-
-  if (inBrowser) {
-    reader = new FileReader()
-    reader.onload = (event) => {
-      resultImage.value = event.target?.result as string
-    }
-  }
-
   function handleInput(file: File) {
     image.value = file
   }
 
-  const config: AxiosRequestConfig = {
+  const { data, loading, error, post, cancel } = useApi<Blob>(`${DEMO_API_ENDPOINT}${path}`, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
     responseType: 'blob',
-  }
-
-  const { data, loading, error, post, cancel } = useApi<Blob>(objectDetectionUrl, config)
+  })
 
   const checkFileExt = (file: File) => {
     if (allowFileTypes.includes(file.type))
@@ -45,12 +29,10 @@ export function useUploadImage(path: string) {
   }
 
   watch(data, (v) => {
-    if (v) reader.readAsDataURL(v as Blob)
+    if (!v) return
+    resultImage.value = DOMURL!.createObjectURL(v)
   })
-  watch(error, (e) => {
-    // eslint-disable-next-line no-console
-    console.error(e)
-  })
+
   watch(image, async(file) => {
     if (!file || !checkFileExt(file)) return
     loading.value = true
@@ -62,6 +44,7 @@ export function useUploadImage(path: string) {
       flash(EmitTypes.Danger, t('errors.upload-error'))
     }
   })
+
   onUnmounted(() => {
     cancel()
   })
@@ -69,6 +52,7 @@ export function useUploadImage(path: string) {
   return {
     handleInput,
     loading,
+    error,
     resultImage,
   }
 }

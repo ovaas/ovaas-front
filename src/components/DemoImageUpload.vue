@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useHead } from '@vueuse/head'
-import { generateHeadMeta } from '@/logics/meta'
+import { useHead } from '@/logics/head'
 import { useUploadImage } from '@/logics/upload'
 
 const props = defineProps<{
@@ -9,12 +8,10 @@ const props = defineProps<{
   uploadPath: string
 }>()
 
-const siteData = reactive({
-  title: `OVaaS - ${props.title}`,
+useHead(computed(() => ({
+  title: props.title,
   description: props.description,
-})
-
-useHead(generateHeadMeta(siteData))
+})))
 
 const {
   handleInput,
@@ -24,11 +21,9 @@ const {
 </script>
 
 <template>
-  <MainContent
-    :title="title"
-    :back-btn="true"
-  >
-    <div class="flex flex-col items-stretch flex-auto w-full h-full space-y-4 md:(space-y-0 space-x-6 flex-row)">
+  <div class="">
+    <PageTitle :title="title" />
+    <div class="flex flex-col flex-auto w-full space-y-4 md:(space-y-0 space-x-6 flex-row) h-200">
       <div class="flex flex-1 md:w-2/3">
         <ImagePreview :image="resultImage" />
       </div>
@@ -37,5 +32,5 @@ const {
         @change="handleInput"
       />
     </div>
-  </MainContent>
+  </div>
 </template>

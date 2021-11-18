@@ -19,3 +19,18 @@ export interface HandwrittenResult {
   timecost: number
   text: string
 }
+
+export interface FieldSchema {
+  as?: string
+  name: string
+  label: string
+  sublabel?: string
+  [k: string]: any
+}
+
+export interface FormSchema {
+  fields: FieldSchema[]
+  validation: any
+  values?: { [k: string]: any }
+  submitText: string
+}

@@ -1,110 +1,64 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
-import { useI18n } from 'vue-i18n'
-import type { AxiosRequestConfig } from 'axios'
-import { useApi, useFromData } from '@/logics/axios'
-import { generateHeadMeta } from '@/logics/meta'
-import { useCanvas } from '@/logics/canvas'
-import type { HandwrittenResult } from '@/types'
+import { useHandWritten } from '@/logics/demo'
 
 const { t } = useI18n()
 
-const siteData = reactive({
-  title: `OVaaS - ${t('demos.handwritten-ocr.title')}`,
+useHead(computed(() => ({
+  title: t('demos.handwritten-ocr.title'),
   description: t('demos.handwritten-ocr.content'),
-})
+})))
 
-useHead(generateHeadMeta(siteData))
-
-const canvas = ref<HTMLCanvasElement | null>(null)
-const box = ref<HTMLElement | null>(null)
-const isModelOpen = ref(false)
-const modelText = ref<HandwrittenResult>()
-const disableAllBtn = ref(false)
-const isProd = import.meta.env.MODE === 'production'
-
-watch(isModelOpen, (value) => {
-  disableAllBtn.value = !!value
-})
-
+const svgEl = ref<SVGSVGElement | null>(null)
 const {
-  clearAll,
-  undo,
-  redo,
-  doMouseDown,
-  doMouseMove,
-  doTouchStart,
-  doTouchMove,
-  doEnd,
-  disableUndo,
-  disableRedo,
-} = useCanvas(canvas, box)
-
-const mimeType = 'image/jpeg'
-const url = import.meta.env.VITE_FUNCTIONS_ENDPOINT
-const handWriteUrl = `${url}/handwritten`
-const config: AxiosRequestConfig = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-  responseType: 'json',
-}
-
-const { data, loading, error, post, cancel } = useApi<HandwrittenResult>(handWriteUrl, config)
-
-watch(data, async(v) => {
-  if (!v) return
-  // eslint-disable-next-line no-console
-  if (!isProd) console.log(v)
-  modelText.value = v
-  isModelOpen.value = true
-})
-watch(error, (e) => {
-  // eslint-disable-next-line no-console
-  console.error(e)
-})
-
-const sendImage = async() => {
-  if (!canvas.value) return
-  canvas.value.toBlob(async(blob) => {
-    if (!blob) return
-    const formData = useFromData('image', blob, 'handwritten.jpg')
-    post(formData)
-  }, mimeType)
-}
-onUnmounted(() => {
-  cancel()
-})
+  drauu,
+  mode,
+  loading,
+  canUndo,
+  canRedo,
+  modelText,
+  isModelOpen,
+  uploadImage,
+  downloadImage,
+} = useHandWritten(svgEl)
 </script>
 
 <template>
-  <MainContent :title="t('demos.handwritten-ocr.title')" :back-btn="true">
-    <div class="relative flex flex-col items-stretch flex-auto w-full h-full">
-      <div class="inline-flex items-center justify-end mb-3 space-x-4 text-gray-600 md:(absolute top-0 right-0 transform -translate-y-14) text-md">
-        <RoundedFullBtn aria-label="Undo" :is-disable="disableUndo || disableAllBtn" @click="undo()">
-          <bx-bx-undo class="text-2xl" />
-        </RoundedFullBtn>
-        <RoundedFullBtn aria-label="Redo" :is-disable="disableRedo || disableAllBtn" @click="redo()">
-          <bx-bx-redo class="text-2xl" />
-        </RoundedFullBtn>
-        <RoundedFullBtn aria-label="Clear" :is-disable="disableUndo && disableRedo || disableAllBtn" @click="clearAll()">
-          <bx-bx-trash class="text-2xl" />
-        </RoundedFullBtn>
-        <SendBtn :loading="loading" :is-disabled="disableUndo || disableAllBtn" @click="sendImage()" />
+  <PageTitle :title="t('demos.handwritten-ocr.title')">
+    <template #actions>
+      <SendBtn :loading="loading" :is-disabled="!canUndo && !canRedo" @click="uploadImage" />
+    </template>
+  </PageTitle>
+  <div class="relative">
+    <div class="space-y-4 select-none">
+      <div class="px-3 py-2 border border-light-800 dark:border-dark-200 rounded-xl bg-white dark:bg-dark-500 flex flex-wrap gap-0.5 children:align-middle children:my-auto">
+        <ToolButton aria-label="Undo" title="Undo" :disabled="!canUndo" @click="drauu.undo()">
+          <bx:bx-undo />
+        </ToolButton>
+        <ToolButton aria-label="Redo" title="Redo" :disabled="!canRedo" @click="drauu.redo()">
+          <bx:bx-redo />
+        </ToolButton>
+        <ToolButton aria-label="Clear" title="Clear" @click="drauu.clear()">
+          <bx:bx-trash />
+        </ToolButton>
+        <div class="mx-4 opacity-25">
+          /
+        </div>
+        <ToolButton :class="{'active': mode === 'stylus'}" aria-label="Stylus" title="Stylus" @click="mode = 'stylus'">
+          ✍️
+        </ToolButton>
+        <ToolButton :class="{'active': mode === 'draw'}" aria-label="Draw" title="Draw" @click="mode = 'draw'">
+          ✏️
+        </ToolButton>
+        <div class="mx-4 opacity-25">
+          /
+        </div>
+        <ToolButton title="Download" @click="downloadImage()">
+          <bx:bxs-download />
+        </ToolButton>
       </div>
-      <div ref="box" class="relative z-30 w-full h-full overflow-hidden border-2 border-gray-300 rounded-2xl">
-        <canvas
-          ref="canvas"
-          class="absolute z-10 w-full h-full bg-gray-white cursor-pen"
-          @mousedown="doMouseDown"
-          @mousemove="doMouseMove"
-          @mouseup="doEnd"
-          @touchstart.prevent="doTouchStart"
-          @touchmove.prevent="doTouchMove"
-          @touchend.prevent="doEnd"
-        />
-        <ResultModel v-model:open="isModelOpen" :text="modelText?.text" />
-      </div>
+      <svg ref="svgEl" class="border-light-600 w-full h-180 bg-white rounded-xl" style="touch-action: none" />
     </div>
-  </MainContent>
+    <ResultModel v-model:open="isModelOpen" :text="modelText" />
+  </div>
 </template>
