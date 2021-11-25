@@ -27,7 +27,7 @@ export function generateHeadMeta(siteData: Ref<SiteData>) {
 export function useHead(siteData: Ref<SiteData>) {
   const route = useRoute()
   if (route.path !== '/')
-    siteData.value.title += ' - OVaaS'
+    siteData.value.title += ' - OVAAS'
 
   return _useHead(generateHeadMeta(siteData))
 }

@@ -61,8 +61,8 @@ const config = defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'OVaaS',
-        short_name: 'OVaaS',
+        name: 'OVAAS',
+        short_name: 'OVAAS',
         theme_color: '#1A202C',
         lang: 'ja',
         icons: [

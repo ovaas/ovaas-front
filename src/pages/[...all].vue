@@ -4,7 +4,7 @@ import { useHead } from '@/logics/head'
 const { t } = useI18n()
 
 useHead(computed(() => ({
-  title: 'OVaaS - Not Found',
+  title: 'OVAAS - Not Found',
   description: 'The page does not exist.',
 })))
 </script>

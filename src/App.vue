@@ -7,7 +7,7 @@ import { isDev } from '@/utils'
 const { locale } = useI18n()
 
 useHead(computed(() => ({
-  title: 'OVaaS - OpenVINO as a service',
+  title: 'OVAAS - OpenVINO as a service',
   description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })))
 
@@ -28,7 +28,7 @@ watch(locale, (v) => {
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta property="og:url" content="https://ovaas.netlify.app">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="OVaaS">
+    <meta property="og:site_name" content="OVAAS">
     <meta property="og:image" content="https://ovaas.netlify.app/og.png">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ja_JP">

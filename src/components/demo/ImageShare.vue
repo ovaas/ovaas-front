@@ -6,7 +6,7 @@ const show = ref(false)
 const props = defineProps<{ image: string }>()
 
 // const shareToTwitter = () => {
-//   const text = 'Some Image using OVaaS power by OpenVINO'
+//   const text = 'Some Image using OVAAS power by OpenVINO'
 //   const url = `https://twitter.com/intent/tweet?text=${text}`
 
 //   window.open(url, '_blank')
