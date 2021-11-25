@@ -57,6 +57,12 @@ const demos = computed<Demo[]>(() => ([
     content: t('demos.object-detection-yolo.content'),
     path: '/demo/object-detection-yolo',
   },
+  {
+    title: t('demos.hide-distant-person.title'),
+    image: '/images/hide-distant-person.webp',
+    content: t('demos.hide-distant-person.content'),
+    path: '/demo/hide-distant-person',
+  },
 ]))
 
 </script>
