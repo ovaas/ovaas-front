@@ -93,7 +93,7 @@ const config = defineConfig({
     include: ['vue', 'vue-router', 'drauu', 'dayjs', 'mitt', 'axios'],
   },
   ssgOptions: {
-    script: 'async',
+    format: 'cjs',
     formatting: 'minify',
     onFinished() {
       fs.copyFileSync(resolve(__dirname, 'dist/index.html'), resolve(__dirname, 'dist/404.html'))
