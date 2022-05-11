@@ -1,4 +1,4 @@
-name: Deploy Website
+name: CI/CD
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node_version }}
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install deps
         run: pnpm install
@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install deps
         run: pnpm install
@@ -65,8 +65,8 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ROCK_03BB9DD00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: 'dist'
+          action: upload
+          app_location: dist
           skip_app_build: true
 
   deploy-azure-web-docker:
@@ -85,7 +85,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install deps
         run: pnpm install
@@ -101,6 +101,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0F2661300 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: 'dist'
+          action: upload
+          app_location: dist
           skip_app_build: true
