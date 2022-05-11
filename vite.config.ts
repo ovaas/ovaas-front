@@ -7,7 +7,7 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import { vueI18n } from '@intlify/vite-plugin-vue-i18n'
 import WindiCSS from 'vite-plugin-windicss'
 import AutoImport from 'unplugin-auto-import/vite'
 import { viteMockServe } from 'vite-plugin-mock'
@@ -80,7 +80,7 @@ const config = defineConfig({
       },
     }),
     // https://github.com/intlify/vite-plugin-vue-i18n
-    VueI18n({
+    vueI18n({
       runtimeOnly: true,
       compositionOnly: true,
       include: [resolve(__dirname, 'locales/**')],
