@@ -16,19 +16,19 @@
     "type-check": "nuxi typecheck"
   },
   "devDependencies": {
-    "@hannoeru/eslint-config": "^0.8.7",
-    "@iconify/json": "^2.1.41",
+    "@hannoeru/eslint-config": "^0.8.9",
+    "@iconify/json": "^2.1.46",
     "@intlify/nuxt3": "^0.2.2",
     "@kevinmarrec/nuxt-pwa": "^0.0.2",
-    "@types/node": "^17.0.32",
+    "@types/node": "^17.0.35",
     "@types/nprogress": "^0.2.0",
-    "@unocss/nuxt": "^0.33.2",
-    "@unocss/reset": "^0.33.2",
+    "@unocss/nuxt": "^0.34.0",
+    "@unocss/reset": "^0.34.0",
     "@vee-validate/i18n": "^4.5.11",
     "@vee-validate/rules": "^4.5.11",
-    "@vueuse/core": "^8.4.2",
+    "@vueuse/core": "^8.5.0",
     "@vueuse/head": "^0.7.6",
-    "@vueuse/nuxt": "^8.4.2",
+    "@vueuse/nuxt": "^8.5.0",
     "axios": "^0.27.2",
     "compressorjs": "^1.1.1",
     "dayjs": "^1.11.2",
@@ -36,18 +36,14 @@
     "eslint": "^8.15.0",
     "mitt": "^3.0.0",
     "nuxt": "3.0.0-rc.3",
-    "postcss": "^8.4.13",
+    "postcss": "^8.4.14",
     "postcss-nested": "^5.0.6",
     "typescript": "^4.6.4",
-    "unocss": "^0.33.2",
+    "unocss": "^0.34.0",
     "vee-validate": "^4.5.11",
     "vue-i18n": "next"
   },
   "pnpm": {
-    "overrides": {
-      "@nuxt/kit": "3.0.0-rc.3",
-      "@intlify/core-base": "beta"
-    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "webpack",
@@ -56,7 +52,8 @@
         "vue-router"
       ],
       "allowedVersions": {
-        "vue-i18n": "*"
+        "vue-i18n": "*",
+        "vue": "*"
       }
     }
   }
