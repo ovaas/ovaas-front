@@ -12,9 +12,6 @@ export default defineNuxtConfig({
   meta: {
     charset: 'utf-8',
   },
-  nitro: {
-    preset: 'netlify-edge',
-  },
   typescript: {
     strict: true,
   },
