@@ -57,7 +57,7 @@ jobs:
       - name: Build Production
         env:
           VITE_FUNCTIONS_ENDPOINT: https://ovaas-backend.azurewebsites.net/api
-        run: npm run build
+        run: NITRO_PRESET=azure pnpm run build
 
       - name: Deploy to ASWA
         id: builddeploy
@@ -95,7 +95,7 @@ jobs:
       - name: Build Production
         env:
           VITE_FUNCTIONS_ENDPOINT: https://ovaas-backend-docker.azurewebsites.net/api
-        run: npm run build
+        run: NITRO_PRESET=azure pnpm run build
 
       - name: Deploy to ASWA
         id: builddeploy
