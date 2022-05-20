@@ -66,7 +66,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ROCK_03BB9DD00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: dist
+          app_location: /
+          api_location: .output/server
+          output_location: .output/public
           skip_app_build: true
 
   deploy-azure-web-docker:
@@ -102,5 +104,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0F2661300 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: dist
+          app_location: /
+          api_location: .output/server
+          output_location: .output/public
           skip_app_build: true
