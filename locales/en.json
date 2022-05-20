@@ -1,0 +1,88 @@
+{
+    "pages-title": {
+        "home": "Home",
+        "history": "History",
+        "settings": "Settings",
+        "login": "Login"
+    },
+    "demos": {
+        "human-pose": {
+            "title": "Human Pose Estimation",
+            "content": "This is a demo to estimate human's pose by AI. Try it with uploading your picture."
+        },
+        "handwritten-ocr": {
+            "title": "Japanese Handwritten OCR",
+            "content": "AI will recognize what is written in Japanese. Try it with writing some character in Japanese.",
+            "text-not-found": "No text found."
+        },
+        "draw-colors": {
+            "title": "Colorization",
+            "content": "This is a demo to convert a monochrome image to a colorized image by AI. Try it with uploading your monochrome image."
+        },
+        "face-age": {
+            "title": "Face Age",
+            "content": "This is a demo to estimate age of a person in a picture by AI. Try it with your picture!"
+        },
+        "mono-depth": {
+            "title": "Mono Depth",
+            "content": "AI estimates the relative distances in a picture. The farther objects in a picture are converted to grayscale. Try it with your picture!"
+        },
+        "object-detection": {
+            "title": "Object Detection",
+            "content": "AI will detect TENJI mark and Toilet mark in a picture. Try it with your picture!"
+        },
+        "segmentation": {
+            "title": "Segmentation",
+            "content": "AI finds people in a picture. People remain in color, while the others are converted to grayscale. Try it with your picture!"
+        },
+        "super-resolution": {
+            "title": "Super Resolution",
+            "content": "AI corrects a fuzzy image to high resolution image. Try it with your image!"
+        },
+        "object-detection-yolo": {
+            "title": "Object Detection Yolo",
+            "content": "AI estimates the type of objects in a picture. This AI can estimate 80 kinds of objects. Try it with your picture!"
+        },
+        "hide-distant-person": {
+            "title": "Segmentation & Mono Depth",
+            "content": "AI estimates shape of person and distance in a picture. The brightness of only person changes according to the distance."
+        }
+    },
+    "upload": {
+        "recognize": "Recognize",
+        "image": {
+            "title": "Upload Image",
+            "content": "Click to select image file or drop image to upload.",
+            "support": "Only support JPG or PNG file."
+        }
+    },
+    "share": {
+        "download": "Download",
+        "facebook": "Share to Facebook",
+        "twitter": "Share to Twitter",
+        "instagram": "Share to Instagram"
+    },
+    "errors": {
+        "upload-error": "Upload error.",
+        "not-valid-image": "Please upload a valid image file."
+    },
+    "colorMode": {
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "validate": {
+        "messages": {
+            "required": "This field is required",
+            "email": "This field must be a valid email"
+        }
+    },
+    "form": {
+        "username": "Username",
+        "password": "Password",
+        "login": "Login"
+    },
+    "button": {
+        "logout": "Logout"
+    },
+    "page-not-found": "404 Page Not Found"
+}
