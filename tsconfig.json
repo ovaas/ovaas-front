@@ -1,29 +1,7 @@
 {
+  // https://v3.nuxtjs.org/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
-    "target": "es2017",
-    "lib": [
-      "DOM",
-      "dom.iterable",
-      "ESNext"
-    ],
-    "strict": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "include": [
-    "**/*.vue",
-    "**/*.ts",
-    "**/*.d.ts"
-  ]
+    "strictNullChecks": true
+  }
 }

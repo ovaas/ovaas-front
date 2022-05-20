@@ -4,3 +4,10 @@ dist
 *.local
 .vite-ssg-dist
 .vite-ssg-temp
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+.netlify

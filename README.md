@@ -17,24 +17,42 @@ OpenVINO as a service
 
 ## Develop
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/OVaaS/ovaas-front)
-
 This project use pnpm as package manager.
 
-### Install pnpm
-```
-npm i -g pnpm
+[nuxt 3 documentation](https://v3.nuxtjs.org)
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+pnpm install
 ```
 
-### Start dev server
-```
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
 pnpm dev
 ```
 
-### Build for production
-```
+## Production
+
+Build the application for production:
+
+```bash
 pnpm build
 ```
+
+Locally preview production build:
+
+```bash
+pnpm preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
 
 <br><br>
 <h2 align="center">License</h2><br>
