@@ -1,5 +1,6 @@
 import { getMousePos } from '@/lib/utils'
 import type { Ref } from 'vue'
+import { canvasToBlob, downloadBlobFile } from '@/lib/utils'
 
 export function useCanvas(
   canvas: Ref<HTMLCanvasElement | null>,
@@ -16,6 +17,21 @@ export function useCanvas(
     ctx.fillRect(0, 0, canvas.value.width, canvas.value.height)
     ctx.lineJoin = 'round'
     ctx.lineCap = 'round'
+
+    canvas.value.addEventListener('mousedown', doMouseDown)
+    canvas.value.addEventListener('mousemove', doMouseMove)
+    canvas.value.addEventListener('mouseup', doEnd)
+    canvas.value.addEventListener('touchstart', doTouchStart)
+    canvas.value.addEventListener('touchmove', doTouchMove)
+    canvas.value.addEventListener('touchend', doEnd)
+  })
+  onUnmounted(() => {
+    canvas.value?.removeEventListener('mousedown', doMouseDown)
+    canvas.value?.removeEventListener('mousemove', doMouseMove)
+    canvas.value?.removeEventListener('mouseup', doEnd)
+    canvas.value?.removeEventListener('touchstart', doTouchStart)
+    canvas.value?.removeEventListener('touchmove', doTouchMove)
+    canvas.value?.removeEventListener('touchend', doEnd)
   })
   let draw = false
   const color = '#000000'
@@ -105,6 +121,15 @@ export function useCanvas(
     return redoDataStack.value.length === 0
   })
 
+  const toBlob = () => canvasToBlob(canvas.value!)
+
+  async function download() {
+    const blob = await toBlob()
+    if (!blob)
+      return
+    downloadBlobFile(blob)
+  }
+
   return {
     clearAll,
     undo,
@@ -116,5 +141,7 @@ export function useCanvas(
     doEnd,
     disableUndo,
     disableRedo,
+    download,
+    toBlob,
   }
 }

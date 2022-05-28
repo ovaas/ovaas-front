@@ -31,3 +31,25 @@ export function getMousePos(
     y: y - rect.top,
   }
 }
+
+export async function canvasToBlob(canvas: HTMLCanvasElement) {
+  return new Promise<Blob | null>((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob)
+        resolve(blob)
+      else
+        resolve(null)
+    }, 'image/jpeg')
+    canvas.onerror = function(e) {
+      reject(e)
+    }
+  })
+}
+
+export function downloadBlobFile(blob: Blob) {
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.download = 'hand-written.jpeg'
+  document.body.appendChild(link)
+  link.click()
+}
