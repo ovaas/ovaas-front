@@ -1,16 +1,18 @@
 <script setup lang="ts">
-// @ts-ignore i18n beta
-import { useI18n } from 'vue-i18n'
-import { HandwrittenResult } from '~~/lib/types';
-import { isDev } from '~~/lib/utils';
+import { HandwrittenResult } from '@/lib/types'
+import { isDev } from '@/lib/utils'
+import { Demo } from '@/lib/schema'
 
-const { t } = useI18n()
+const props = defineProps<{
+  demo: Demo
+}>()
+
+const { title, description } = useDemoLocale(props.demo)
+
 useCustomHead({
-  title: t('demos.handwritten-ocr.title'),
-  description: t('demos.handwritten-ocr.content'),
+  title: title.value,
+  description: description.value,
 })
-
-const config = useRuntimeConfig().public
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const box = ref<HTMLDivElement | null>(null)
@@ -27,7 +29,7 @@ const {
 const modelText = ref('')
 const isModelOpen = ref(false)
 
-const { data, loading, post, cancel } = useApi<HandwrittenResult>(`${config.functionsUrl}/handwritten`, {
+const { data, loading, post, cancel } = useApi<HandwrittenResult>(props.demo.apiUrl, {
   headers: {
     'Content-Type': 'multipart/form-data',
   },
@@ -56,7 +58,7 @@ onUnmounted(() => {
 
 <template>
   <div class="">
-    <PageTitle :title="$t('demos.handwritten-ocr.title')">
+    <PageTitle :title="title">
       <template #actions>
         <DemoSendBtn :loading="loading" :is-disabled="disableUndo && disableRedo" @click="uploadImage" />
       </template>
@@ -78,13 +80,13 @@ onUnmounted(() => {
           </div>
           <!-- <ToolButton :class="{ active: mode === 'stylus' }" aria-label="Stylus" title="Stylus" @click="mode = 'stylus'">
             ✍️
-          </ToolButton>
-          <ToolButton :class="{ active: mode === 'draw' }" aria-label="Draw" title="Draw" @click="mode = 'draw'">
+            </ToolButton>
+            <ToolButton :class="{ active: mode === 'draw' }" aria-label="Draw" title="Draw" @click="mode = 'draw'">
             ✏️
-          </ToolButton>
-          <div class="mx-4 opacity-25">
+            </ToolButton>
+            <div class="mx-4 opacity-25">
             /
-          </div> -->
+            </div> -->
           <ToolButton title="Download" @click="download()">
             <UnoIcon i-bx:bxs-download />
           </ToolButton>

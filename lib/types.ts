@@ -1,12 +1,12 @@
 export type Colors = 'green' | 'red' | 'yellow' | 'white'
 export interface FlashPayload { color: Colors, message: string }
 
-export interface Demo {
-  title: string
-  image: string
-  content: string
-  path: string
-}
+// export interface Demo {
+//   title: string
+//   image: string
+//   content: string
+//   path: string
+// }
 
 export interface SiteData {
   title: string

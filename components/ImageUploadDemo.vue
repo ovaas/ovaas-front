@@ -1,20 +1,21 @@
 <script setup lang="ts">
+import { Demo } from '@/lib/schema'
 const props = defineProps<{
-  title: string
-  description: string
-  uploadPath: string
+  demo: Demo
 }>()
 
+const { title, description } = useDemoLocale(props.demo)
+
 useCustomHead({
-  title: props.title,
-  description: props.description,
+  title: title.value,
+  description: description.value,
 })
 
 const {
   handleInput,
   loading,
   resultImage,
-} = useUploadImage(props.uploadPath)
+} = useUploadImage(props.demo.apiUrl)
 </script>
 
 <template>

@@ -3,7 +3,6 @@ import { email, required } from '@vee-validate/rules'
 import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import ja from '@vee-validate/i18n/dist/locale/ja.json'
-import { messages } from '@/messages'
 
 export function setupVeeValidate() {
   defineRule('required', required)
@@ -14,19 +13,15 @@ export function setupVeeValidate() {
       en: {
         messages: {
           ...en.messages,
-          ...Object.fromEntries(
-            Object.entries(messages.en.validate.messages)
-              .map(([key, value]) => [key, (value as any).source]),
-          ),
+          required: 'This field is required',
+          email: 'This field must be a valid email',
         },
       },
       ja: {
         messages: {
           ...ja.messages,
-          ...Object.fromEntries(
-            Object.entries(messages.ja.validate.messages)
-              .map(([key, value]) => [key, (value as any).source]),
-          ),
+          required: 'こちらは必須項目です',
+          email: '有効のメールアドレスではありません',
         },
       },
     }),

@@ -1,5 +1,5 @@
 import { useHead } from '#head'
-import type { SiteData } from '~~/lib/types'
+import type { SiteData } from '@/lib/types'
 
 export function useCustomHead(siteData: SiteData) {
   const route = useRoute()

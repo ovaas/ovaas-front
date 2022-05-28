@@ -25,6 +25,9 @@ export default defineNuxtConfig({
       functionsUrl: 'https://ovaas-backend.azurewebsites.net/api',
       apiUrl: '/api/v1',
     },
+    azureStorageAccountName: '',
+    azureStorageAccountKey: '',
+    azureTableName: '',
   },
   unocss: {
     preflight: true,

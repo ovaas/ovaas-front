@@ -1,6 +1,6 @@
 import { useI18n } from 'vue-i18n'
 import { DOMURL, resizeImage } from '@/lib/utils'
-import { allowFileTypes } from '@/constants'
+import { allowFileTypes } from '@/lib/constants'
 import { ref, watch } from '#imports'
 
 export function useUploadImage(path: string) {

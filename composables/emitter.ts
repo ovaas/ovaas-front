@@ -1,6 +1,6 @@
 import mitt from 'mitt'
 import type { EventType } from 'mitt'
-import type { Colors, FlashPayload } from '~~/lib/types'
+import type { Colors, FlashPayload } from '@/lib/types'
 
 export const FLASH_EVENT = Symbol('flashMessage')
 

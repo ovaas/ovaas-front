@@ -1,88 +1,40 @@
 {
-   "pages-title": {
-      "home": "ホーム",
-      "history": "履歴",
-      "settings": "設定",
-      "login": "ログイン"
-   },
-   "demos": {
-      "human-pose": {
-         "title": "骨格推定",
-         "content": "AIによる人間の骨格を推定するデモです。皆さんの写真をアップロードしてお試しください。"
-      },
-      "handwritten-ocr": {
-         "title": "日本語手書き文字OCR",
-         "content": "日本語の手書き文字をAIが認識します。お好きな文字を書いてお試しください。",
-         "text-not-found": "文字は見つかりませんでした"
-      },
-      "draw-colors": {
-         "title": "白黒画像のカラー化",
-         "content": "白黒画像に対してAIが自動で色を塗り、カラー画像に変換します。白黒画像をアップロードしてお試しください。"
-      },
-      "face-age": {
-         "title": "年齢推定",
-         "content": "AIが画像内に写っている人物の年齢を推定します。人が写っている画像をアップロードしてお試しください。"
-      },
-      "mono-depth": {
-         "title": "深度推定",
-         "content": "AIが画像内の相対的な距離を推定し、距離が近いものはカラーのままで、遠いものはグレースケールに変換します。"
-      },
-      "object-detection": {
-         "title": "物体検出",
-         "content": "画像の中の点字マークとトイレマークをAIが検出します。"
-      },
-      "segmentation": {
-         "title": "セグメンテーション",
-         "content": "AIが画像内に写っている人物を発見します。人物はカラーのままで、他のモノはグレースケールになります。"
-      },
-      "super-resolution": {
-         "title": "超解像",
-         "content": "AIが画像内に写っているモノの種類を推定します．画像をアップロードしてお試しください。"
-      },
-      "object-detection-yolo": {
-         "title": "物体検出(Yolo)",
-         "content": "AIが画像内に写っているモノの種類を推定します。画像をアップロードしてお試しください。"
-      },
-      "hide-distant-person": {
-         "title": "セグメンテーションと距離推定",
-         "content": "AIが画像内の人物と距離を推定し、距離に応じて人物のみ明暗を変更します。"
-      }
-   },
-   "upload": {
-      "recognize": "認識",
-      "image": {
-         "title": "アップロードイメージ",
-         "content": "クリックで画像ファイルを選択、もしくはここにドラッグ＆ドロップでアップロード。",
-         "support": "JPGとPNGファイルのみサポートしています"
-      }
-   },
-   "share": {
-      "download": "ダウンロード",
-      "facebook": "Facebookにシェア",
-      "twitter": "Twitterにシェア",
-      "instagram": "Instagramにシェア"
-   },
-   "errors": {
-      "upload-error": "アップロードエラー",
-      "not-valid-image": "JPG画像ファイルではありません"
-   },
-   "colorMode": {
-      "light": "ライト",
-      "dark": "ダーク"
-   },
-   "validate": {
-      "messages": {
-         "required": "こちらは必須項目です",
-         "email": "有効のメールアドレスではありません"
-      }
-   },
-   "form": {
-      "username": "ユーザーネーム",
-      "password": "パスワード",
-      "login": "ログイン"
-   },
-   "button": {
-      "logout": "ログアウト"
-   },
-   "page-not-found": "404 ベージが見つかりません"
+  "pages-title": {
+    "home": "ホーム",
+    "history": "履歴",
+    "settings": "設定",
+    "login": "ログイン"
+  },
+  "upload": {
+    "recognize": "認識",
+    "image": {
+      "title": "アップロードイメージ",
+      "content": "クリックで画像ファイルを選択、もしくはここにドラッグ＆ドロップでアップロード。",
+      "support": "JPGとPNGファイルのみサポートしています"
+    }
+  },
+  "share": {
+    "download": "ダウンロード",
+    "facebook": "Facebookにシェア",
+    "twitter": "Twitterにシェア",
+    "instagram": "Instagramにシェア"
+  },
+  "errors": {
+    "upload-error": "アップロードエラー",
+    "not-valid-image": "JPG画像ファイルではありません"
+  },
+  "colorMode": {
+    "light": "ライト",
+    "dark": "ダーク"
+  },
+  "form": {
+    "username": "ユーザーネーム",
+    "password": "パスワード",
+    "login": "ログイン"
+  },
+  "button": {
+    "logout": "ログアウト"
+  },
+  "page-not-found": "404 ベージが見つかりません",
+  "text-not-found": "文字は見つかりませんでした"
 }
