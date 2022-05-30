@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -40,7 +40,7 @@ jobs:
     name: Build & Deploy to Azure Static Web App - Intel
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Deploy to ASWA
         id: builddeploy
@@ -62,7 +62,7 @@ jobs:
     name: Build & Deploy to Azure Static Web App - Intel (Docker Back-end)
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Deploy to ASWA
         id: builddeploy
