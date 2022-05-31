@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { Demo } from '@/lib/schema'
+
 useCustomHead({
   title: 'OVAAS - OpenVINO as a service',
   description: 'No setup! No command! No code! Easy to use OpenVINO™ demo website.',
 })
 
-const { data: demos } = await useFetch('/api/demos')
+const { data: demos } = await useFetch<Demo[]>('/api/demos')
 </script>
 
 <template>
