@@ -4,13 +4,13 @@ const route = useRoute()
 const { slug } = route.params
 const { data } = useFetch(`/api/demos/${slug}`)
 
-const demo = computed(() => data.value as unknown as Demo)
+const demo = computed(() => data.value as unknown as Demo | undefined)
 </script>
 
 <template>
   <div>
-    <ImageUploadDemo v-if="demo.type === 'imageUpload'" :demo="demo" />
-    <CanvasDemo v-else-if="demo.type === 'canvas'" :demo="demo" />
+    <ImageUploadDemo v-if="demo?.type === 'imageUpload'" :demo="demo" />
+    <CanvasDemo v-else-if="demo?.type === 'canvas'" :demo="demo" />
     <div v-else>
       Demo component not found!
     </div>
