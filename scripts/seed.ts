@@ -1,4 +1,4 @@
-import { TableClient } from '@azure/data-tables'
+import { AzureNamedKeyCredential, TableClient } from '@azure/data-tables'
 import dotenv from 'dotenv'
 import { demoPartitionKey } from '../lib/table'
 import type { Demo } from '../lib/schema'
@@ -109,10 +109,19 @@ const demos: Demo[] = [
 ]
 
 async function main() {
-  const table = TableClient.fromConnectionString(process.env.NUXT_TABLE_STORAGE_CONNECTION_STRING!, 'demos')
+  const account = process.env.NUXT_AZURE_STORAGE_ACCOUNT_NAME!
+  const accountKey = process.env.NUXT_AZURE_STORAGE_ACCOUNT_KEY!
+  const azureTableName = process.env.NUXT_AZURE_TABLE_NAME!
+  const sharedKeyCredential = new AzureNamedKeyCredential(account, accountKey)
+
+  const client = new TableClient(
+    `https://${account}.table.core.windows.net`,
+    `${azureTableName}`,
+    sharedKeyCredential,
+  )
 
   for (const demo of demos) {
-    const result = await table.createEntity({
+    const result = await client.createEntity({
       partitionKey: demoPartitionKey,
       rowKey: demo.slug,
       ...demo,
