@@ -4,7 +4,7 @@ import { allowFileTypes } from '@/lib/constants'
 import { ref, watch } from '#imports'
 
 export function useUploadImage(path: string) {
-  const config = useRuntimeConfig().public
+  const { functionsUrl } = useRuntimeConfig().public
   const { t } = useI18n()
 
   const image = ref<File | null>(null)
@@ -14,7 +14,7 @@ export function useUploadImage(path: string) {
     image.value = file
   }
 
-  const { data, loading, error, post, cancel } = useApi<Blob>(`${config.functionsUrl}${path}`, {
+  const { data, loading, error, post, cancel } = useApi<Blob>(new URL(path, functionsUrl).toString(), {
     headers: {
       'Content-Type': 'multipart/form-data',
     },

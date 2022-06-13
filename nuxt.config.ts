@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      functionsUrl: 'https://ovaas-backend.azurewebsites.net/api',
+      functionsUrl: '',
       apiUrl: '/api/v1',
     },
     azureStorageAccountName: '',
