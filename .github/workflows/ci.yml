@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -13,9 +13,6 @@ jobs:
   test:
     name: Test Build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node_version: [16]
 
     steps:
       - name: Checkout
@@ -24,10 +21,10 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
 
-      - name: Set node version to ${{ matrix.node_version }}
+      - name: Set node version to v16
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: 16
           cache: pnpm
 
       - name: Install deps
@@ -35,69 +32,3 @@ jobs:
 
       - name: Build Production
         run: npm run build
-
-  build_and_deploy_job:
-    needs: test
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: Build & Deploy to Azure Static Web App - Intel
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to ASWA
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        env:
-          NUXT_PUBLIC_FUNCTIONS_URL: https://ovaas-backend.azurewebsites.net/api
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ROCK_03BB9DD00 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: upload
-          app_location: /
-          api_location: .output/server
-          output_location: .output/public
-
-  build_and_deploy_job_docker:
-    needs: test
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: Build & Deploy to Azure Static Web App - Intel (Docker Back-end)
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to ASWA
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        env:
-          NUXT_PUBLIC_FUNCTIONS_URL: https://ovaas-backend-docker.azurewebsites.net/api
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0F2661300 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: upload
-          app_location: /
-          api_location: .output/server
-          output_location: .output/public
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ROCK_03BB9DD00 }}
-          action: close
-
-  close_pull_request_job_docker:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_ROCK_03BB9DD00 }}
-          action: close
