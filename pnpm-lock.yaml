@@ -14,7 +14,7 @@ specifiers:
   '@vee-validate/rules': ^4.6.2
   '@vueuse/core': ^8.9.4
   '@vueuse/head': ^0.7.8
-  '@vueuse/nuxt': ^8.9.4
+  '@vueuse/nuxt': ^9.0.2
   axios: ^0.27.2
   compressorjs: ^1.1.1
   dayjs: ^1.11.4
@@ -44,7 +44,7 @@ devDependencies:
   '@vee-validate/rules': 4.6.2
   '@vueuse/core': 8.9.4_vue@3.2.37
   '@vueuse/head': 0.7.8_vue@3.2.37
-  '@vueuse/nuxt': 8.9.4_rollup@2.77.0+vue@3.2.37
+  '@vueuse/nuxt': 9.0.2_rollup@2.77.0+vue@3.2.37
   axios: 0.27.2
   compressorjs: 1.1.1
   dayjs: 1.11.4
@@ -874,36 +874,6 @@ packages:
       - webpack
     dev: true
 
-  /@nuxt/kit/3.0.0-rc.5_rollup@2.77.0:
-    resolution: {integrity: sha512-PmRfy0AdpvYne5p1/QWXOFoJawnjC/p2TkEJeCgI7MMHP7U2ru/7MxM7x0+ScjD13fUd4KSv1bCMJRTCoaCzPQ==}
-    engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
-    dependencies:
-      '@nuxt/schema': 3.0.0-rc.6_rollup@2.77.0
-      c12: 0.2.8
-      consola: 2.15.3
-      defu: 6.0.0
-      globby: 13.1.2
-      hash-sum: 2.0.0
-      ignore: 5.2.0
-      jiti: 1.14.0
-      knitwork: 0.1.2
-      lodash.template: 4.5.0
-      mlly: 0.5.4
-      pathe: 0.3.2
-      pkg-types: 0.3.3
-      scule: 0.2.1
-      semver: 7.3.7
-      unctx: 1.1.4_rollup@2.77.0
-      unimport: 0.4.5_rollup@2.77.0
-      untyped: 0.4.4
-    transitivePeerDependencies:
-      - esbuild
-      - rollup
-      - supports-color
-      - vite
-      - webpack
-    dev: true
-
   /@nuxt/kit/3.0.0-rc.6_34lyoy2px4mwvanejqhdojvpg4:
     resolution: {integrity: sha512-+lxSd6dSWlAzMXfGOPcY4856xnMF1Ck1rycFUZ+K2QYiDXphq/fiW2eMaWLVvqgPyL2Box2WzVDZJ6C5ceptcw==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
@@ -1267,6 +1237,10 @@ packages:
 
   /@types/web-bluetooth/0.0.14:
     resolution: {integrity: sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==}
+    dev: true
+
+  /@types/web-bluetooth/0.0.15:
+    resolution: {integrity: sha512-w7hEHXnPMEZ+4nGKl/KDRVpxkwYxYExuHOYXyzIzCDzEZ9ZCGMAewulr9IqJu2LR4N37fcnb1XVeuZ09qgOxhA==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.27.0_7y3rtqm3ievhd4dejnmbzfej7i:
@@ -1769,6 +1743,18 @@ packages:
       vue-demi: 0.12.5_vue@3.2.37
     dev: true
 
+  /@vueuse/core/9.0.2_vue@3.2.37:
+    resolution: {integrity: sha512-kOIqaQPSs7OSByWg1ulEKRUJbsq3FmbJiUr0RhEKpt3O1Uhl4DrDj85DUbQBABVYgPvSaY6AE/fP3/FOcRIOoQ==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.15
+      '@vueuse/metadata': 9.0.2
+      '@vueuse/shared': 9.0.2_vue@3.2.37
+      vue-demi: 0.12.5_vue@3.2.37
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
   /@vueuse/head/0.7.8_vue@3.2.37:
     resolution: {integrity: sha512-D0lFcCgynjzTVVHM2RsQShDxKfjgbc2vhzeLqkOyH0lKEV3iv4xJ8ZSIW47V4XC6erGpnM2z2XGnwltMZFn7oA==}
     peerDependencies:
@@ -1784,12 +1770,16 @@ packages:
     resolution: {integrity: sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==}
     dev: true
 
-  /@vueuse/nuxt/8.9.4_rollup@2.77.0+vue@3.2.37:
-    resolution: {integrity: sha512-iA0/maD70161MYY7HjCGmxMd97LqiaDA5d7pZnuBe3Xanm6xetvbvYCLAlhigbTujfDUQcmD0qiHbNaXaIP5Xg==}
+  /@vueuse/metadata/9.0.2:
+    resolution: {integrity: sha512-TRh+TNUYXiodatSAxd0xZc7sh4RfktVVgNFIN7TCQXKyancbCAcWfHvKfgdlX8LcqSBxKoHVa90n0XdUbboTkw==}
+    dev: true
+
+  /@vueuse/nuxt/9.0.2_rollup@2.77.0+vue@3.2.37:
+    resolution: {integrity: sha512-1NYT3DC58fZ0YxFGaGZ4V0uAd3E4YMMnalKd1K1HBvrW3exB9zcBW52spKMspZL9dnNlxyv3TauH52b94fMxqg==}
     dependencies:
-      '@nuxt/kit': 3.0.0-rc.5_rollup@2.77.0
-      '@vueuse/core': 8.9.4_vue@3.2.37
-      '@vueuse/metadata': 8.9.4
+      '@nuxt/kit': 3.0.0-rc.6_rollup@2.77.0
+      '@vueuse/core': 9.0.2_vue@3.2.37
+      '@vueuse/metadata': 9.0.2
       local-pkg: 0.4.2
       vue-demi: 0.12.5_vue@3.2.37
     transitivePeerDependencies:
@@ -1815,6 +1805,15 @@ packages:
     dependencies:
       vue: 3.2.37
       vue-demi: 0.12.5_vue@3.2.37
+    dev: true
+
+  /@vueuse/shared/9.0.2_vue@3.2.37:
+    resolution: {integrity: sha512-KwBDefK2ljLESpt0ffe2w8EGUCb3IaMfTzeytB/uHHjHOGOEIHLHHyn8W2C48uGQEvoe5iwaW4Bfp8cRUM6IFA==}
+    dependencies:
+      vue-demi: 0.12.5_vue@3.2.37
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
     dev: true
 
   /abbrev/1.1.1:

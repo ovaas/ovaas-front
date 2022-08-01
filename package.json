@@ -29,7 +29,7 @@
     "@vee-validate/rules": "^4.6.2",
     "@vueuse/core": "^8.9.4",
     "@vueuse/head": "^0.7.8",
-    "@vueuse/nuxt": "^8.9.4",
+    "@vueuse/nuxt": "^9.0.2",
     "axios": "^0.27.2",
     "compressorjs": "^1.1.1",
     "dayjs": "^1.11.4",
