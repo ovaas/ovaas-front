@@ -27,7 +27,7 @@
     "@unocss/reset": "^0.45.1",
     "@vee-validate/i18n": "^4.6.2",
     "@vee-validate/rules": "^4.6.2",
-    "@vueuse/core": "^8.9.4",
+    "@vueuse/core": "^9.0.2",
     "@vueuse/head": "^0.7.8",
     "@vueuse/nuxt": "^9.0.2",
     "axios": "^0.27.2",
