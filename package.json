@@ -34,7 +34,7 @@
     "compressorjs": "^1.1.1",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.2",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "mitt": "^3.0.0",
     "nuxt": "3.0.0-rc.9",
     "postcss": "^8.4.16",
