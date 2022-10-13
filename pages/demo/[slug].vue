@@ -2,13 +2,13 @@
 import { Demo } from '@/lib/schema'
 const route = useRoute()
 const { slug } = route.params
-const { data: demo } = await useFetch<Demo>(`/api/demos/${slug}`)
+const { data: demo } = await useFetch<Demo>(`/api/demos/${slug}`, { initialCache: false })
 </script>
 
 <template>
   <div>
-    <ImageUploadDemo v-if="demo.type === 'imageUpload'" :demo="demo" />
-    <CanvasDemo v-else-if="demo.type === 'canvas'" :demo="demo" />
+    <ImageUploadDemo v-if="demo?.type === 'imageUpload'" :demo="demo" />
+    <CanvasDemo v-else-if="demo?.type === 'canvas'" :demo="demo" />
     <div v-else>
       Demo component not found!
     </div>
