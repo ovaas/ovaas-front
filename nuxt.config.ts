@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config'
 import { transformerDirectives, transformerVariantGroup } from 'unocss'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -47,6 +47,9 @@ export default defineNuxtConfig({
     },
   },
   pwa: {
+    workbox: {
+      enabled: true,
+    },
     manifest: {
       name: 'OVAAS',
       short_name: 'OVAAS',
