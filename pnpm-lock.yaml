@@ -445,14 +445,14 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       core-js-pure: 3.25.5
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.10
     dev: true
 
   /@babel/runtime/7.19.4:
     resolution: {integrity: sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.10
     dev: true
 
   /@babel/standalone/7.19.5:
@@ -6104,8 +6104,8 @@ packages:
       redis-errors: 1.2.0
     dev: true
 
-  /regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+  /regenerator-runtime/0.13.10:
+    resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
     dev: true
 
   /regexp-tree/0.1.24:
