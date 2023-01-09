@@ -3,18 +3,18 @@ lockfileVersion: 5.4
 specifiers:
   '@azure/data-tables': ^13.2.0
   '@hannoeru/eslint-config': ^0.9.4
-  '@iconify/json': ^2.2.0
+  '@iconify/json': ^2.2.3
   '@intlify/nuxt3': ^0.2.4
-  '@kevinmarrec/nuxt-pwa': ^0.13.0
+  '@kevinmarrec/nuxt-pwa': ^0.14.0
   '@types/node': ^18.11.18
   '@types/nprogress': ^0.2.0
-  '@unocss/nuxt': ^0.48.0
-  '@unocss/reset': ^0.48.0
+  '@unocss/nuxt': ^0.48.3
+  '@unocss/reset': ^0.48.3
   '@vee-validate/i18n': ^4.7.3
   '@vee-validate/rules': ^4.7.3
-  '@vueuse/core': ^9.9.0
+  '@vueuse/core': ^9.10.0
   '@vueuse/head': ^1.0.22
-  '@vueuse/nuxt': ^9.9.0
+  '@vueuse/nuxt': ^9.10.0
   axios: ^1.2.2
   compressorjs: ^1.1.1
   dayjs: ^1.11.7
@@ -22,10 +22,10 @@ specifiers:
   eslint: ^8.31.0
   mitt: ^3.0.0
   nuxt: 3.0.0
-  postcss: ^8.4.20
+  postcss: ^8.4.21
   postcss-nested: ^6.0.0
   typescript: ^4.9.4
-  unocss: ^0.48.0
+  unocss: ^0.48.3
   vee-validate: ^4.7.3
   vue-i18n: next
   zod: ^3.20.2
@@ -35,7 +35,7 @@ devDependencies:
   '@hannoeru/eslint-config': 0.9.4_iukboom6ndih5an6iafl45j2fe
   '@iconify/json': 2.2.3
   '@intlify/nuxt3': 0.2.4_rollup@2.79.1
-  '@kevinmarrec/nuxt-pwa': 0.13.0
+  '@kevinmarrec/nuxt-pwa': 0.14.0
   '@types/node': 18.11.18
   '@types/nprogress': 0.2.0
   '@unocss/nuxt': 0.48.3_rollup@2.79.1
@@ -862,8 +862,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@kevinmarrec/nuxt-pwa/0.13.0:
-    resolution: {integrity: sha512-0F0FwGEBvBdGEB526rK2cY0cxIf+kEKWa0EjnIQ7R4K85aAlGZVa04E+oOX1A4eGSLpjB5VxcSuZv/y2y7Pg3Q==}
+  /@kevinmarrec/nuxt-pwa/0.14.0:
+    resolution: {integrity: sha512-60YWkyFAgCZVl9BKwC5aKEv7l5s/SuGIP4jf1o4uiE1B5Mxpm4n5HFPmDdirMn+RX+Xe4LFjdB2vuxxcUt3fFw==}
     dependencies:
       hasha: 5.2.2
       sharp: 0.31.3
