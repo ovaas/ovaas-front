@@ -21,7 +21,7 @@
     "@iconify/json": "^2.2.36",
     "@intlify/nuxt3": "^0.2.4",
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
-    "@types/node": "^18.15.3",
+    "@types/node": "^20.17.0",
     "@types/nprogress": "^0.2.0",
     "@unocss/nuxt": "^0.50.6",
     "@unocss/reset": "^0.50.6",
